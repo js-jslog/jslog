@@ -1,0 +1,22 @@
+{
+  "name": "jslog",
+  "version": "1.0.0",
+  "description": "the website hosted at jslog.co.uk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-jslog/jslog.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "js-jslog",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/js-jslog/jslog/issues"
+  },
+  "homepage": "https://github.com/js-jslog/jslog#readme"
+}
