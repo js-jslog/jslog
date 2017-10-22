@@ -26,8 +26,8 @@ THE SOFTWARE.
         d="m85,5 
           l1040,0 
           a80,80 0 0,1 80,80 
-          l-1040,0 
-          a80,80 0 0,1 -80,-80
+          l-1200,0 
+          a80,80 0 0,1 80,-80
           z"
         style="fill:#3b352b; stroke:#3b352b;" />
   <path id="mainBlockOutline"
