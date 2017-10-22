@@ -30,6 +30,15 @@ THE SOFTWARE.
           a80,80 0 0,1 -80,-80
           z"
         style="fill:#3b352b; stroke:#3b352b;" />
+  <!--<path id="mossBottomFill"
+        d="m5,440 
+          l1200,0 
+          l0,40
+          a80,80 0 0,1 -80,80 
+          l-1000,0 
+          a120,120 0 0,0 -120,-120 
+          z"
+        style="fill:#3b352b; stroke:#3b352b;" />-->
   <path id="mainBlockOutline"
         d="m85,5 
           l1040,0 
