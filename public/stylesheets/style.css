@@ -8,7 +8,12 @@
 
 nav ul a,
 nav .brand-logo {
-  color: #444;
+  color: #12100c;
+}
+
+nav .brand-logo img {
+  height: 93px;
+  margin-top: 1px;
 }
 
 p {
