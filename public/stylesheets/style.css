@@ -16,6 +16,17 @@ nav .brand-logo img {
   margin-top: 1px;
 }
 
+nav {
+  position: absolute;
+}
+
+.title-box {
+  position: relative;
+  margin-right: 327px;
+  top: -43px;
+  float: right;
+}
+
 p {
   line-height: 2rem;
 }
@@ -58,7 +69,7 @@ h5 {
 }
 
 .parallax-container {
-  min-height: 645px;
+  min-height: 696px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
