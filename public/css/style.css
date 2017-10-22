@@ -1,23 +1,10 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-
-nav ul a,
-nav .brand-logo {
-  color: #12100c;
+nav {
+  position: absolute;
 }
 
 nav .brand-logo img {
   height: 93px;
   margin-top: 1px;
-}
-
-nav {
-  position: absolute;
 }
 
 .title-box {
@@ -31,20 +18,11 @@ p {
   line-height: 2rem;
 }
 
-.color-brown {
-  color: #12100c;
-}
-
-.color-white {
-  color: #fff;
-}
-
 h5 {
   color: #bb4430;
 }
 
 .page-footer {
-  padding-top: 20px;
   background-color: #303b52;
 }
 
@@ -64,10 +42,6 @@ h5 {
   background-color: rgba(51, 51, 51, 0.2);
 }
 
-.button-collapse {
-  color: #26a69a;
-}
-
 .parallax-container {
   min-height: 696px;
   line-height: 0;
@@ -79,26 +53,6 @@ h5 {
   width: 100%;
 }
 
-.float-right {
-    float: right;
-}
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
 .icon-block {
   padding: 0 15px;
 }
@@ -106,6 +60,9 @@ h5 {
   font-size: inherit;
 }
 
-footer.page-footer {
-  margin: 0;
+@media only screen and (max-width : 992px) {
 }
+
+@media only screen and (max-width : 600px) {
+}
+
