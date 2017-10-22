@@ -4251,6 +4251,10 @@ nav .brand-logo {
   font-size: 2.1rem;
   padding: 0;
 }
+nav .brand-logo img {
+  height: 93px;
+  margin-top: 1px;
+}
 
 nav .brand-logo.center {
   left: 50%;
