@@ -1,15 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/article1', function(req, res, next) {
-    res.render('articles/article1', {
-        title: 'Article 1',
-    });
-});
-
-router.get('/', function(req, res, next) {
-    res.render('articles', {
-        title: 'Articles',
+router.get(/\/(.*)/, function(req, res, next) {
+    var page = req.params[0];
+    // TODO: make sure to check that a file exists for this page and throw and error if not
+    res.render('articles/' + page, {
+        title: page,
+        title_image: page + '.jpg',
     });
 });
 
