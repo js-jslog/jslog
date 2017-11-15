@@ -1,0 +1,68 @@
+nav {
+  position: absolute;
+}
+
+nav .brand-logo img {
+  height: 93px;
+  margin-top: 1px;
+}
+
+.title-box {
+  position: relative;
+  margin-right: 327px;
+  top: -43px;
+  float: right;
+}
+
+p {
+  line-height: 2rem;
+}
+
+h5 {
+  color: #bb4430;
+}
+
+.page-footer {
+  background-color: #303b52;
+}
+
+.page-footer .footer-copyright {
+  overflow: hidden;
+  min-height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(51, 51, 51, 0.2);
+}
+
+.parallax-container {
+  min-height: 696px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+@media only screen and (max-width : 992px) {
+}
+
+@media only screen and (max-width : 600px) {
+}
+
