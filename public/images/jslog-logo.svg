@@ -22,6 +22,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 -->
+  <path id="mainBlockFill"
+        d="m85,5 
+          l1040,0 
+          a80,80 0 0,1 80,80 
+          l0,400 
+          a80,80 0 0,1 -80,80 
+          l-1000,0 
+          a120,120 0 0,0 -120,-120 
+          l0,-360 
+          a80,80 0 0,1 80,-80"
+        style="fill:#ffffff; fill-opacity:0.5; stroke:none;" />
   <path id="mossTopFill"
         d="m85,5 
           l1040,0 
