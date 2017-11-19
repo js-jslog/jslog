@@ -39,14 +39,13 @@
         </div>
   </nav>
 
-  <div id="index-banner" class="parallax-container">
-      <div class="parallax"><img src="/images/{{title_image}}" alt="joe enjoying time with his family"></div>
-  </div>
   {{#> hero-block}}
     {{!-- Hero content goes here. --}}
   {{/hero-block}}
 
-  {{{body}}}
+  {{#> body-block}}
+    {{!-- body content goes here. --}}
+  {{/body-block}}
 
   {{#> footer-block}}
     {{!--
