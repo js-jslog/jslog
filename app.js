@@ -28,7 +28,7 @@ app.get('/articles', function (req, res) {
 app.get(/\/(.*)/, function(req, res, next) {
     var page = req.params[0];
     // TODO: make sure to check that a file exists for this page and throw and error if not
-    res.sendFile(path.join(__dirname + '/pages/' + page));
+    res.sendFile(path.join(__dirname + '/pages/' + page + '.html'));
 });
 
 app.get('/', function (req, res) {
