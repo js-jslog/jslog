@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "gulp html",
+    "build": "gulp clean | gulp html",
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www"
   },
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-rename": "^1.2.2",
     "nodemon": "^1.12.1"
