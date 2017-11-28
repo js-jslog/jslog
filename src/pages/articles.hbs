@@ -1,0 +1,59 @@
+{{#> layouts/base title="Articles" }}
+
+  {{#*inline "hero-block"}}
+    {{> includes/hero
+      hero-src="/highhope.jpg"
+      hero-alt="articles"
+    }}
+  {{/inline}}
+
+  {{#*inline "body-block"}}
+    <div class="container">
+      <div class="section">
+    
+        <!--   Icon Section   -->
+        <div class="row">
+          {{> includes/articles-box
+            article-title="This is the title"
+            img-src="/highhope.jpg"
+            blurb="Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that"
+          }}
+
+          {{> includes/articles-box
+            article-title="This is the title"
+            img-src="/highhope.jpg"
+            blurb="Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that"
+          }}
+
+          {{> includes/articles-box
+            article-title="This is the title"
+            img-src="/highhope.jpg"
+            blurb="Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that"
+          }}
+        </div>
+    
+        <div class="row">
+          {{> includes/articles-box
+            article-title="This is the title"
+            img-src="/highhope.jpg"
+            blurb="Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that"
+          }}
+
+          {{> includes/articles-box
+            article-title="This is the title"
+            img-src="/highhope.jpg"
+            blurb="Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that"
+          }}
+
+          {{> includes/articles-box
+            article-title="This is the title"
+            img-src="/highhope.jpg"
+            blurb="Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that"
+          }}
+        </div>
+      </div>
+    </div>
+    
+  {{/inline}}
+
+{{/layouts/base}}
