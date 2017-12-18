@@ -36,3 +36,4 @@ jspm_packages
 
 # build directories
 /pages
+/public/js/react

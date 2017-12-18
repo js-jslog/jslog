@@ -12,12 +12,7 @@
       <div class="section">
     
         <div class="row">
-          {{> includes/articles-box
-            article-title="Modularisation without obstruction"
-            img-src="/modularisation-without-obstruction.jpg"
-            blurb="Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that"
-            link="modularisation-without-obstruction"
-          }}
+          <div id="article1"></div>
 
           {{> includes/articles-box
             article-title="The ultimate pseudo classical inheritance pattern"
@@ -116,6 +111,10 @@
       </div>
     </div>
     
+  {{/inline}}
+
+  {{#*inline "scripts-block"}}
+    <script src="/js/react/article.js"></script>
   {{/inline}}
 
 {{/layouts/base}}
