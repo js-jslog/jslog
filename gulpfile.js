@@ -41,8 +41,13 @@ gulp.task('jsx', () => {
             "plugins": ["transform-react-jsx"],
             "presets": ["es2015"]
         }))
-    .pipe(rename({
-        extname: '.js'
-    }))
-    .pipe(gulp.dest('./public/js/react'));
+        .pipe(rename({
+            extname: '.js'
+        }))
+        .pipe(gulp.dest('./public/js/react'));
+});
+gulp.task('webpack', () => {
+  return gulp.src('src/jsx/article-box-row.jsx')
+    .pipe(webpack( require('./webpack.config.js')))
+    .pipe(gulp.dest('public/js/react'));
 });

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "gulp cleanpages | gulp html",
-    "buildjsx": "gulp cleanreact | gulp jsx",
+    "buildjsx": "gulp cleanreact | gulp webpack",
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www"
   },
