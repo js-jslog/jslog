@@ -22,11 +22,15 @@ const data_array = [
     },
 ];
 
-ReactDOM.render(
-  <div className="row">
-    <ArticleBox data={data_array[0]} />
-    <ArticleBox data={data_array[1]} />
-    <ArticleBox data={data_array[2]} />
-  </div>,
-  document.getElementById('row1')
-);
+class ArticleRow extends React.Component {
+    render() {
+        let articles = data_array.map(article_info => {
+            return <ArticleBox data={article_info} />
+        });
+        return <div className="row">
+            {articles}
+        </div>
+    };
+}
+
+export default ArticleRow

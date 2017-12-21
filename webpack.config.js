@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: "./src/jsx/article-box-row.jsx",
+  entry: "./src/jsx/articles-page-content.jsx",
   output: {
     path: __dirname + "/public/js/react",
     filename: "article-box-row.js"
