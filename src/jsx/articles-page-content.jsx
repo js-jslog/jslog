@@ -2,26 +2,97 @@ import ArticleRow from './article-box-row.jsx';
 
 const data_array = [
     {
-        href: "/articles/modularisation-without-obstruction",
-        imgSrc: "/images/hero/modularisation-without-obstruction.jpg",
+        href: "modularisation-without-obstruction",
+        imgSrc: "modularisation-without-obstruction.jpg",
         articleTitle: "Modularisation without obstruction",
         blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
     },
     {
-        href: "/articles/ultimate-pseudo-classical-inheritance",
-        imgSrc: "/images/hero/ultimate-pseudo-classical-inheritance.jpg",
+        href: "ultimate-pseudo-classical-inheritance",
+        imgSrc: "ultimate-pseudo-classical-inheritance.jpg",
         articleTitle: "The ultimate pseudo classical inheritance pattern",
         blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
     },
     {
-        href: "/articles/loops-or-array-methods",
-        imgSrc: "images/hero/loops-or-array-methods.jpg",
+        href: "loops-or-array-methods",
+        imgSrc: "loops-or-array-methods.jpg",
         articleTitle: "Loops or array methods",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "iterative-array-methods",
+        imgSrc: "iterative-array-methods.jpg",
+        articleTitle: "Iterative array methods",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "boolean-function",
+        imgSrc: "boolean-function.png",
+        articleTitle: "The boolean function",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "the-object-object",
+        imgSrc: "the-object-object.jpg",
+        articleTitle: "The object object",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "functions-are-objects-too",
+        imgSrc: "functions-are-objects-too.jpeg",
+        articleTitle: "Functions are objects too",
+        blurb: "Functions are first class citizens in javascript. But in the end how different are they from objects.",
+    },
+    {
+        href: "the-two-pillars-of-javascript",
+        imgSrc: "the-two-pillars-of-javascript.jpg",
+        articleTitle: "The two pillars of Javascript",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "prefix-vs-postfix-increment-unary-operators",
+        imgSrc: "prefix-vs-postfix-increment-unary-operators.jpg",
+        articleTitle: "Prefix vs postfix increment unary operators",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "number-conversion",
+        imgSrc: "number-conversion.jpg",
+        articleTitle: "Number conversion",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "build-a-game-with-tdd",
+        imgSrc: "build-a-game-with-tdd.jpg",
+        articleTitle: "Build a game with TDD",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "floating-point-visualisation",
+        imgSrc: "floating-point-visualisation.jpg",
+        articleTitle: "Floating point visualisation",
+        blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
+    },
+    {
+        href: "keywords-and-reserved-words-in-javascript",
+        imgSrc: "keywords-and-reserved-words-in-javascript.jpg",
+        articleTitle: "Keywords & reserved words in Javascript",
         blurb: "Overview of the article. Probably the same text which should appear in the hero image under the title when I get round to that",
     },
 ];
 
+const rows = data_array.map(function (val, index, arr) {
+    const columns = 3;
+    const marker = index * columns;
+    return arr.slice(marker, marker + columns);
+}).filter(a => a.length>0)
+  .map(row_data_array => {
+    return <ArticleRow data_array={row_data_array} />;
+});
+    
 ReactDOM.render(
-  <ArticleRow data_array={data_array} />,
-  document.getElementById('row1')
+  <div>
+    {rows}
+  </div>,
+  document.getElementById('articlesSection')
 );

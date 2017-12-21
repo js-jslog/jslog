@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/jsx/articles-page-content.jsx",
   output: {
     path: __dirname + "/public/js/react",
-    filename: "article-box-row.js"
+    filename: "article-page-content.js"
   },
   module: {
     loaders: [
