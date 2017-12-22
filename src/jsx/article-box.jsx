@@ -1,5 +1,3 @@
-import React from 'react';
-
 class ArticleBox extends React.Component {
     render() {
         let imgSrc = "/images/hero/" + this.props.data.imgSrc;
