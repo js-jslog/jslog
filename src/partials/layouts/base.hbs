@@ -17,6 +17,11 @@
   <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
   <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
+  {{#if title}}
+    <script>
+      window.pageTitle="{{title}}";
+    </script>
+  {{/if}}
   {{#> head-block}}
       {{!-- Custom <head> content per page could be added. --}}
   {{/head-block}}

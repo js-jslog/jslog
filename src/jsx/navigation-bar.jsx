@@ -15,7 +15,7 @@ class NavigationBar extends React.Component {
           <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
         </div>
             <div className="title-box">
-                <h1 className="header">{this.props.pageTitle}</h1>
+                <h1 className="header">{window.pageTitle}</h1>
             </div>
       </nav>
     };
