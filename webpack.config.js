@@ -2,10 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: "./src/jsx/articles-page-content.jsx",
+  entry: {
+      articlesPageContent: "./src/jsx/articles-page-content.jsx",
+      navigationBarInclude: "./src/jsx/navigation-bar-include.jsx"
+  },
   output: {
     path: __dirname + "/public/js/react",
-    filename: "article-page-content.js"
+    filename: "[name].js"
   },
   module: {
     loaders: [

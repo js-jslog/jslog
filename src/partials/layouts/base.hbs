@@ -22,24 +22,7 @@
   {{/head-block}}
 </head>
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="/" class="brand-logo">
-        <img src="/images/jslog-logo.svg"/>
-      </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-        <div class="title-box">
-            <h1 class="header">{{title}}</h1>
-        </div>
-  </nav>
+  <div id="navigationBar"></div>
 
   {{#> hero-block}}
     {{!-- Hero content goes here. --}}
@@ -49,8 +32,6 @@
     {{!-- body content goes here. --}}
   {{/body-block}}
 
-      </div>
-    </div>
   {{#> footer-block}}
     {{!--
       The `includes/footer` partial is the default content,
@@ -64,6 +45,7 @@
   <script src="/js/materialize/materialize.min.js"></script>
   <script src="/js/materialize/init.js"></script>
   <script src="/js/home_page.js"></script>
+  <script src="/js/react/navigationBarInclude.js"></script>
   {{#> scripts-block}}
     {{!-- Custom scripts per page can be added. --}}
   {{/scripts-block}}
