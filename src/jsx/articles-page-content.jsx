@@ -1,6 +1,6 @@
-import ArticleRow from './article-box-row.jsx';
+import ArticleBoxRow from './article-box-row.jsx';
 
-const data_array = [
+const article_box_data = [
     {
         href: "modularisation-without-obstruction",
         imgSrc: "modularisation-without-obstruction.jpg",
@@ -81,18 +81,18 @@ const data_array = [
     },
 ];
 
-const rows = data_array.map(function (val, index, arr) {
+const article_rows = article_box_data.map(function (val, index, arr) {
     const columns = 3;
     const marker = index * columns;
     return arr.slice(marker, marker + columns);
 }).filter(a => a.length>0)
-  .map(row_data_array => {
-    return <ArticleRow data_array={row_data_array} />;
+  .map(row_data => {
+    return <ArticleBoxRow row_data={row_data} />;
 });
     
 ReactDOM.render(
   <div>
-    {rows}
+    {article_rows}
   </div>,
   document.getElementById('articlesSection')
 );

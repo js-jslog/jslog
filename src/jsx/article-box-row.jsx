@@ -1,10 +1,9 @@
-import ArticleBox from './article.jsx';
-//import ReactDOM from 'react-dom';
+import ArticleBox from './article-box.jsx';
 
-class ArticleRow extends React.Component {
+class ArticleBoxRow extends React.Component {
     render() {
-        let articles = this.props.data_array.map(article_info => {
-            return <ArticleBox data={article_info} />
+        let articles = this.props.row_data.map(article_data => {
+            return <ArticleBox data={article_data} />
         });
         return <div className="row">
             {articles}
@@ -12,4 +11,4 @@ class ArticleRow extends React.Component {
     };
 }
 
-export default ArticleRow
+export default ArticleBoxRow

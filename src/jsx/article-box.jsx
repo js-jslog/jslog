@@ -1,6 +1,6 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
-class Article extends React.Component {
+
+class ArticleBox extends React.Component {
     render() {
         let imgSrc = "/images/hero/" + this.props.data.imgSrc;
         let href = "/articles/" + this.props.data.href;
@@ -15,4 +15,4 @@ class Article extends React.Component {
       </div>
     };
 }
-export default Article;
+export default ArticleBox;
