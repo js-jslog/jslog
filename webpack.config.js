@@ -4,8 +4,8 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
       articlesPageContent: "./src/jsx/articles-page-content.jsx",
-      navigationBarInclude: "./src/jsx/navigation-bar-include.jsx",
-      footerInclude: "./src/jsx/footer-include.jsx"
+      NavigationBar: "./src/jsx/NavigationBar.jsx",
+      Footer: "./src/jsx/Footer.jsx"
   },
   output: {
     path: __dirname + "/public/js/react",
