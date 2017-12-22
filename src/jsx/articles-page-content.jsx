@@ -86,8 +86,9 @@ const article_rows = article_box_data.map(function (val, index, arr) {
     const marker = index * columns;
     return arr.slice(marker, marker + columns);
 }).filter(a => a.length>0)
-  .map(row_data => {
-    return <ArticleBoxRow row_data={row_data} />;
+  .map(function (row_data, index2) {
+    let key = "row" + index2;
+    return <ArticleBoxRow key={key} row_data={row_data} />;
 });
     
 ReactDOM.render(
