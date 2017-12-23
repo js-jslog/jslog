@@ -4,6 +4,7 @@ import BooleanFunctionPage from './pages/BooleanFunctionPage.jsx';
 import UltimatePseudoClassicalInheritancePage from './pages/UltimatePseudoClassicalInheritancePage.jsx';
 import TheTwoPillarsOfJavascriptPage from './pages/TheTwoPillarsOfJavascriptPage.jsx';
 import TheObjectObjectPage from './pages/TheObjectObjectPage.jsx';
+import PrefixVsPostfixIncrementUnaryOperatorsPage from './pages/PrefixVsPostfixIncrementUnaryOperatorsPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -21,6 +22,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <TheTwoPillarsOfJavascriptPage />
         } else if (pathname === "/articles/the-object-object") {
             contentTag = <TheObjectObjectPage />
+        } else if (pathname === "/articles/prefix-vs-postfix-increment-unary-operators") {
+            contentTag = <PrefixVsPostfixIncrementUnaryOperatorsPage />
         } else {
             contentTag = <IndexPage />
         }
