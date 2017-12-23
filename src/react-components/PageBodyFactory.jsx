@@ -8,6 +8,7 @@ import PrefixVsPostfixIncrementUnaryOperatorsPage from './pages/PrefixVsPostfixI
 import NumberConversionPage from './pages/NumberConversionPage.jsx';
 import ModularisationWithoutObstructionPage from './pages/ModularisationWithoutObstructionPage.jsx';
 import LoopsOrArrayMethodsPage from './pages/LoopsOrArrayMethodsPage.jsx';
+import KeywordsAndReservedWordsInJavascriptPage from './pages/KeywordsAndReservedWordsInJavascriptPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -33,6 +34,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <ModularisationWithoutObstructionPage />
         } else if (pathname === "/articles/loops-or-array-methods") {
             contentTag = <LoopsOrArrayMethodsPage />
+        } else if (pathname === "/articles/keywords-and-reserved-words-in-javascript") {
+            contentTag = <KeywordsAndReservedWordsInJavascriptPage />
         } else {
             contentTag = <IndexPage />
         }
