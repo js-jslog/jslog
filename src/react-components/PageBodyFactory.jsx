@@ -1,14 +1,14 @@
-import ArticlesPageContent from './pageContents/articles-page-content.jsx';
-import IndexPageContent from './pageContents/indexPageContent.jsx';
+import ArticlesPage from './pages/ArticlesPage.jsx';
+import IndexPage from './pages/IndexPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
         const pathname = window.location.pathname;
         let contentTag;
         if (pathname === "/index") {
-            contentTag = <IndexPageContent />;
+            contentTag = <IndexPage />;
         } else if (pathname === "/articles") {
-            contentTag = <ArticlesPageContent />;
+            contentTag = <ArticlesPage />;
         }
         return contentTag;
     };

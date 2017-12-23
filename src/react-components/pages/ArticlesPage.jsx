@@ -1,6 +1,6 @@
-import ArticleBoxRow from './article-box-row.jsx';
+import ArticleBoxRow from '../ArticleBoxRow.jsx';
 
-class ArticlesPageContent extends React.Component {
+class ArticlesPage extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -104,4 +104,4 @@ class ArticlesPageContent extends React.Component {
     }
 };
 
-export default ArticlesPageContent;
+export default ArticlesPage;

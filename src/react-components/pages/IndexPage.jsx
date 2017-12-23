@@ -1,4 +1,4 @@
-class ArticlesPageContent extends React.Component {
+class IndexPage extends React.Component {
     render () {
         return <div>
             <div className="container">
@@ -52,4 +52,4 @@ class ArticlesPageContent extends React.Component {
     }
 };
 
-export default ArticlesPageContent;
+export default IndexPage;
