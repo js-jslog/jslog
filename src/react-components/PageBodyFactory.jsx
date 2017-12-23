@@ -5,6 +5,7 @@ import UltimatePseudoClassicalInheritancePage from './pages/UltimatePseudoClassi
 import TheTwoPillarsOfJavascriptPage from './pages/TheTwoPillarsOfJavascriptPage.jsx';
 import TheObjectObjectPage from './pages/TheObjectObjectPage.jsx';
 import PrefixVsPostfixIncrementUnaryOperatorsPage from './pages/PrefixVsPostfixIncrementUnaryOperatorsPage.jsx';
+import NumberConversionPage from './pages/NumberConversionPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -24,6 +25,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <TheObjectObjectPage />
         } else if (pathname === "/articles/prefix-vs-postfix-increment-unary-operators") {
             contentTag = <PrefixVsPostfixIncrementUnaryOperatorsPage />
+        } else if (pathname === "/articles/number-conversion") {
+            contentTag = <NumberConversionPage />
         } else {
             contentTag = <IndexPage />
         }
