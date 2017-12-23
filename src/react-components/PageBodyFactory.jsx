@@ -3,6 +3,7 @@ import IndexPage from './pages/IndexPage.jsx';
 import BooleanFunctionPage from './pages/BooleanFunctionPage.jsx';
 import UltimatePseudoClassicalInheritancePage from './pages/UltimatePseudoClassicalInheritancePage.jsx';
 import TheTwoPillarsOfJavascriptPage from './pages/TheTwoPillarsOfJavascriptPage.jsx';
+import TheObjectObjectPage from './pages/TheObjectObjectPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -18,6 +19,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <UltimatePseudoClassicalInheritancePage />
         } else if (pathname === "/articles/the-two-pillars-of-javascript") {
             contentTag = <TheTwoPillarsOfJavascriptPage />
+        } else if (pathname === "/articles/the-object-object") {
+            contentTag = <TheObjectObjectPage />
         } else {
             contentTag = <IndexPage />
         }
