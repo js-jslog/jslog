@@ -5,6 +5,7 @@ module.exports = {
   entry: {
       articlesPageContent: "./src/jsx/articles-page-content.jsx",
       NavigationBar: "./src/jsx/NavigationBar.jsx",
+      HeroBanner: "./src/jsx/HeroBanner.jsx",
       Footer: "./src/jsx/Footer.jsx"
   },
   output: {
