@@ -6,6 +6,7 @@ import TheTwoPillarsOfJavascriptPage from './pages/TheTwoPillarsOfJavascriptPage
 import TheObjectObjectPage from './pages/TheObjectObjectPage.jsx';
 import PrefixVsPostfixIncrementUnaryOperatorsPage from './pages/PrefixVsPostfixIncrementUnaryOperatorsPage.jsx';
 import NumberConversionPage from './pages/NumberConversionPage.jsx';
+import ModularisationWithoutObstructionPage from './pages/ModularisationWithoutObstructionPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -27,6 +28,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <PrefixVsPostfixIncrementUnaryOperatorsPage />
         } else if (pathname === "/articles/number-conversion") {
             contentTag = <NumberConversionPage />
+        } else if (pathname === "/articles/modularisation-without-obstruction") {
+            contentTag = <ModularisationWithoutObstructionPage />
         } else {
             contentTag = <IndexPage />
         }
