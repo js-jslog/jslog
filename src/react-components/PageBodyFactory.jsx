@@ -9,6 +9,7 @@ import NumberConversionPage from './pages/NumberConversionPage.jsx';
 import ModularisationWithoutObstructionPage from './pages/ModularisationWithoutObstructionPage.jsx';
 import LoopsOrArrayMethodsPage from './pages/LoopsOrArrayMethodsPage.jsx';
 import KeywordsAndReservedWordsInJavascriptPage from './pages/KeywordsAndReservedWordsInJavascriptPage.jsx';
+import IterativeArrayMethodsPage from './pages/IterativeArrayMethodsPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -36,6 +37,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <LoopsOrArrayMethodsPage />
         } else if (pathname === "/articles/keywords-and-reserved-words-in-javascript") {
             contentTag = <KeywordsAndReservedWordsInJavascriptPage />
+        } else if (pathname === "/articles/iterative-array-methods") {
+            contentTag = <IterativeArrayMethodsPage />
         } else {
             contentTag = <IndexPage />
         }
