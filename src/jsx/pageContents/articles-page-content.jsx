@@ -1,7 +1,5 @@
 import ArticleBoxRow from './article-box-row.jsx';
 
-
-    
 class ArticlesPageContent extends React.Component {
     constructor (props) {
         super(props);
@@ -98,8 +96,10 @@ class ArticlesPageContent extends React.Component {
           let key = "row" + index2;
           return <ArticleBoxRow key={key} row_data={row_data} />;
       });
-      return <div className="section">
-        {article_rows}
+      return <div className="container">
+          <div className="section">
+              {article_rows}
+          </div>
       </div>
     }
 };
