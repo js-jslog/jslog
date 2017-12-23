@@ -1,4 +1,4 @@
-class ArticlesPage extends React.Component {
+class BooleanFunctionPage extends React.Component {
     render () {
       return <div className="container">
           <div className="section">
@@ -153,4 +153,4 @@ The first solution will produce the same result as the second, but is less conci
     }
 };
 
-export default ArticlesPage;
+export default BooleanFunctionPage;
