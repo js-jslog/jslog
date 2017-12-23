@@ -10,6 +10,7 @@ import ModularisationWithoutObstructionPage from './pages/ModularisationWithoutO
 import LoopsOrArrayMethodsPage from './pages/LoopsOrArrayMethodsPage.jsx';
 import KeywordsAndReservedWordsInJavascriptPage from './pages/KeywordsAndReservedWordsInJavascriptPage.jsx';
 import IterativeArrayMethodsPage from './pages/IterativeArrayMethodsPage.jsx';
+import FunctionsAreObjectsTooPage from './pages/FunctionsAreObjectsTooPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -39,6 +40,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <KeywordsAndReservedWordsInJavascriptPage />
         } else if (pathname === "/articles/iterative-array-methods") {
             contentTag = <IterativeArrayMethodsPage />
+        } else if (pathname === "/articles/functions-are-objects-too") {
+            contentTag = <FunctionsAreObjectsTooPage />
         } else {
             contentTag = <IndexPage />
         }
