@@ -21,7 +21,4 @@ class NavigationBar extends React.Component {
     };
 }
 
-ReactDOM.render(
-  <NavigationBar />,
-  document.getElementById('navigationBar')
-);
+export default NavigationBar;

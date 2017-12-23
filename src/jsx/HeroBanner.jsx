@@ -27,7 +27,4 @@ class HeroBanner extends React.Component {
     };
 }
 
-ReactDOM.render(
-  <HeroBanner />,
-  document.getElementById('heroBanner')
-);
+export default HeroBanner;
