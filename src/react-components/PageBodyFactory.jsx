@@ -7,6 +7,7 @@ import TheObjectObjectPage from './pages/TheObjectObjectPage.jsx';
 import PrefixVsPostfixIncrementUnaryOperatorsPage from './pages/PrefixVsPostfixIncrementUnaryOperatorsPage.jsx';
 import NumberConversionPage from './pages/NumberConversionPage.jsx';
 import ModularisationWithoutObstructionPage from './pages/ModularisationWithoutObstructionPage.jsx';
+import LoopsOrArrayMethodsPage from './pages/LoopsOrArrayMethodsPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -30,6 +31,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <NumberConversionPage />
         } else if (pathname === "/articles/modularisation-without-obstruction") {
             contentTag = <ModularisationWithoutObstructionPage />
+        } else if (pathname === "/articles/loops-or-array-methods") {
+            contentTag = <LoopsOrArrayMethodsPage />
         } else {
             contentTag = <IndexPage />
         }
