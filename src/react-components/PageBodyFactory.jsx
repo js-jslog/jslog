@@ -11,6 +11,7 @@ import LoopsOrArrayMethodsPage from './pages/LoopsOrArrayMethodsPage.jsx';
 import KeywordsAndReservedWordsInJavascriptPage from './pages/KeywordsAndReservedWordsInJavascriptPage.jsx';
 import IterativeArrayMethodsPage from './pages/IterativeArrayMethodsPage.jsx';
 import FunctionsAreObjectsTooPage from './pages/FunctionsAreObjectsTooPage.jsx';
+import FloatingPointVisualisationPage from './pages/FloatingPointVisualisationPage.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -42,6 +43,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <IterativeArrayMethodsPage />
         } else if (pathname === "/articles/functions-are-objects-too") {
             contentTag = <FunctionsAreObjectsTooPage />
+        } else if (pathname === "/articles/floating-point-visualisation") {
+            contentTag = <FloatingPointVisualisationPage />
         } else {
             contentTag = <IndexPage />
         }
