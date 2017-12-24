@@ -12,6 +12,7 @@ import KeywordsAndReservedWordsInJavascriptPage from './pages/KeywordsAndReserve
 import IterativeArrayMethodsPage from './pages/IterativeArrayMethodsPage.jsx';
 import FunctionsAreObjectsTooPage from './pages/FunctionsAreObjectsTooPage.jsx';
 import FloatingPointVisualisationPage from './pages/FloatingPointVisualisationPage.jsx';
+import BuildAGameWithTdd from './pages/BuildAGameWithTdd.jsx';
 
 class PageBodyFactory extends React.Component {
     render() {
@@ -45,6 +46,8 @@ class PageBodyFactory extends React.Component {
             contentTag = <FunctionsAreObjectsTooPage />
         } else if (pathname === "/articles/floating-point-visualisation") {
             contentTag = <FloatingPointVisualisationPage />
+        } else if (pathname === "/articles/build-a-game-with-tdd") {
+            contentTag = <BuildAGameWithTdd />
         } else {
             contentTag = <IndexPage />
         }
