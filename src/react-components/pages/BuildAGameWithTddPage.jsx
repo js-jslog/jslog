@@ -1,4 +1,4 @@
-class BuildAGameWithTdd extends React.Component {
+class BuildAGameWithTddPage extends React.Component {
     render () {
       return <div className="container">
          <div className="section">
@@ -1566,4 +1566,4 @@ requirejs(['../src/matchFactory'], function(matchFactory) {
     }
 };
 
-export default BuildAGameWithTdd;
+export default BuildAGameWithTddPage;
