@@ -4,49 +4,22 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>
-    {{#if title}}
-      {{title}}
-    {{else}}
-      Base Page Title
-    {{/if}}
+      Joseph Sinfield
   </title>
-
-  <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/css/materialize/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
   <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
-  {{#if title}}
-    <script>
-      window.pageTitle="{{title}}";
-    </script>
-  {{/if}}
-  {{#> head-block}}
-      {{!-- Custom <head> content per page could be added. --}}
-  {{/head-block}}
 </head>
 <body>
-  <div id="navigationBar"></div>
-
-  <div id="heroBanner"></div>
-
-  {{#> body-block}}
-    {{!-- body content goes here. --}}
-  {{/body-block}}
-
-  <div id="footerBlock"></div>
+  <div id="pageBody"></div>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/js/materialize/materialize.min.js"></script>
   <script src="/js/materialize/init.js"></script>
   <script src="/js/home_page.js"></script>
-  <script src="/js/react/NavigationBar.js"></script>
-  <script src="/js/react/HeroBanner.js"></script>
-  <script src="/js/react/Footer.js"></script>
-  {{#> scripts-block}}
-    {{!-- Custom scripts per page can be added. --}}
-  {{/scripts-block}}
+  <script src="/js/react/PageBody.js"></script>
   </body>
 </html>

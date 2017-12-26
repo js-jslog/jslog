@@ -3,10 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-      articlesPageContent: "./src/jsx/articles-page-content.jsx",
-      NavigationBar: "./src/jsx/NavigationBar.jsx",
-      HeroBanner: "./src/jsx/HeroBanner.jsx",
-      Footer: "./src/jsx/Footer.jsx"
+      PageBody: "./src/react-components/PageBody.jsx"
   },
   output: {
     path: __dirname + "/public/js/react",

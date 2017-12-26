@@ -21,17 +21,7 @@ app.use(cookieParser());
 // }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/articles', function (req, res) {
-    res.sendFile(path.join(__dirname + '/pages/articles.html'));
-});
-
-app.get(/\/(.*)/, function(req, res, next) {
-    var page = req.params[0];
-    // TODO: make sure to check that a file exists for this page and throw and error if not
-    res.sendFile(path.join(__dirname + '/pages/' + page + '.html'));
-});
-
-app.get('/', function (req, res) {
+app.get(/(.*)/, function(req, res, next) {
     res.sendFile(path.join(__dirname + '/pages/index.html'));
 });
 

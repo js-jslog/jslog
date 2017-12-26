@@ -1,4 +1,4 @@
-import ArticleBox from './article-box.jsx';
+import ArticleBox from './ArticleBox.jsx';
 
 class ArticleBoxRow extends React.Component {
     render() {
