@@ -5,7 +5,7 @@ import Footer from './Footer.jsx';
 import HeroBanner from './HeroBanner.jsx';
 import PageContentFactory from './PageContentFactory.jsx';
 
-const page_mapper = {
+const page_library = {
     Articles: {
         content_component_name: "ArticlesPage",
         hero_img: "articles.jpg",
@@ -115,33 +115,36 @@ const page_mapper = {
     },
 }
 
+const locationToPageKey = function (location) {
+    const pagename = location.pathname.substr(location.pathname.lastIndexOf("/") + 1);
+    const reg_pattern = /-\w/;
+    const replacer = function (match) {
+        return match.substr(1).toUpperCase();
+    };
+    let page_component = pagename.charAt(0).toUpperCase() + pagename.slice(1);
+    while (page_component.search(reg_pattern) >= 0) {
+        page_component = page_component.replace(reg_pattern, replacer);
+    };
+    return page_component;
+};
+
 class PageBody extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            page_component: "",
+            page_key: "",
         };
     };
     componentWillMount () {
-        const pathname = window.location.pathname;
-        const pagename = pathname.substr(pathname.lastIndexOf("/") + 1);
-        const reg_pattern = /-\w/;
-        const replacer = function (match) {
-            return match.substr(1).toUpperCase();
-        }   
-        let page_component = pagename.charAt(0).toUpperCase() + pagename.slice(1);
-        while (page_component.search(reg_pattern) >= 0) {
-            page_component = page_component.replace(reg_pattern, replacer);
-        }
-        this.setState({page_component, page_component});
+        const page_key = locationToPageKey(window.location);
+        this.setState({page_key: page_key});
     };
     render() {
-        const pathname = window.location.pathname;
-        const mapped_page = page_mapper[this.state.page_component];
+        const page_detail = page_library[this.state.page_key];
         return <div>
-            <NavigationBar page_title={mapped_page.title} />
-            <HeroBanner hero_img={mapped_page.hero_img} />
-            <PageContentFactory component_name={mapped_page.content_component_name} page_info={page_mapper}/>
+            <NavigationBar page_title={page_detail.title} />
+            <HeroBanner hero_img={page_detail.hero_img} />
+            <PageContentFactory component_name={page_detail.content_component_name} page_library={page_library}/>
             <Footer />
         </div>
     };

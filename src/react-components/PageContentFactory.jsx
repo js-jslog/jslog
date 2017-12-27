@@ -37,7 +37,7 @@ class PageContentFactory extends React.Component {
             BuildAGameWithTddPage: BuildAGameWithTddPage,
         };
         const PageComponent = tag_mapper[this.props.component_name];
-        return <PageComponent page_info={this.props.page_info} />
+        return <PageComponent page_library={this.props.page_library} />
     };
 }
 
