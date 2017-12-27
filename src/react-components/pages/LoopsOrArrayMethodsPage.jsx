@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class LoopsOrArrayMethodsPage extends React.Component {
     render () {
       return <div className="container">

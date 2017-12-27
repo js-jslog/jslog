@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class HeroBanner extends React.Component {
     render() {
         let img_src = "/images/hero/" + this.props.hero_img;

@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import NavigationBar from './NavigationBar.jsx';
 import Footer from './Footer.jsx';
 import HeroBanner from './HeroBanner.jsx';

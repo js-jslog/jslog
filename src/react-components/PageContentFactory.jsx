@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import ArticlesPage from './pages/ArticlesPage.jsx';
 import IndexPage from './pages/IndexPage.jsx';
 import BooleanFunctionPage from './pages/BooleanFunctionPage.jsx';

@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import ArticleBoxRow from '../ArticleBoxRow.jsx';
 
 class ArticlesPage extends React.Component {

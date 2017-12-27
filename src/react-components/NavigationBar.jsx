@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 class NavigationBar extends React.Component {
     render() {
       return <nav className="white" role="navigation">
