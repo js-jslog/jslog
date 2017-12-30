@@ -16,9 +16,6 @@ const locationToPageKey = function (location) {
     while (page_component.search(reg_pattern) >= 0) {
         page_component = page_component.replace(reg_pattern, replacer);
     };
-    if (page_component.indexOf(".html") !== -1) {
-        page_component = page_component.substr(0, page_component.indexOf(".html"));
-    }
     return page_component;
 };
 
