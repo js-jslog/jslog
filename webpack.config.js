@@ -7,6 +7,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/public/js/react",
+    publicPath: "/js/react/",
     filename: "[name].js"
   },
   module: {
