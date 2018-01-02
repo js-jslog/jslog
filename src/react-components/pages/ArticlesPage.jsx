@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ArticleBoxRow from '../ArticleBoxRow.jsx';
 
 const pageLibraryToArticlesPageArray = function (page_library) {

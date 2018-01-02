@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ArticleBox from './ArticleBox.jsx';
 
 class ArticleBoxRow extends React.Component {

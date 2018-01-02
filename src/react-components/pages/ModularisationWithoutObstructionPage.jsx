@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class ModularisationWithoutObstructionPage extends React.Component {
     render () {
