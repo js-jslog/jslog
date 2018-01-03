@@ -4,66 +4,20 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>
-    {{#if title}}
-      {{title}}
-    {{else}}
-      Base Page Title
-    {{/if}}
+      Joseph Sinfield
   </title>
-
-  <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/css/materialize/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  {{#> head-block}}
-      {{!-- Custom <head> content per page could be added. --}}
-  {{/head-block}}
 </head>
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="/" class="brand-logo">
-        <img src="/images/jslog-logo.svg"/>
-      </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-        <div class="title-box">
-            <h1 class="header">{{title}}</h1>
-        </div>
-  </nav>
-
-  {{#> hero-block}}
-    {{!-- Hero content goes here. --}}
-  {{/hero-block}}
-
-  {{#> body-block}}
-    {{!-- body content goes here. --}}
-  {{/body-block}}
-
-      </div>
-    </div>
-  {{#> footer-block}}
-    {{!--
-      The `includes/footer` partial is the default content,
-      but can be overridden.
-    --}}
-    {{> includes/footer }}
-  {{/footer-block}}
+  <div id="pageBody"></div>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/js/materialize/materialize.min.js"></script>
   <script src="/js/materialize/init.js"></script>
   <script src="/js/home_page.js"></script>
-  {{#> scripts-block}}
-    {{!-- Custom scripts per page can be added. --}}
-  {{/scripts-block}}
+  <script src="/js/react/PageBody.js"></script>
   </body>
 </html>

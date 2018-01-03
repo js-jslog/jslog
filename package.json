@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "gulp clean | gulp html",
+    "build": "gulp cleanpages | gulp html",
+    "buildjsx": "gulp cleanreact | gulp webpack",
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www"
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base public/ --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -21,21 +22,31 @@
   },
   "homepage": "https://github.com/js-jslog/jslog#readme",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "express-handlebars": "^3.0.0",
-    "materialize-css": "^0.100.2",
-    "morgan": "~1.9.0",
-    "node-sass-middleware": "0.9.8",
-    "serve-favicon": "~2.4.5"
-  },
-  "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-rename": "^1.2.2",
-    "nodemon": "^1.12.1"
-  }
+    "materialize-css": "^0.100.2",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.9.8",
+    "nodemon": "^1.12.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "serve-favicon": "~2.4.5",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-stream": "^4.0.0"
+  },
+  "devDependencies": {}
 }
