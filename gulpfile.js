@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const clean = require('gulp-clean');
-const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
@@ -14,6 +13,11 @@ gulp.task('cleanpages', () => {
     }))
 });
 
+gulp.task('publishhtml', () => {
+    return gulp.src('./src/html/**.*')
+    .pipe(gulp.dest('./pages'))
+});
+
 gulp.task('cleanreact', () => {
     return gulp.src('./public/js/react', {
         read: false
@@ -21,18 +25,6 @@ gulp.task('cleanreact', () => {
     .pipe(clean({}, {
         force: true
     }))
-});
-
-gulp.task('html', () => {
-    return gulp.src('./src/pages/**/*.hbs')
-        .pipe(handlebars({}, {
-            ignorePartials: true,
-            batch: ['./src/partials'],
-        }))
-    .pipe(rename({
-        extname: '.html'
-    }))
-    .pipe(gulp.dest('./pages'));
 });
 
 gulp.task('webpack', () => {
