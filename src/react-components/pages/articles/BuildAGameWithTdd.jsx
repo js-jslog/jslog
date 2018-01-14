@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BuildAGameWithTddPage extends React.Component {
+class PageContents extends React.Component {
     render () {
       return <div className="container">
          <div className="section">
@@ -1568,4 +1568,18 @@ requirejs(['../src/matchFactory'], function(matchFactory) {
     }
 };
 
-export default BuildAGameWithTddPage;
+const title = "boolean";
+const image = "index.jpg";
+const link = "boolean-function";
+const blurb = "this is a test blurb";
+const published = true;
+
+const exportable = {
+    published: published,
+    PageContents: PageContents,
+    title: title,
+    image: image,
+    blurb: blurb,
+}
+
+export default exportable;

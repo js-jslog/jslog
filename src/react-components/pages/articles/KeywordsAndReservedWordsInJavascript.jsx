@@ -1,6 +1,6 @@
 import React from 'react';
 
-class KeywordsAndReservedWordsInJavascriptPage extends React.Component {
+class PageContents extends React.Component {
     render () {
       return <div className="container">
          <div className="section">
@@ -469,4 +469,18 @@ The simple answer to this <em>is</em> quite simple. <i>Keywords</i> have a speci
     }
 };
 
-export default KeywordsAndReservedWordsInJavascriptPage;
+const title = "boolean";
+const image = "index.jpg";
+const link = "boolean-function";
+const blurb = "this is a test blurb";
+const published = true;
+
+const exportable = {
+    published: published,
+    PageContents: PageContents,
+    title: title,
+    image: image,
+    blurb: blurb,
+}
+
+export default exportable;

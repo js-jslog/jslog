@@ -58,11 +58,13 @@ const image = "index.jpg";
 const link = "boolean-function";
 const blurb = "this is a test blurb";
 const published = true;
-export {
-    PageContents,
-    title,
-    image,
-    link,
-    blurb,
-    published,
+
+const exportable = {
+    published: published,
+    PageContents: PageContents,
+    title: title,
+    image: image,
+    blurb: blurb,
 }
+
+export default exportable;

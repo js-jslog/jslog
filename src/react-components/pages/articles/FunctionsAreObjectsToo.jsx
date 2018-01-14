@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FunctionsAreObjectsTooPage extends React.Component {
+class PageContents extends React.Component {
     render () {
       return <div className="container">
          <div className="section">
@@ -151,4 +151,18 @@ setTimeout(
     }
 };
 
-export default FunctionsAreObjectsTooPage;
+const title = "boolean";
+const image = "index.jpg";
+const link = "boolean-function";
+const blurb = "this is a test blurb";
+const published = true;
+
+const exportable = {
+    published: published,
+    PageContents: PageContents,
+    title: title,
+    image: image,
+    blurb: blurb,
+}
+
+export default exportable;

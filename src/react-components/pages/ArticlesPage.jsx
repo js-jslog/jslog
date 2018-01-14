@@ -6,23 +6,26 @@ import Footer from '../Footer.jsx';
 
 import ArticleBox from '../ArticleBox.jsx';
 
-import * as BooleanFunctionPage from '../pages/BooleanFunctionPage.jsx';
-import * as FloatingPointVisualisation from '../pages/FloatingPointVisualisationPage.jsx';
-import * as IterativeArrayMethods from '../pages/IterativeArrayMethodsPage.jsx';
-import * as LoopsOrArrayMethods from '../pages/LoopsOrArrayMethodsPage.jsx';
-import * as TheObjectObject from '../pages/TheObjectObjectPage.jsx';
-import * as TheTwoPillarsOfJavascript from '../pages/TheTwoPillarsOfJavascriptPage.jsx';
-import * as UltimatePseudoClassicalInheritance from '../pages/UltimatePseudoClassicalInheritancePage.jsx';
+import * as articles from './articles/articles.js';
+//import Boolean from '../pages/articles/BooleanFunctionPage.jsx';
+//import * as FloatingPointVisualisation from '../pages/articles/FloatingPointVisualisationPage.jsx';
+//import * as IterativeArrayMethods from '../pages/articles/IterativeArrayMethodsPage.jsx';
+//import * as LoopsOrArrayMethods from '../pages/articles/LoopsOrArrayMethodsPage.jsx';
+//import * as TheObjectObject from '../pages/articles/TheObjectObjectPage.jsx';
+//import * as TheTwoPillarsOfJavascript from '../pages/articles/TheTwoPillarsOfJavascriptPage.jsx';
+//import * as UltimatePseudoClassicalInheritance from '../pages/articles/UltimatePseudoClassicalInheritancePage.jsx';
 
-const articles_list = [
-    BooleanFunctionPage,
-    FloatingPointVisualisation,
-    IterativeArrayMethods,
-    LoopsOrArrayMethods,
-    TheObjectObject,
-    TheTwoPillarsOfJavascript,
-    UltimatePseudoClassicalInheritance,
-];
+//const articles_list = [
+//    BooleanFunctionPage,
+//    FloatingPointVisualisation,
+//    IterativeArrayMethods,
+//    LoopsOrArrayMethods,
+//    TheObjectObject,
+//    TheTwoPillarsOfJavascript,
+//    UltimatePseudoClassicalInheritance,
+//];
+
+const articles_list = Object.keys(articles).map((key) => articles[key]);
 
 const getArticlesBoxArray = () => {
     return articles_list.map(function (component) {
