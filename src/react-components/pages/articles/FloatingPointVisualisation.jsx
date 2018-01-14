@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Floating point visualisation";
+const image = "floating-point-visualisation.jpg";
+const link = "floating-point-visualisation";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -14,12 +20,6 @@ class PageContents extends React.Component {
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Functions are objects too";
+const image = "functions-are-objects-too.jpeg";
+const link = "functions-are-objects-too";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -150,12 +156,6 @@ setTimeout(
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

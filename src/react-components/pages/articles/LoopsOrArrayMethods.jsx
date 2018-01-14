@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Loops or array-methods";
+const image = "loops-or-array-methods.jpg";
+const link = "loops-or-array-methods";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -172,12 +178,6 @@ console.log(blueFlag && greenFlag);
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

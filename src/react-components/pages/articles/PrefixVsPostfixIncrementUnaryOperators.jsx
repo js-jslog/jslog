@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Prefix vs postfix increment unary operators";
+const image = "prefix-vs-postfix-increment-unary-operators.jpg";
+const link = "prefix-vs-postfix-increment-unary-operators";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -63,12 +69,6 @@ The prefix operator ensures that it is the first operation to occur in the state
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

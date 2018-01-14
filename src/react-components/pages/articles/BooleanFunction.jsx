@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "The boolean function";
+const image = "boolean-function.png";
+const link = "boolean-function";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -154,12 +160,6 @@ The first solution will produce the same result as the second, but is less conci
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

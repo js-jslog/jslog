@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Keywords and reserved words in Javascript";
+const image = "keywords-and-reserved-words-in-javascript.jpg";
+const link = "keywords-and-reserved-words-in-javascript";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -468,12 +474,6 @@ The simple answer to this <em>is</em> quite simple. <i>Keywords</i> have a speci
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

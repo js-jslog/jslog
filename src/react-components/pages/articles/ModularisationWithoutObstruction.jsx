@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Modularisation without obstruction";
+const image = "modularisation-without-obstruction.jpg";
+const link = "modularisation-without-obstruction";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -135,12 +141,6 @@ define(["./module1", "./module2"], function (module1, module2) {
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

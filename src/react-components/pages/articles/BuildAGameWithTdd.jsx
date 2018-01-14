@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Build a game with TDD";
+const image = "index.jpg";
+const link = "build-a-game-with-tdd";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -1567,12 +1573,6 @@ requirejs(['../src/matchFactory'], function(matchFactory) {
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

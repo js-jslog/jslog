@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "The Object object";
+const image = "the-object-object.jpg";
+const link = "the-object-object";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -673,12 +679,6 @@ console.log(obj2.meth2());      // Obj2Meth2
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Iterative array methods";
+const image = "iterative-array-methods.jpg";
+const link = "iterative-array-methods";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -199,12 +205,6 @@ console.log(numbers);
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

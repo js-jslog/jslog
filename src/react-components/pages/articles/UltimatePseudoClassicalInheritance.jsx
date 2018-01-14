@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "The ultimate pseudo-classical inheritance pattern";
+const image = "ultimate-pseudo-classical-inheritance.jpg";
+const link = "ultimate-pseudo-classical-inheritance";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -277,12 +283,6 @@ It would be nice if we could add some instance property access restrictions by i
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,

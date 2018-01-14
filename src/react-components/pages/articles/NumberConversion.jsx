@@ -1,5 +1,11 @@
 import React from 'react';
 
+const title = "Number conversion";
+const image = "number-conversion.jpg";
+const link = "number-conversion";
+const blurb = "this is a test blurb";
+const published = true;
+
 class PageContents extends React.Component {
     render () {
       return <div className="container">
@@ -296,12 +302,6 @@ The parseFloat() function operates in the same way as parseInt() except that it 
       </div>
     }
 };
-
-const title = "boolean";
-const image = "index.jpg";
-const link = "boolean-function";
-const blurb = "this is a test blurb";
-const published = true;
 
 const exportable = {
     published: published,
