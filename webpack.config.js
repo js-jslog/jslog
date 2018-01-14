@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-      PageBody: "./src/react-components/PageBody.jsx"
+      index: "./src/react-components/index.jsx"
   },
   output: {
     path: __dirname + "/public/js/react",

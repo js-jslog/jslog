@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class NavigationBar extends React.Component {
     render() {
@@ -7,6 +8,7 @@ class NavigationBar extends React.Component {
           <a id="logo-container" href="/" className="brand-logo">
             <img src="/images/jslog-logo.svg"/>
           </a>
+          <Link to="/articles">Articles</Link>
           <ul className="right hide-on-med-and-down">
             <li><a href="#">Navbar Link</a></li>
           </ul>

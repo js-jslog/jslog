@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TheObjectObjectPage extends React.Component {
+class PageContents extends React.Component {
     render () {
       return <div className="container">
           <div className="section">
@@ -674,4 +674,16 @@ console.log(obj2.meth2());      // Obj2Meth2
     }
 };
 
-export default TheObjectObjectPage;
+const title = "boolean";
+const image = "index.jpg";
+const link = "boolean-function";
+const blurb = "this is a test blurb";
+const published = true;
+export {
+    PageContents,
+    title,
+    image,
+    link,
+    blurb,
+    published,
+}

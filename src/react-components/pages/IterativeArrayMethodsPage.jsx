@@ -1,6 +1,6 @@
 import React from 'react';
 
-class IterativeArrayMethodsPage extends React.Component {
+class PageContents extends React.Component {
     render () {
       return <div className="container">
          <div className="section">
@@ -200,4 +200,16 @@ console.log(numbers);
     }
 };
 
-export default IterativeArrayMethodsPage;
+const title = "boolean";
+const image = "index.jpg";
+const link = "boolean-function";
+const blurb = "this is a test blurb";
+const published = true;
+export {
+    PageContents,
+    title,
+    image,
+    link,
+    blurb,
+    published,
+}

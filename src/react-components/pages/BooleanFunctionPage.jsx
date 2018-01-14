@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BooleanFunctionPage extends React.Component {
+class PageContents extends React.Component {
     render () {
       return <div className="container">
           <div className="section">
@@ -155,4 +155,16 @@ The first solution will produce the same result as the second, but is less conci
     }
 };
 
-export default BooleanFunctionPage;
+const title = "boolean";
+const image = "index.jpg";
+const link = "boolean-function";
+const blurb = "this is a test blurb";
+const published = true;
+export {
+    PageContents,
+    title,
+    image,
+    link,
+    blurb,
+    published,
+}

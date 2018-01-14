@@ -35,19 +35,8 @@ gulp.task('html', () => {
     .pipe(gulp.dest('./pages'));
 });
 
-gulp.task('jsx', () => {
-    return gulp.src('./src/jsx/**/*.jsx')
-        .pipe(babel({
-            "plugins": ["transform-react-jsx"],
-            "presets": ["es2015"]
-        }))
-        .pipe(rename({
-            extname: '.js'
-        }))
-        .pipe(gulp.dest('./public/js/react'));
-});
 gulp.task('webpack', () => {
-  return gulp.src('src/jsx/articles-page-content.jsx')
+  return gulp.src('THIS IS INSIGNIFICANT')
     .pipe(webpack( require('./webpack.config.js')))
     .pipe(gulp.dest('public/js/react'));
 });
