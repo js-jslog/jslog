@@ -35,6 +35,10 @@ class MaterialNavBar extends React.Component {
                 <Drawer
                     open={this.state.open}>
                     <MenuItem
+                        primaryText="Home"
+                        containerElement={<Link to="/" />}
+                    />
+                    <MenuItem
                         primaryText="Articles"
                         containerElement={<Link to="/articles" />}
                     />
