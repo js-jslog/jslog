@@ -6,14 +6,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import JsLogMuiTheme from './muiThemes/JsLogMuiTheme.js';
 
 import Home from './pages/HomePage.jsx';
-import Articles from './pages/ArticlesPage.jsx';
-
+import ArticlesIndex from './pages/ArticlesIndex.jsx';
+import ArticleContainer from './pages/ArticleContainer.jsx';
 
 const JsLog = () => (
     <Router>
         <div>
             <Route exact path="/" component={Home}/>
-            <Route path="/articles" component={Articles}/>
+            <Route exact path="/articles" component={ArticlesIndex}/>
+            <Route exact path="/articles/:article_id" component={ArticleContainer}/>
         </div>
     </Router>
 );

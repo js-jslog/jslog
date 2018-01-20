@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Build a game with TDD";
 const image = "index.jpg";
 const link = "build-a-game-with-tdd";
-const blurb = "this is a test blurb";
+const blurb = "A walkthrough of the development of a WingTron game";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
          <div className="section">
 <p className="emphasise">Here we will see the effect a TDD workflow has on application design by revisiting a game I created a few weeks ago. My coding ability may have improved slightly, but I expect an interesting deviation to arise purely from the use of the TDD workflow. This article will also serve as a simple demonstration of how to set up a basic project with version control in Git & GitHub and dependency management using bower.</p>
 <p>The original and modified games along with their source code can be found <a href="tron-game">here (original)</a> & <a href="wing-tron-game">here (updated)</a></p>
@@ -1571,8 +1570,7 @@ requirejs(['../src/matchFactory'], function(matchFactory) {
 <p>I will endeavour to finish this guide, unfortunately now I have run out of time. You can finish the analysis yourself however by looking at the two codebases included in the links at the top of this article</p>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,

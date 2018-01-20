@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Functions are objects too";
 const image = "functions-are-objects-too.jpeg";
 const link = "functions-are-objects-too";
-const blurb = "this is a test blurb";
+const blurb = "An explanation of the history and power of functions as first class citizens in JavaScript";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
          <div className="section">
 <p>
 This is a concept that many people struggle with. How can functions be objects? And what does that mean for the functions place within the language?
@@ -154,8 +153,7 @@ setTimeout(
 </ul>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,

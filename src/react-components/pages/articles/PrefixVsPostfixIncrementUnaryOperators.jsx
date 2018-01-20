@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Prefix vs postfix increment unary operators";
 const image = "prefix-vs-postfix-increment-unary-operators.jpg";
 const link = "prefix-vs-postfix-increment-unary-operators";
-const blurb = "this is a test blurb";
+const blurb = "Revealing a little known subtlety in Javascript";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
           <div className="section">
 <p>The increment & decrement operators will be recognisable to anyone with some experience programming JavaScript. They are taken straight from C and are simple in concept.</p>
 <figure>
@@ -67,8 +66,7 @@ The prefix operator ensures that it is the first operation to occur in the state
 </p>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,

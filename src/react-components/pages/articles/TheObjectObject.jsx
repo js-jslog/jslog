@@ -3,12 +3,11 @@ import React from 'react';
 const title = "The Object object";
 const image = "the-object-object.jpg";
 const link = "the-object-object";
-const blurb = "this is a test blurb";
+const blurb = "A simple look at the Object object";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
           <div className="section">
 <p>
 My obsession with the fundamentals continues today with a look into the native Object methods & properties. The examples used are designed partly to expose the details of the function being used but also as an opportunity to have a bit of a play in general. You may see unnecessary use of IIFE's, or sub-optimal forms. Please excuse these cases. I think the points are still clearly made. Depricated methods have not been included. Information gathered from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Mozilla.org.</a>
@@ -677,8 +676,7 @@ console.log(obj2.meth2());      // Obj2Meth2
 </ol>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,

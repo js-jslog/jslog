@@ -3,12 +3,11 @@ import React from 'react';
 const title = "The ultimate pseudo-classical inheritance pattern";
 const image = "ultimate-pseudo-classical-inheritance.jpg";
 const link = "ultimate-pseudo-classical-inheritance";
-const blurb = "this is a test blurb";
+const blurb = "A detailed examination of a less than ideal pattern";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
           <div className="section">
 <p>Getting to grips with inheritance in JavaScript is fundamental to mastering the language. It is so carelessly used by experienced programmers, probably because efforts have been made to give C derivative language developers a syntax which looks familiar.</p>
 <p>Technical committee 39 were well intentioned in designing the language this way, and it is a key reason JavaScript's proliferation of the web as the de-facto client side language that everyone can use, but no-one understands. The recent addition of <code>Class</code> will only compound these conflicting forces.</p>
@@ -281,8 +280,7 @@ It would be nice if we could add some instance property access restrictions by i
 </ol>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,

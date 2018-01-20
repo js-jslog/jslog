@@ -3,12 +3,11 @@ import React from 'react';
 const title = "The boolean function";
 const image = "boolean-function.png";
 const link = "boolean-function";
-const blurb = "this is a test blurb";
+const blurb = "An description of the native Boolean function and explanation of why understanding this simple function might be more important than you think";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
           <div className="section">
 <p>
 The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
@@ -158,8 +157,7 @@ The first solution will produce the same result as the second, but is less conci
 </p>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,

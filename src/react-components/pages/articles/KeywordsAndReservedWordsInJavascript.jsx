@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Keywords and reserved words in Javascript";
 const image = "keywords-and-reserved-words-in-javascript.jpg";
 const link = "keywords-and-reserved-words-in-javascript";
-const blurb = "this is a test blurb";
+const blurb = "A complete list of the reserved words in the ECMAScript definition up to 2015";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
          <div className="section">
 <p>
 All you <em>need</em> to know about <i>keywords</i> & <i>reserved</i> words is that you must not use them as <i>identifiers</i>. That means no variable names, function names, property names or parameter names. But it helps to understand a little more, so what follows is a definition of the terms in this area and a description of their history.
@@ -472,8 +471,7 @@ The simple answer to this <em>is</em> quite simple. <i>Keywords</i> have a speci
 </ul>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,
