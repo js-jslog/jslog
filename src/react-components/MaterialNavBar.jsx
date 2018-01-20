@@ -35,6 +35,14 @@ class MaterialNavBar extends React.Component {
                 <Drawer
                     open={this.state.open}>
                     <MenuItem
+                        primaryText="Close"
+                        leftIcon={
+                            <FontIcon className="material-icons">exit_to_app</FontIcon>
+                        }
+                        onClick={this.closeDrawer.bind(this)}
+                    />
+                    <Divider />
+                    <MenuItem
                         primaryText="Home"
                         containerElement={<Link to="/" />}
                     />
@@ -45,14 +53,6 @@ class MaterialNavBar extends React.Component {
                     <MenuItem
                         primaryText="Apps"
                         containerElement={<Link to="/articles" />}
-                    />
-                    <Divider />
-                    <MenuItem
-                        primaryText="Close"
-                        leftIcon={
-                            <FontIcon className="material-icons">exit_to_app</FontIcon>
-                        }
-                        onClick={this.closeDrawer.bind(this)}
                     />
                 </Drawer>
             </div>
