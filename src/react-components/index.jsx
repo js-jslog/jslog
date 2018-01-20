@@ -2,6 +2,9 @@ import React from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import JsLogMuiTheme from './muiThemes/JsLogMuiTheme.js';
+
 import Home from './pages/HomePage.jsx';
 import Articles from './pages/ArticlesPage.jsx';
 
@@ -17,7 +20,9 @@ const JsLog = () => (
 
 class App extends React.Component {
     render () {
-        return <JsLog />
+        return <MuiThemeProvider muiTheme={JsLogMuiTheme}>
+            <JsLog />
+        </MuiThemeProvider>
     }
 }
 

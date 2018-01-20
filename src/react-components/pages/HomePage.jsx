@@ -1,13 +1,14 @@
 import React from 'react';
 
 import NavigationBar from '../NavigationBar.jsx';
+import MaterialNavBar from '../MaterialNavBar.jsx';
 import HeroBanner from '../HeroBanner.jsx';
 import Footer from '../Footer.jsx';
 
 class PageContents extends React.Component {
     render () {
         return <div>
-            <NavigationBar />
+            <MaterialNavBar />
             <HeroBanner image="index.jpg" />
             <div className="container">
               <div className="section">
