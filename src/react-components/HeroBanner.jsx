@@ -11,13 +11,16 @@ class HeroBanner extends React.Component {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            color: "white",
+            textAlign: "center",
         };
+        let overlayText = this.props.overlayText || "";
         return <Parallax
             className="custom-class"
             offsetYMax={0}
             offsetYMin={0}
         >
-            <div style={style}></div>
+            <div style={style}>{overlayText}</div>
         </Parallax>
     };
 };

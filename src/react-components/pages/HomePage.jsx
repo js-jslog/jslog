@@ -45,16 +45,7 @@ const PageContents = () => (
         </div>
         
         
-        <div className="parallax-container valign-wrapper">
-          <div className="section no-pad-bot">
-            <div className="container">
-              <div className="row center">
-                <h5 className="header col s12 light color-white">A new type of developer for a new world of development</h5>
-              </div>
-            </div>
-          </div>
-          <div className="parallax"><img src="/images/highhope.jpg" alt="joe performing on stage"></img></div>
-        </div>
+        <HeroBanner image="../highhope.jpg" overlayText="Open for business" />
         <Footer />
     </div>
 );
