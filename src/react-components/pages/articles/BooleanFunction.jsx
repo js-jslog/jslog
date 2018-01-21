@@ -1,4 +1,5 @@
 import React from 'react';
+import CodeBlock from '../../CodeBlock.jsx';
 
 const title = "The boolean function";
 const image = "boolean-function.png";
@@ -89,6 +90,7 @@ The Boolean() function converts a variable of any data type into it's boolean li
 <p>
 This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
 </p>
+<CodeBlock code_string='var true_bool = "false";' />
 <figure>
 <div className="row">
 <div className="col-md-6">
