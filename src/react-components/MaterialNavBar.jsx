@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import {Parallax} from 'react-scroll-parallax';
 import AppBar from 'material-ui/AppBar';
 import MenuItem from 'material-ui/MenuItem';
 import Drawer from 'material-ui/Drawer';
@@ -31,6 +32,7 @@ class MaterialNavBar extends React.Component {
             <div>
                 <AppBar
                     onLeftIconButtonClick={this.toggleDrawer.bind(this)}
+                    title={this.props.title}
                 />
                 <Drawer
                     open={this.state.open}>

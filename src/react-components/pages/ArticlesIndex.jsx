@@ -35,7 +35,7 @@ const ArticlesGridList = () => (
 
 const ArticlesIndex = () => (
     <div>
-        <MaterialNavBar />
+        <MaterialNavBar title="Articles" />
         <HeroBanner image="articles.jpg" />
         <ArticlesGridList />
         <Footer />

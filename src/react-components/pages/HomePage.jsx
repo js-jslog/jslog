@@ -1,13 +1,12 @@
 import React from 'react';
 
-import NavigationBar from '../NavigationBar.jsx';
 import MaterialNavBar from '../MaterialNavBar.jsx';
 import HeroBanner from '../HeroBanner.jsx';
 import Footer from '../Footer.jsx';
 
 const PageContents = () => (
     <div>
-        <MaterialNavBar />
+        <MaterialNavBar title="Joseph Sinfield" />
         <HeroBanner image="index.jpg" />
         <div className="container">
           <div className="section">
