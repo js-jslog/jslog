@@ -14,7 +14,6 @@ Object.keys(articles).forEach((init_key) => {
 
 const ArticleContainer = function ({match}) {
     const article_contents = articles_keyed_list[match.params.article_id];
-    console.log(article_contents);
     return <div>
         <MaterialNavBar title={article_contents.title} />
         <HeroBanner image={article_contents.image} />

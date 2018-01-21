@@ -5,16 +5,16 @@ import {Parallax} from 'react-scroll-parallax';
 class HeroBanner extends React.Component {
     render() {
         let style = {
-            "background-image": "url('/images/hero/" + this.props.image + "')",
-            "height": "800px",
-            "background-attachment": "fixed",
-            "background-position": "center",
-            "background-repeat": "no-repeat",
-            "background-size": "cover",
+            backgroundImage: "url('/images/hero/" + this.props.image + "')",
+            height: "800px",
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
         };
         return <Parallax
             className="custom-class"
-            offsetYMax={-10}
+            offsetYMax={0}
             offsetYMin={0}
         >
             <div style={style}></div>

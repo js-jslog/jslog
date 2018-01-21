@@ -22,7 +22,7 @@ const ArticlesGridList = () => (
                     title={tile.title}
                     subtitle={tile.blurb}
                     subtitleStyle={{
-                        "white-space": "pre-line",
+                        whiteSpace: "pre-line",
                     }}
                     containerElement={<Link to={"/articles/" + tile.link} />}
                 >
