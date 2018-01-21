@@ -3,12 +3,11 @@ import React from 'react';
 const title = "The two pillars of Javascript";
 const image = "the-two-pillars-of-javascript.jpg";
 const link = "the-two-pillars-of-javascript";
-const blurb = "this is a test blurb";
+const blurb = "A little look at an admirable article written by one of the languages greatest advocates";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
           <div className="section">
 <p>Eric Elliots two articles titled 'The two pillars of JavaScript' <a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3#.d517hj1ji">Part 1</a> & <a href="">Part 2</a> describe the two fundamental features (as Eric see's it) of JavaScript which make it <q>one of the most important programming languages of all time</q>.</p>
 <p>The two pillars are :</p>
@@ -56,8 +55,7 @@ class PageContents extends React.Component {
 <h2 id="functionalProgramming">Pillar 2. Functional programming</h2>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,
@@ -65,6 +63,7 @@ const exportable = {
     title: title,
     image: image,
     blurb: blurb,
+    link: link,
 }
 
 export default exportable;

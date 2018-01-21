@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Iterative array methods";
 const image = "iterative-array-methods.jpg";
 const link = "iterative-array-methods";
-const blurb = "this is a test blurb";
+const blurb = "A rundown of the 5 higher order iterative functions which exist on Arrays as of ES2015";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
          <div className="section">
 <p>Amongst the functionality offered by JavaScript core which the casual developer may be unaware of, are the iterative methods for array objects. These offer verbose ways of performing tasks or drawing conclusions on whole arrays without the need for developer defined loops.</p>
 <p>The simplicity of these tasks may account for why so many people are unaware of the, However, having these functions under your belt will save an enormous amount of time in the long run and also standardise your code for improved maintainability.</p>
@@ -203,8 +202,7 @@ console.log(numbers);
 </figure>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,
@@ -212,6 +210,7 @@ const exportable = {
     title: title,
     image: image,
     blurb: blurb,
+    link: link,
 }
 
 export default exportable;

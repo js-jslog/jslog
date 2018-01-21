@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Modularisation without obstruction";
 const image = "modularisation-without-obstruction.jpg";
 const link = "modularisation-without-obstruction";
-const blurb = "this is a test blurb";
+const blurb = "An introductory look at the progressing field of modularisation in JavaScript";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
          <div className="section">
 <p>During my first attempts at using module patterns I was very concerned with the issue of reducing my application's exposed API. Douglas Crockford's advice to reducing code's exposed API through use of closures was at the forefront of my mind and I gave little consideration to the other side of module patterns. Namely, the modularity element. It seems like an obvious point, but let me illustrate my mistake.</p>
 <p>After studying the <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a> for a while, you might be tempted to create an application which looks something like this :</p>
@@ -139,8 +138,7 @@ define(["./module1", "./module2"], function (module1, module2) {
 <p>Even if you are not familiar with RequireJS yet the idea here should be clear enough. Our modules are now properly decoupled from the application code, we have the ability to test them and they are still not exposed to the global namespace when in the context of the running application.</p>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,
@@ -148,6 +146,7 @@ const exportable = {
     title: title,
     image: image,
     blurb: blurb,
+    link: link,
 }
 
 export default exportable;

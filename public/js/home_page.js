@@ -5,6 +5,6 @@ $(window).scroll(function() {
 $(window).scroll(function() {
     var pos = $(window).scrollTop();
     var past_fold = (pos > 635);
-    $("nav").css("position", past_fold ? "absolute" : "fixed");
-    $("nav").css("top", past_fold ? "635px" : "0px");
+    $("#nav").css("top", past_fold ? "635px" : "0px");
+    $("#nav").css("position", past_fold ? "absolute" : "fixed");
 });

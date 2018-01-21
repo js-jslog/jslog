@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Loops or array-methods";
 const image = "loops-or-array-methods.jpg";
 const link = "loops-or-array-methods";
-const blurb = "this is a test blurb";
+const blurb = "A discussion on the pros and cons of loops vs array methods";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
          <div className="section">
 <p>After writing the article on <a href="/iterative-array-methods">iterative array methods</a> I heard Douglas Crockford at a Nordic JS event state that he <a href="https://www.youtube.com/watch?v=PSGEjv3Tqo0#t=10m54s">no longer uses <code>for</code> loops</a><sup>1</sup>.</p>
 <p>Now, I love the language subset idea espoused by Douglas that it is a developers duty to use only the good parts of a language. It is a mature and sensible approach to progressing languages which must maintain support for defunct features. Abandoning the <code>for</code> loop felt like a bold step & one which I was willing to take so I investigated further.</p>
@@ -176,8 +175,7 @@ console.log(blueFlag && greenFlag);
 </ol>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,
@@ -185,6 +183,7 @@ const exportable = {
     title: title,
     image: image,
     blurb: blurb,
+    link: link,
 }
 
 export default exportable;

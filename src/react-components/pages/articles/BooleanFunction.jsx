@@ -1,14 +1,14 @@
 import React from 'react';
+import CodeBlock from '../../CodeBlock.jsx';
 
 const title = "The boolean function";
 const image = "boolean-function.png";
 const link = "boolean-function";
-const blurb = "this is a test blurb";
+const blurb = "An description of the native Boolean function and explanation of why understanding this simple function might be more important than you think";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
           <div className="section">
 <p>
 The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
@@ -90,6 +90,7 @@ The Boolean() function converts a variable of any data type into it's boolean li
 <p>
 This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
 </p>
+<CodeBlock code_string='var true_bool = "false";' />
 <figure>
 <div className="row">
 <div className="col-md-6">
@@ -158,8 +159,7 @@ The first solution will produce the same result as the second, but is less conci
 </p>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,
@@ -167,6 +167,7 @@ const exportable = {
     title: title,
     image: image,
     blurb: blurb,
+    link: link,
 }
 
 export default exportable;

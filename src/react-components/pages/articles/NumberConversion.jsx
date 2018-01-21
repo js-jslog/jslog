@@ -3,12 +3,11 @@ import React from 'react';
 const title = "Number conversion";
 const image = "number-conversion.jpg";
 const link = "number-conversion";
-const blurb = "this is a test blurb";
+const blurb = "A look at number conversion in JavaScript";
 const published = true;
 
-class PageContents extends React.Component {
-    render () {
-      return <div className="container">
+const PageContents = () => (
+      <div className="container">
          <div className="section">
 <p>
 Type conversion is at the heart of JavaScript's flexibility. The earlier article on the type conversion implicit in flow control statements discussed the <a href="boolean_function">Boolean() casting function</a> demonstrated how various types are converted to the boolean type. Converting to the numeric type is one of the most common conversions you will come across in JavaScript development. However despite its ease of use, it is not necessarily as straight forward as it appears.
@@ -300,8 +299,7 @@ The parseFloat() function operates in the same way as parseInt() except that it 
 </p>
           </div>
       </div>
-    }
-};
+);
 
 const exportable = {
     published: published,
@@ -309,6 +307,7 @@ const exportable = {
     title: title,
     image: image,
     blurb: blurb,
+    link: link,
 }
 
 export default exportable;
