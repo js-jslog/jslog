@@ -8,8 +8,7 @@ const blurb = "An description of the native Boolean function and explanation of 
 const published = true;
 
 const PageContents = () => (
-      <div className="container">
-          <div className="section">
+<div>
 <p>
 The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
 </p>
@@ -91,33 +90,12 @@ The Boolean() function converts a variable of any data type into it's boolean li
 This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
 </p>
 <CodeBlock gist_id="1f97ae4946a3c529283dd648e8c856f0">
-  <output>the Boolean() evaluation of the String true_bool ("false") is true</output>
+  <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
+  <output>Uncaught TypeError: Cannot read property 'length' of undefined</output>
 </CodeBlock>
-<figure>
-<div className="col-md-6">
-<div className="panel panel-code">
-<div className="panel-heading">JavaScript</div>
-  <pre>
-    <code className="language-javascript">{`
-var true_bool = "false";
-var false_bool = "";
-var undefined_false_bool;
-if (true_bool) {
-  console.log("the Boolean() evaluation of the String true_bool (\"" + true_bool + "\") is true");
-}
-if (false_bool) {
-  console.log("the Boolean() evaluation of the String false_bool (\"" + false_bool + "\") is true");
-}
-if (undefined_false_bool) {
-  console.log("the Boolean() evaluation of the String undefined_false_bool (\"" + false_bool + "\") is true");
-}
-    `}</code>
-  <output>the Boolean() evaluation of the String true_bool ("false") is true</output>
-  </pre>
-</div>
-</div>
-<figcaption>The results of these code blocks are identical</figcaption>
-</figure>
+<CodeBlock gist_id="fe20761a27144a71a1b126edcce69dcd">
+  <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
+</CodeBlock>
 <p>
 In the first example above, the coder has decided to check for the length of the String in order to determine whether or not it has been set with a meaningful value. However their effort is wasted as both of these will produce the same output (printed above).
 </p>
@@ -135,8 +113,7 @@ Evaluating an error inside an <i>if statement</i> will always produce a <code>fa
 <p>
 The first solution will produce the same result as the second, but is less concise and as a result introduces the potential for bugs.
 </p>
-          </div>
-      </div>
+</div>
 );
 
 const exportable = {
