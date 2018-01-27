@@ -90,31 +90,10 @@ The Boolean() function converts a variable of any data type into it's boolean li
 <p>
 This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
 </p>
-<CodeBlock code_string='var true_bool = "false";' />
-<figure>
-<div className="row">
-<div className="col-md-6">
-<div className="panel panel-code">
-<div className="panel-heading">JavaScript</div>
-  <pre>
-    <code className="language-javascript">{`
-var true_bool = "false";
-var false_bool = "";
-var undefined_false_bool;
-if (true_bool.length>0) {
-  console.log("the Boolean() evaluation of the String true_bool (\"" + true_bool + "\") is true");
-}
-if (false_bool>0) {
-  console.log("the Boolean() evaluation of the String false_bool (\"" + false_bool + "\") is true");
-}
-if (undefined_false_bool>0) {
-  console.log("the Boolean() evaluation of the String undefined_false_bool (\"" + false_bool + "\") is true");
-}
-    `}</code>
+<CodeBlock gist_id="1f97ae4946a3c529283dd648e8c856f0">
   <output>the Boolean() evaluation of the String true_bool ("false") is true</output>
-  </pre>
-</div>
-</div>
+</CodeBlock>
+<figure>
 <div className="col-md-6">
 <div className="panel panel-code">
 <div className="panel-heading">JavaScript</div>
@@ -135,7 +114,6 @@ if (undefined_false_bool) {
     `}</code>
   <output>the Boolean() evaluation of the String true_bool ("false") is true</output>
   </pre>
-</div>
 </div>
 </div>
 <figcaption>The results of these code blocks are identical</figcaption>
