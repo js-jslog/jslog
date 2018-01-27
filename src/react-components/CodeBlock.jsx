@@ -8,7 +8,7 @@ import {docco} from 'react-syntax-highlighter/styles/hljs';
 const CodeBlock = (props) => (
     <div>
         <Gist id={props.gist_id} />
-        {React.Children.only(props.children)}
+        {props.children}
     </div>
 );
 
