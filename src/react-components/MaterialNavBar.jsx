@@ -11,19 +11,9 @@ import List, {ListItem} from 'material-ui/List';
 import MenuIcon from 'material-ui-icons/Menu';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import Hidden from 'material-ui/Hidden';
 
 const styles = {
-    desktop_nav: {
-        display: "none",
-    },
-    '@media (min-width: 992px)': {
-        desktop_nav: {
-            display: "flex",
-        },
-        mobile_nav: {
-            display: "none",
-        },
-    },
 };
 
 const nav_links = [
@@ -32,11 +22,11 @@ const nav_links = [
         display_text: "Home",
     },
     {
-        link: "articles",
+        link: "/articles",
         display_text: "Articles",
     },
     {
-        link: "apps",
+        link: "/apps",
         display_text: "Apps",
     },
 ];
@@ -50,9 +40,9 @@ const DrawListNavItems = function () {
         </ListItem>
     ));
 };
-const ToolbarNavItems = function ({classes}) {
+const ToolbarNavItems = function () {
     return nav_links.map(link => (
-        <Button className={classes.desktop_nav} key={link.link}>
+        <Button key={link.link}>
             <Link to={link.link}>
                 {link.display_text}
             </Link>
@@ -78,29 +68,35 @@ class MaterialNavBar extends React.Component {
             <div>
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton className={classes.mobile_nav}>
-                            <MenuIcon onClick={this.toggleDrawer()} />
-                        </IconButton>
-                        <ToolbarNavItems classes={classes}/>
+                        <Hidden mdUp>
+                            <IconButton>
+                                <MenuIcon onClick={this.toggleDrawer()} />
+                            </IconButton>
+                        </Hidden>
+                        <Hidden mdDown>
+                            <ToolbarNavItems classes={classes}/>
+                        </Hidden>
                         <Typography type="title">
                             {this.props.title} 
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Drawer
-                    open={this.state.open} onClose={this.toggleDrawer()}
-                >
-                    <div
-                        tabIndex={0}
-                        role="button"
-                        onClick={this.toggleDrawer()}
-                        onKeyDown={this.toggleDrawer()}
+                <Hidden mdUp>
+                    <Drawer
+                        open={this.state.open} onClose={this.toggleDrawer()}
                     >
-                        <List>
-                            <DrawListNavItems />
-                        </List>
-                    </div>
-                </Drawer>
+                        <div
+                            tabIndex={0}
+                            role="button"
+                            onClick={this.toggleDrawer()}
+                            onKeyDown={this.toggleDrawer()}
+                        >
+                            <List>
+                                <DrawListNavItems />
+                            </List>
+                        </div>
+                    </Drawer>
+                </Hidden>
             </div>
         );
     };
