@@ -5,7 +5,7 @@ import MaterialNavBar from '../MaterialNavBar.jsx';
 import HeroBanner from '../HeroBanner.jsx';
 import Footer from '../Footer.jsx';
 
-import {GridList, GridTile} from 'material-ui/GridList';
+import GridList, {GridListTile, GridListTileBar} from 'material-ui/GridList';
 
 import * as articles from './articles/articles.js';
 
@@ -17,17 +17,21 @@ const ArticlesGridList = () => (
             cellHeight={180}
         >
             {articles_list.map((tile) => (
-                <GridTile
+                <GridListTile
                     key={tile.image}
-                    title={tile.title}
-                    subtitle={tile.blurb}
-                    subtitleStyle={{
-                        whiteSpace: "pre-line",
-                    }}
-                    containerElement={<Link to={"/articles/" + tile.link} />}
                 >
-                    <img src={"images/hero/" + tile.image} />
-                </GridTile>
+                    <Link to={"/articles/" + tile.link} >
+                        <img style={{"width": "100%"}} src={"images/hero/" + tile.image} />
+                        <GridListTileBar
+                            title={tile.title}
+                            subtitle={tile.blurb}
+                            subtitleStyle={{
+                                whiteSpace: "pre-line",
+                            }}
+                        >
+                        </GridListTileBar>
+                    </Link>
+                </GridListTile>
             ))}
         </GridList>
     </div>

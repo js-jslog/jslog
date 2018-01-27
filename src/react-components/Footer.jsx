@@ -1,19 +1,31 @@
 import React from 'react';
 
-const Footer = (props) => (
-    <footer style={{
-        backgroundColor: "black",
-        color: "white",
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+    footer: {
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.primary.light,
         padding: "20px",
         textAlign: "center",
-    }}>
-        <div>
-            Paid for by <b>Joseph Sinfield</b>
-        </div>
-        <a href="https://github.com/js-jslog">
-            <img height="24" src="/images/GitHub-Mark-Light-32px.png" style={{margin: "5px"}} />
-        </a>
-    </footer>
-);
+    },
+    git_watermark: {
+        margin: "5px",
+    },
+});
 
-export default Footer;
+const Footer = function (props) { 
+    const {classes} = props;
+    return (
+        <footer className={classes.footer}>
+            <div>
+                Paid for by <b>Joseph Sinfield</b>
+            </div>
+            <a href="https://github.com/js-jslog">
+                <img className={classes.git_watermark} height="24" src="/images/GitHub-Mark-Light-32px.png" />
+            </a>
+        </footer>
+    );
+};
+
+export default withStyles(styles)(Footer);

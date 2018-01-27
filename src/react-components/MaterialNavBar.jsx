@@ -1,65 +1,109 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import {Parallax} from 'react-scroll-parallax';
-import AppBar from 'material-ui/AppBar';
-import MenuItem from 'material-ui/MenuItem';
-import Drawer from 'material-ui/Drawer';
-import Divider from 'material-ui/Divider';
-import FontIcon from 'material-ui/FontIcon';
+import {withStyles} from 'material-ui/styles';
 
-import JsLogIcon from './icons/JsLogIcon.jsx';
+import AppBar from 'material-ui/AppBar';
+import Button from 'material-ui/Button';
+import Drawer from 'material-ui/Drawer';
+import IconButton from 'material-ui/IconButton';
+import List, {ListItem} from 'material-ui/List';
+import MenuIcon from 'material-ui-icons/Menu';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+
+const styles = {
+    desktop_nav: {
+        display: "none",
+    },
+    '@media (min-width: 992px)': {
+        desktop_nav: {
+            display: "flex",
+        },
+        mobile_nav: {
+            display: "none",
+        },
+    },
+};
+
+const nav_links = [
+    {
+        link: "/",
+        display_text: "Home",
+    },
+    {
+        link: "articles",
+        display_text: "Articles",
+    },
+    {
+        link: "apps",
+        display_text: "Apps",
+    },
+];
+
+const DrawListNavItems = function () {
+    return nav_links.map(link => (
+        <ListItem key={link.link} button>
+            <Link to={link.link}>
+                {link.display_text}
+            </Link>
+        </ListItem>
+    ));
+};
+const ToolbarNavItems = function ({classes}) {
+    return nav_links.map(link => (
+        <Button className={classes.desktop_nav} key={link.link}>
+            <Link to={link.link}>
+                {link.display_text}
+            </Link>
+        </Button>
+    ));
+};
+
 
 class MaterialNavBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-        };
+    state = {
+        open: false,
     };
-    toggleDrawer() {
+
+    toggleDrawer = () => () => {
         this.setState({
             open: !this.state.open,
-        });
+        })
     };
-    closeDrawer() {
-        this.setState({
-            open: false,
-        });
-    };
+
     render() {
+        const {classes} = this.props;
         return (
             <div>
-                <AppBar
-                    onLeftIconButtonClick={this.toggleDrawer.bind(this)}
-                    title={this.props.title}
-                />
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton className={classes.mobile_nav}>
+                            <MenuIcon onClick={this.toggleDrawer()} />
+                        </IconButton>
+                        <ToolbarNavItems classes={classes}/>
+                        <Typography type="title">
+                            {this.props.title} 
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
                 <Drawer
-                    open={this.state.open}>
-                    <MenuItem
-                        primaryText="Close"
-                        leftIcon={
-                            <FontIcon className="material-icons">exit_to_app</FontIcon>
-                        }
-                        onClick={this.closeDrawer.bind(this)}
-                    />
-                    <Divider />
-                    <MenuItem
-                        primaryText="Home"
-                        containerElement={<Link to="/" />}
-                    />
-                    <MenuItem
-                        primaryText="Articles"
-                        containerElement={<Link to="/articles" />}
-                    />
-                    <MenuItem
-                        primaryText="Apps"
-                        containerElement={<Link to="/articles" />}
-                    />
+                    open={this.state.open} onClose={this.toggleDrawer()}
+                >
+                    <div
+                        tabIndex={0}
+                        role="button"
+                        onClick={this.toggleDrawer()}
+                        onKeyDown={this.toggleDrawer()}
+                    >
+                        <List>
+                            <DrawListNavItems />
+                        </List>
+                    </div>
                 </Drawer>
             </div>
         );
     };
 }
 
-export default MaterialNavBar;
+export default withStyles(styles)(MaterialNavBar);

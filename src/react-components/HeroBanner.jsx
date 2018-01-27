@@ -1,28 +1,21 @@
 import React from 'react';
 
-import {Parallax} from 'react-scroll-parallax';
+import {Parallax, Background} from 'react-parallax';
 
-class HeroBanner extends React.Component {
-    render() {
-        let style = {
-            backgroundImage: "url('/images/hero/" + this.props.image + "')",
-            height: "800px",
-            backgroundAttachment: "fixed",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            color: "white",
-            textAlign: "center",
-        };
-        let overlayText = this.props.overlayText || "";
-        return <Parallax
-            className="custom-class"
-            offsetYMax={0}
-            offsetYMin={0}
-        >
-            <div style={style}>{overlayText}</div>
-        </Parallax>
-    };
+class HeroBanner3 extends React.Component {
+    render () {
+        let image_src = '/images/hero/' + this.props.image;
+        return (
+            <div>
+                <Parallax
+                    bgImage={image_src}
+                    strength={400}
+                >
+                    <div style={{ height: '800px' }} />
+                </Parallax>
+            </div>
+        );
+    }
 };
 
-export default HeroBanner;
+export default HeroBanner3;
