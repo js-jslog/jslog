@@ -1,21 +1,33 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
 
 import {Parallax, Background} from 'react-parallax';
 
-class HeroBanner3 extends React.Component {
-    render () {
-        let image_src = '/images/hero/' + this.props.image;
-        return (
-            <div>
-                <Parallax
-                    bgImage={image_src}
-                    strength={400}
-                >
-                    <div style={{ height: '800px' }} />
-                </Parallax>
-            </div>
-        );
-    }
+const styles = theme => ({
+    image: {
+        height: '400px',
+    },
+    [theme.breakpoints.up('md')]: {
+        image: {
+            height: "800px",
+        },
+    },
+});
+
+const HeroBanner = function (props) {
+    const image_src = '/images/hero/' + props.image;
+    const {classes} = props;
+    return (
+        <div>
+            <Parallax
+                blur={{ min: -15, max: 15 }}
+                bgImage={image_src}
+                strength={200}
+            >
+                <div className={classes.image}/>
+            </Parallax>
+        </div>
+    );
 };
 
-export default HeroBanner3;
+export default withStyles(styles)(HeroBanner);
