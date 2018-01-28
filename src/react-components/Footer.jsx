@@ -1,9 +1,10 @@
 import React from 'react';
+import Typography from 'material-ui/Typography';
 
 import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
-    footer: {
+j   footer: {
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.primary.light,
         padding: "20px",
@@ -18,9 +19,9 @@ const Footer = function (props) {
     const {classes} = props;
     return (
         <footer className={classes.footer}>
-            <div>
+            <Typography>
                 Paid for by <b>Joseph Sinfield</b>
-            </div>
+            </Typography>
             <a href="https://github.com/js-jslog">
                 <img className={classes.git_watermark} height="24" src="/images/GitHub-Mark-Light-32px.png" />
             </a>

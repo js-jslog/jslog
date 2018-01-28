@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import {withStyles} from 'material-ui/styles';
 import MaterialNavBar from '../MaterialNavBar.jsx';
 import HeroBanner from '../HeroBanner.jsx';
 import Footer from '../Footer.jsx';
@@ -9,9 +10,15 @@ import GridList, {GridListTile, GridListTileBar} from 'material-ui/GridList';
 
 import * as articles from './articles/articles.js';
 
+const styles = {
+    grid_image: {
+        width: "100%",
+    },
+};
+
 const articles_list = Object.keys(articles).map((key) => articles[key]);
 
-const ArticlesGridList = () => (
+const ArticlesGridList = (props) => (
     <div>
         <GridList
             cellHeight={180}
@@ -21,13 +28,10 @@ const ArticlesGridList = () => (
                     key={tile.image}
                 >
                     <Link to={"/articles/" + tile.link} >
-                        <img style={{"width": "100%"}} src={"images/hero/" + tile.image} />
+                        <img className={props.classes.grid_image} src={"images/hero/" + tile.image} href={"articles/" + tile.link} />
                         <GridListTileBar
                             title={tile.title}
                             subtitle={tile.blurb}
-                            subtitleStyle={{
-                                whiteSpace: "pre-line",
-                            }}
                         >
                         </GridListTileBar>
                     </Link>
@@ -37,13 +41,13 @@ const ArticlesGridList = () => (
     </div>
 );
 
-const ArticlesIndex = () => (
+const ArticlesIndex = (props) => (
     <div>
         <MaterialNavBar title="Articles" />
         <HeroBanner image="articles.jpg" />
-        <ArticlesGridList />
+        <ArticlesGridList {...props} />
         <Footer />
     </div>
 );
 
-export default ArticlesIndex;
+export default withStyles(styles)(ArticlesIndex);

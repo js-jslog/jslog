@@ -33,19 +33,15 @@ const nav_links = [
 
 const DrawListNavItems = function () {
     return nav_links.map(link => (
-        <ListItem key={link.link} button>
-            <Link to={link.link}>
-                {link.display_text}
-            </Link>
+        <ListItem key={link.link} component={Link} to={link.link} button>
+            {link.display_text}
         </ListItem>
     ));
 };
 const ToolbarNavItems = function () {
     return nav_links.map(link => (
-        <Button key={link.link}>
-            <Link to={link.link}>
-                {link.display_text}
-            </Link>
+        <Button key={link.link} component={Link} to={link.link}>
+            {link.display_text}
         </Button>
     ));
 };

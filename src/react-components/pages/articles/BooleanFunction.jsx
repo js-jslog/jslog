@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../CodeBlock.jsx';
+import Typography from 'material-ui/Typography';
 
 const title = "The boolean function";
 const image = "boolean-function.png";
@@ -7,7 +8,9 @@ const link = "boolean-function";
 const blurb = "An description of the native Boolean function and explanation of why understanding this simple function might be more important than you think";
 const published = true;
 
-const PageContents = () => (
+class PageContents extends React.Component {
+    render() {
+        return (
 <div>
 <p>
 The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
@@ -85,10 +88,10 @@ The Boolean() function converts a variable of any data type into it's boolean li
 </table>
 <figcaption>Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite></figcaption>
 </figure>
-<h3>Why is this important?</h3>
-<p>
+<Typography type='title'>Why is this important?</Typography>
+<Typography>
 This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
-</p>
+</Typography>
 <CodeBlock gist_id="1f97ae4946a3c529283dd648e8c856f0">
   <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
   <output>Uncaught TypeError: Cannot read property 'length' of undefined</output>
@@ -114,7 +117,9 @@ Evaluating an error inside an <i>if statement</i> will always produce a <code>fa
 The first solution will produce the same result as the second, but is less concise and as a result introduces the potential for bugs.
 </p>
 </div>
-);
+        );
+    };
+};
 
 const exportable = {
     published: published,

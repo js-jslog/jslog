@@ -3,8 +3,16 @@ import React from 'react';
 import MaterialNavBar from '../MaterialNavBar.jsx';
 import HeroBanner from '../HeroBanner.jsx';
 import Footer from '../Footer.jsx';
+import {withStyles} from 'material-ui/styles';
 
 import * as articles from './articles/articles.js';
+
+const styles = theme => ({
+    page_contents: {
+        marginTop: '3em',
+        marginBottom: '3em',
+    },
+});
 
 let articles_keyed_list = {};
 Object.keys(articles).forEach((init_key) => {
@@ -12,14 +20,17 @@ Object.keys(articles).forEach((init_key) => {
     articles_keyed_list[article_info.link] = article_info;
 });
 
-const ArticleContainer = function ({match}) {
-    const article_contents = articles_keyed_list[match.params.article_id];
+const ArticleContainer = function (props) {
+    const {classes, match} = props;
+    const {title, image, PageContents} = articles_keyed_list[match.params.article_id];
     return <div>
-        <MaterialNavBar title={article_contents.title} />
-        <HeroBanner image={article_contents.image} />
-        {article_contents.PageContents()}
+        <MaterialNavBar title={title} />
+        <HeroBanner image={image} />
+        <div className={classes.page_contents} >
+            <PageContents />
+        </div>
         <Footer />
     </div>
 };
 
-export default ArticleContainer;
+export default withStyles(styles)(ArticleContainer);
