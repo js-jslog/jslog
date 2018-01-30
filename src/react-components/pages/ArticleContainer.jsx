@@ -4,6 +4,7 @@ import MaterialNavBar from '../MaterialNavBar.jsx';
 import HeroBanner from '../HeroBanner.jsx';
 import Footer from '../Footer.jsx';
 import {withStyles} from 'material-ui/styles';
+import PageContents, {title, image} from './articles/BooleanFunction.jsx';
 
 import * as articles from './articles/articles.js';
 
@@ -13,16 +14,16 @@ const styles = theme => ({
         marginBottom: '3em',
     },
 });
-
-let articles_keyed_list = {};
-Object.keys(articles).forEach((init_key) => {
-    const article_info = articles[init_key];
-    articles_keyed_list[article_info.link] = article_info;
-});
+//
+//let articles_keyed_list = {};
+//Object.keys(articles).forEach((init_key) => {
+//    const article_info = articles[init_key];
+//    articles_keyed_list[article_info.link] = article_info;
+//});
 
 const ArticleContainer = function (props) {
     const {classes, match} = props;
-    const {title, image, PageContents} = articles_keyed_list[match.params.article_id];
+    //const {title, image, PageContents} = articles_keyed_list[match.params.article_id];
     return <div>
         <MaterialNavBar title={title} />
         <HeroBanner image={image} />

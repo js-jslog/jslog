@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeBlock from '../../CodeBlock.jsx';
 import Typography from 'material-ui/Typography';
+import {withStyles} from 'material-ui/styles';
 
 const title = "The boolean function";
 const image = "boolean-function.png";
@@ -8,10 +9,19 @@ const link = "boolean-function";
 const blurb = "An description of the native Boolean function and explanation of why understanding this simple function might be more important than you think";
 const published = true;
 
+const styles = theme => ({
+    body_text: {
+        marginLeft: theme.root.body_text_margin,
+        marginRight: theme.root.body_text_margin,
+    },
+});
+
 class PageContents extends React.Component {
     render() {
+        const {classes} = this.props;
         return (
 <div>
+    <Typography className={classes.body_text}>
 <p>
 The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
 </p>
@@ -88,6 +98,7 @@ The Boolean() function converts a variable of any data type into it's boolean li
 </table>
 <figcaption>Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite></figcaption>
 </figure>
+</Typography>
 <Typography type='title'>Why is this important?</Typography>
 <Typography>
 This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
@@ -130,4 +141,9 @@ const exportable = {
     link: link,
 }
 
-export default exportable;
+export default withStyles(styles)(PageContents);
+export {title};
+export {image};
+export {blurb};
+export {link};
+export {published};

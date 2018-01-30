@@ -3,6 +3,14 @@ import red from 'material-ui/colors/red';
 
 
 const JsLogMuiTheme = createMuiTheme({
+    typography: {
+        root: {
+            fontStyle: 'italic',
+        },
+    },
+    root: {
+        body_text_margin: '100px',
+    },
     palette: {
         primary: {
             light: '#6d6d6d',
