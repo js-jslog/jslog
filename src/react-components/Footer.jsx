@@ -4,7 +4,7 @@ import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
-j   footer: {
+    footer: {
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.primary.light,
         padding: "20px",
