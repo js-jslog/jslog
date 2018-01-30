@@ -1,4 +1,8 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+});
 
 const title = "The two pillars of Javascript";
 const image = "the-two-pillars-of-javascript.jpg";
@@ -57,13 +61,9 @@ const PageContents = () => (
       </div>
 );
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
-export default exportable;
+export default withStyles(styles)(PageContents);
+export {title};
+export {image};
+export {blurb};
+export {link};
+export {published};

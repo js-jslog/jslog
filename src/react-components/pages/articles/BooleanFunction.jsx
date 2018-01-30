@@ -132,15 +132,6 @@ The first solution will produce the same result as the second, but is less conci
     };
 };
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
 export default withStyles(styles)(PageContents);
 export {title};
 export {image};

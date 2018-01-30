@@ -16,7 +16,6 @@ const styles = theme => ({
 
 let link_keyed_article_components = {};
 articles.forEach((article_components) => {
-    console.log(article_components);
     const link = article_components.link;
     link_keyed_article_components[link] = article_components;
 });

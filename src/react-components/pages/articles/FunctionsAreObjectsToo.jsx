@@ -1,4 +1,8 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+});
 
 const title = "Functions are objects too";
 const image = "functions-are-objects-too.jpeg";
@@ -155,13 +159,9 @@ setTimeout(
       </div>
 );
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
-export default exportable;
+export default withStyles(styles)(PageContents);
+export {title};
+export {image};
+export {blurb};
+export {link};
+export {published};
