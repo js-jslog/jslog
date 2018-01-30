@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import JsLogTheme from './muiThemes/JsLogMuiTheme.js';
+import JsLogTheme from './muiThemes/JsLogMuiThemeGreyscale.js';
 import {MuiThemeProvider} from 'material-ui/styles';
 
 import Home from './pages/HomePage.jsx';
