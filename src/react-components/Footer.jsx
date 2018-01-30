@@ -6,9 +6,11 @@ import {withStyles} from 'material-ui/styles';
 const styles = theme => ({
     footer: {
         backgroundColor: theme.palette.primary.main,
-        color: theme.palette.primary.light,
         padding: "20px",
         textAlign: "center",
+    },
+    typo: {
+        color: theme.palette.primary.contrastText,
     },
     git_watermark: {
         margin: "5px",
@@ -19,7 +21,7 @@ const Footer = function (props) {
     const {classes} = props;
     return (
         <footer className={classes.footer}>
-            <Typography>
+            <Typography className={classes.typo}>
                 Paid for by <b>Joseph Sinfield</b>
             </Typography>
             <a href="https://github.com/js-jslog">

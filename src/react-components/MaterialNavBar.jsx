@@ -13,8 +13,11 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Hidden from 'material-ui/Hidden';
 
-const styles = {
-};
+const styles = theme => ({
+    app_bar: {
+        backgroundColor: theme.palette.background.paper,
+    }
+});
 
 const nav_links = [
     {
@@ -62,7 +65,7 @@ class MaterialNavBar extends React.Component {
         const {classes} = this.props;
         return (
             <div>
-                <AppBar position="static">
+                <AppBar position="static" className={classes.app_bar}>
                     <Toolbar>
                         <Hidden mdUp>
                             <IconButton>
