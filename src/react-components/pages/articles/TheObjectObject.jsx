@@ -682,7 +682,8 @@ console.log(obj2.meth2());      // Obj2Meth2
       </div>
 );
 
-export default withStyles(styles)(PageContents);
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
 export {title};
 export {image};
 export {blurb};

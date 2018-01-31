@@ -477,7 +477,8 @@ The simple answer to this <em>is</em> quite simple. <i>Keywords</i> have a speci
       </div>
 );
 
-export default withStyles(styles)(PageContents);
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
 export {title};
 export {image};
 export {blurb};

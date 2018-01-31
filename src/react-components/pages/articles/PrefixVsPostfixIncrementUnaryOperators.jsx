@@ -72,7 +72,8 @@ The prefix operator ensures that it is the first operation to occur in the state
       </div>
 );
 
-export default withStyles(styles)(PageContents);
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
 export {title};
 export {image};
 export {blurb};

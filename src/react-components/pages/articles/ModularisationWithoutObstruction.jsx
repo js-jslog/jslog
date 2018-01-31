@@ -144,7 +144,8 @@ define(["./module1", "./module2"], function (module1, module2) {
       </div>
 );
 
-export default withStyles(styles)(PageContents);
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
 export {title};
 export {image};
 export {blurb};

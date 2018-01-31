@@ -305,7 +305,8 @@ The parseFloat() function operates in the same way as parseInt() except that it 
       </div>
 );
 
-export default withStyles(styles)(PageContents);
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
 export {title};
 export {image};
 export {blurb};

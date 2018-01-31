@@ -22,12 +22,12 @@ articles.forEach((article_components) => {
 
 const ArticleContainer = function (props) {
     const {classes, match} = props;
-    const {PageContents, title, image} = link_keyed_article_components[match.params.article_id];
+    const {StyledPageContents, title, image} = link_keyed_article_components[match.params.article_id];
     return <div>
         <MaterialNavBar title={title} />
         <HeroBanner image={image} />
         <div className={classes.page_contents} >
-            <PageContents />
+            <StyledPageContents />
         </div>
         <Footer />
     </div>

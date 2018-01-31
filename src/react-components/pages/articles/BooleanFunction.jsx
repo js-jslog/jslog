@@ -132,7 +132,8 @@ The first solution will produce the same result as the second, but is less conci
     };
 };
 
-export default withStyles(styles)(PageContents);
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
 export {title};
 export {image};
 export {blurb};
