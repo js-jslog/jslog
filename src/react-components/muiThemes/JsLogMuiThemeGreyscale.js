@@ -88,22 +88,42 @@ JsLogMuiTheme.overrides.MuiTypography = {
     },
     display1: {
         marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_xs * 2) + 'px',
-        marginBottom: (JsLogMuiTheme.typography.paragraph_verticle_spacing_xs * 2) + 'px',
+        marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_xs + 'px',
         [JsLogMuiTheme.breakpoints.up('sm')]: {
             marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_sm * 2) + 'px',
-            marginBottom: (JsLogMuiTheme.typography.paragraph_verticle_spacing_sm * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_sm + 'px',
         },
         [JsLogMuiTheme.breakpoints.up('md')]: {
             marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_md * 2) + 'px',
-            marginBottom: (JsLogMuiTheme.typography.paragraph_verticle_spacing_md * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_md + 'px',
         },
         [JsLogMuiTheme.breakpoints.up('lg')]: {
             marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_lg * 2) + 'px',
-            marginBottom: (JsLogMuiTheme.typography.paragraph_verticle_spacing_lg * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_lg + 'px',
         },
         [JsLogMuiTheme.breakpoints.up('xl')]: {
             marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_xl * 2) + 'px',
-            marginBottom: (JsLogMuiTheme.typography.paragraph_verticle_spacing_xl * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_xl + 'px',
+        },
+    },
+    title: {
+        marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_xs * 2) + 'px',
+        marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_xs + 'px',
+        [JsLogMuiTheme.breakpoints.up('sm')]: {
+            marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_sm * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_sm + 'px',
+        },
+        [JsLogMuiTheme.breakpoints.up('md')]: {
+            marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_md * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_md + 'px',
+        },
+        [JsLogMuiTheme.breakpoints.up('lg')]: {
+            marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_lg * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_lg + 'px',
+        },
+        [JsLogMuiTheme.breakpoints.up('xl')]: {
+            marginTop: (JsLogMuiTheme.typography.paragraph_verticle_spacing_xl * 2) + 'px',
+            marginBottom: JsLogMuiTheme.typography.paragraph_verticle_spacing_xl + 'px',
         },
     },
 };
