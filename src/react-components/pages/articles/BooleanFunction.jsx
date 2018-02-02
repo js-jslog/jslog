@@ -10,23 +10,16 @@ const blurb = "An description of the native Boolean function and explanation of 
 const published = true;
 
 const styles = theme => ({
-    body_text: {
-        marginLeft: theme.root.body_text_margin,
-        marginRight: theme.root.body_text_margin,
+    table: {
+        margin: 'auto auto',
     },
+    body_text: theme.layout.body_text,
 });
 
-class PageContents extends React.Component {
-    render() {
-        const {classes} = this.props;
-        return (
-<div>
-    <Typography className={classes.body_text}>
-<p>
-The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
-</p>
+const Table = function (props) {
+    return (
 <figure>
-<table className="table">
+<table className={props.classes.table}>
 <tbody>
   <tr>
     <th>
@@ -98,36 +91,51 @@ The Boolean() function converts a variable of any data type into it's boolean li
 </table>
 <figcaption>Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite></figcaption>
 </figure>
-</Typography>
-<Typography type='title'>Why is this important?</Typography>
-<Typography>
-This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
-</Typography>
-<CodeBlock gist_id="1f97ae4946a3c529283dd648e8c856f0">
-  <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
-  <output>Uncaught TypeError: Cannot read property 'length' of undefined</output>
-</CodeBlock>
-<CodeBlock gist_id="fe20761a27144a71a1b126edcce69dcd">
-  <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
-</CodeBlock>
-<p>
-In the first example above, the coder has decided to check for the length of the String in order to determine whether or not it has been set with a meaningful value. However their effort is wasted as both of these will produce the same output (printed above).
-</p>
-<h3>Complexity leads to errors</h3>
-<p>
-Additionally there is a bug in the first code block. The <code>undefined</code> literal does not contain a <code>length</code> property and evaluation of <code className="language-javascript">undefined.length;</code> throws an error :
-</p>
-<p>
-<output className="error">Uncaught TypeError: Cannot read property 'length' of undefined(…)</output> in Chrome45.0.
-</p>
-<p>
-Evaluating an error inside an <i>if statement</i> will always produce a <code>false</code> result. As such, the bug will potentially go unnoticed.
-</p>
-<h3>Conclusion</h3>
-<p>
-The first solution will produce the same result as the second, but is less concise and as a result introduces the potential for bugs.
-</p>
-</div>
+    );
+};
+
+class PageContents extends React.Component {
+    render() {
+        const {classes} = this.props;
+        return (
+            <div>
+                <div className={classes.body_text}>
+                    <Typography>
+                        The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
+                    </Typography>
+                </div>
+                    <Table classes={classes} />
+                <div className={classes.body_text}>
+                    <Typography type='display1'>Why is this important?</Typography>
+                    <Typography>
+                        This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
+                    </Typography>
+                    <CodeBlock gist_id="1f97ae4946a3c529283dd648e8c856f0">
+                      <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
+                      <output>Uncaught TypeError: Cannot read property 'length' of undefined</output>
+                    </CodeBlock>
+                    <CodeBlock gist_id="fe20761a27144a71a1b126edcce69dcd">
+                      <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
+                    </CodeBlock>
+                    <Typography>
+                        In the first example above, the coder has decided to check for the length of the String in order to determine whether or not it has been set with a meaningful value. However their effort is wasted as both of these will produce the same output (printed above).
+                    </Typography>
+                    <Typography type='title'>Complexity leads to errors</Typography>
+                    <Typography>
+                        Additionally there is a bug in the first code block. The <code>undefined</code> literal does not contain a <code>length</code> property and evaluation of <code className="language-javascript">undefined.length;</code> throws an error :
+                    </Typography>
+                    <Typography>
+                        <output className="error">Uncaught TypeError: Cannot read property 'length' of undefined(…)</output> in Chrome45.0.
+                    </Typography>
+                    <Typography>
+                        Evaluating an error inside an <i>if statement</i> will always produce a <code>false</code> result. As such, the bug will potentially go unnoticed.
+                    </Typography>
+                    <Typography type='title'>Conclusion</Typography>
+                    <Typography>
+                        The first solution will produce the same result as the second, but is less concise and as a result introduces the potential for bugs.
+                    </Typography>
+                </div>
+            </div>
         );
     };
 };
