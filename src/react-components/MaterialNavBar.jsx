@@ -16,7 +16,10 @@ import Hidden from 'material-ui/Hidden';
 const styles = theme => ({
     app_bar: {
         backgroundColor: theme.palette.background.paper,
-    }
+    },
+    page_title: {
+        margin: '0',
+    },
 });
 
 const nav_links = [
@@ -67,20 +70,20 @@ class MaterialNavBar extends React.Component {
             <div>
                 <AppBar position="static" className={classes.app_bar}>
                     <Toolbar>
-                        <Hidden mdUp>
+                        <Hidden smUp>
                             <IconButton>
                                 <MenuIcon onClick={this.toggleDrawer()} />
                             </IconButton>
                         </Hidden>
-                        <Hidden mdDown>
+                        <Hidden xsDown>
                             <ToolbarNavItems classes={classes}/>
                         </Hidden>
-                        <Typography type="title">
+                        <Typography type='title' className={classes.page_title}>
                             {this.props.title} 
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Hidden mdUp>
+                <Hidden smUp>
                     <Drawer
                         open={this.state.open} onClose={this.toggleDrawer()}
                     >
