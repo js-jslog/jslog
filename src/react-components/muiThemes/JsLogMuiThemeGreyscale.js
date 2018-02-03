@@ -16,6 +16,16 @@ let JsLogMuiTheme = createMuiTheme({
         page_gutter_md: '100px',
         page_gutter_lg: '300px',
         page_gutter_xl: '450px',
+        figure_gutter_xs: '0px',
+        figure_gutter_sm: '0px',
+        figure_gutter_md: '100px',
+        figure_gutter_lg: '300px',
+        figure_gutter_xl: '450px',
+        banner_image_height_xs: '400px',
+        banner_image_height_sm: '500px',
+        banner_image_height_md: '600px',
+        banner_image_height_lg: '800px',
+        banner_image_height_xl: '900px',
     },
     palette: {
         primary: {
@@ -43,6 +53,21 @@ let JsLogMuiTheme = createMuiTheme({
 });
 
 JsLogMuiTheme.layout = {
+    banner_image: {
+        height: JsLogMuiTheme.layout.banner_image_height_xs,
+        [JsLogMuiTheme.breakpoints.up('sm')]: {
+            height: JsLogMuiTheme.layout.banner_image_height_sm,
+        },
+        [JsLogMuiTheme.breakpoints.up('md')]: {
+            height: JsLogMuiTheme.layout.banner_image_height_md,
+        },
+        [JsLogMuiTheme.breakpoints.up('lg')]: {
+            height: JsLogMuiTheme.layout.banner_image_height_lg,
+        },
+        [JsLogMuiTheme.breakpoints.up('xl')]: {
+            height: JsLogMuiTheme.layout.banner_image_height_xl,
+        },
+    },
     body_text: {
         marginLeft: JsLogMuiTheme.layout.page_gutter_xs,
         marginRight: JsLogMuiTheme.layout.page_gutter_xs,
@@ -61,6 +86,26 @@ JsLogMuiTheme.layout = {
         [JsLogMuiTheme.breakpoints.up('xl')]: {
             marginLeft: JsLogMuiTheme.layout.page_gutter_xl,
             marginRight: JsLogMuiTheme.layout.page_gutter_xl,
+        },
+    },
+    figure: {
+        marginLeft: JsLogMuiTheme.layout.figure_gutter_xs,
+        marginRight: JsLogMuiTheme.layout.figure_gutter_xs,
+        [JsLogMuiTheme.breakpoints.up('sm')]: {
+            marginLeft: JsLogMuiTheme.layout.figure_gutter_sm,
+            marginRight: JsLogMuiTheme.layout.figure_gutter_sm,
+        },
+        [JsLogMuiTheme.breakpoints.up('md')]: {
+            marginLeft: JsLogMuiTheme.layout.figure_gutter_md,
+            marginRight: JsLogMuiTheme.layout.figure_gutter_md,
+        },
+        [JsLogMuiTheme.breakpoints.up('lg')]: {
+            marginLeft: JsLogMuiTheme.layout.figure_gutter_lg,
+            marginRight: JsLogMuiTheme.layout.figure_gutter_lg,
+        },
+        [JsLogMuiTheme.breakpoints.up('xl')]: {
+            marginLeft: JsLogMuiTheme.layout.figure_gutter_xl,
+            marginRight: JsLogMuiTheme.layout.figure_gutter_xl,
         },
     },
 };

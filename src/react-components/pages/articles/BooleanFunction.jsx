@@ -2,6 +2,8 @@ import React from 'react';
 import CodeBlock from '../../CodeBlock.jsx';
 import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
+import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Paper from 'material-ui/Paper';
 
 const title = "The boolean function";
 const image = "boolean-function.png";
@@ -14,85 +16,50 @@ const styles = theme => ({
         margin: 'auto auto',
     },
     body_text: theme.layout.body_text,
+    figure: theme.layout.figure,
 });
 
-const Table = function (props) {
+let id = 0;
+function createData(type, true_val, false_val) {
+      id += 1;
+      return {id, type, true_val, false_val};
+}
+
+const data = [
+    createData('Boolean', '<code>true</code>', 'false'),
+    createData('String', 'Any nonempty string', '"" (empty string)'),
+    createData('Number', 'Any nonzero number (including infinity)', '0 or NaN'),
+    createData('Object', 'Any object', 'null'),
+    createData('Undefined', 'n/a', 'undefined'),
+];
+function BooleanTable(props) {
+    const { classes } = props;
+
     return (
-<figure>
-<table className={props.classes.table}>
-<tbody>
-  <tr>
-    <th>
-      Data type
-    </th>
-    <th>
-      Values converted to <code>true</code>
-    </th>
-    <th>
-      Values converted to <code>false</code>
-    </th>
-  </tr>
-  <tr>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>true</code>
-    </td>
-    <td>
-      <code>false</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      String
-    </td>
-    <td>
-      Any nonempty string
-    </td>
-    <td>
-      "" (empty string)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Number
-    </td>
-    <td>
-      Any nonzero number (including infinity)
-    </td>
-    <td>
-      0 or <code>NaN</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Object
-    </td>
-    <td>
-      Any object
-    </td>
-    <td>
-      <code>null</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Undefined
-    </td>
-    <td>
-      n/a
-    </td>
-    <td>
-      <code>undefined</code>
-    </td>
-  </tr>
-</tbody>
-</table>
-<figcaption>Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite></figcaption>
-</figure>
+        <Paper className={classes.root}>
+            <Table className={classes.table}>
+                <TableHead>
+                    <TableRow>
+                    <TableCell>Data type</TableCell>
+                    <TableCell>Values converted to true</TableCell>
+                    <TableCell>Values converted to false</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                {data.map(n => {
+                return (
+                    <TableRow key={n.id}>
+                        <TableCell>{n.type}</TableCell>
+                        <TableCell numeric>{n.true_val}</TableCell>
+                        <TableCell numeric>{n.false_val}</TableCell>
+                    </TableRow>
+                );
+                })}
+                </TableBody>
+            </Table>
+        </Paper>
     );
-};
+}
 
 class PageContents extends React.Component {
     render() {
@@ -104,19 +71,28 @@ class PageContents extends React.Component {
                         The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
                     </Typography>
                 </div>
-                    <Table classes={classes} />
+                <figure className={classes.figure}>
+                    <BooleanTable classes={classes} />
+                    <figcaption>Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite></figcaption>
+                </figure>
                 <div className={classes.body_text}>
                     <Typography type='display1'>Why is this important?</Typography>
                     <Typography>
                         This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
                     </Typography>
+                </div>
+                <figure className={classes.figure}>
                     <CodeBlock gist_id="1f97ae4946a3c529283dd648e8c856f0">
                       <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
                       <output>Uncaught TypeError: Cannot read property 'length' of undefined</output>
                     </CodeBlock>
+                </figure>
+                <figure className={classes.figure}>
                     <CodeBlock gist_id="fe20761a27144a71a1b126edcce69dcd">
                       <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
                     </CodeBlock>
+                </figure>
+                <div className={classes.body_text}>
                     <Typography>
                         In the first example above, the coder has decided to check for the length of the String in order to determine whether or not it has been set with a meaningful value. However their effort is wasted as both of these will produce the same output (printed above).
                     </Typography>

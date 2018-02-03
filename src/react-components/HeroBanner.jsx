@@ -4,14 +4,7 @@ import {withStyles} from 'material-ui/styles';
 import {Parallax, Background} from 'react-parallax';
 
 const styles = theme => ({
-    image: {
-        height: '400px',
-    },
-    [theme.breakpoints.up('md')]: {
-        image: {
-            height: "800px",
-        },
-    },
+    image: theme.layout.banner_image,
 });
 
 const HeroBanner = function (props) {
