@@ -1,7 +1,10 @@
+/* general styling */
 body {
     margin: 0;
 }
+/* end general styling */
 
+/* gist styling */
 body .gist .gist-file {
     margin-bottom: 0;
     border: 1px dashed #adb5bd;
@@ -48,3 +51,4 @@ body .gist .blob-num {
 body .gist .gist-meta {
     display: none;
 }
+/* end gist styling */
