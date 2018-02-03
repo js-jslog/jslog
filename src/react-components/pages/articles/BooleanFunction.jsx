@@ -82,13 +82,13 @@ class PageContents extends React.Component {
                     </Typography>
                 </div>
                 <figure className={classes.figure}>
-                    <CodeBlock gist_id="1f97ae4946a3c529283dd648e8c856f0">
+                    <CodeBlock gist_id="js-jslog/1f97ae4946a3c529283dd648e8c856f0">
                       <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
                       <output>Uncaught TypeError: Cannot read property 'length' of undefined</output>
                     </CodeBlock>
                 </figure>
                 <figure className={classes.figure}>
-                    <CodeBlock gist_id="fe20761a27144a71a1b126edcce69dcd">
+                    <CodeBlock gist_id="js-jslog/fe20761a27144a71a1b126edcce69dcd">
                       <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
                     </CodeBlock>
                 </figure>
