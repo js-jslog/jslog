@@ -116,9 +116,9 @@ JsLogMuiTheme.typography.heading_text_spacing = {
     marginBottom: JsLogMuiTheme.typography.margin_thin,
 };
 JsLogMuiTheme.overrides.MuiTypography = {
-    body1: JsLogMuiTheme.typography.body_text_spacing,
-    title: JsLogMuiTheme.typography.heading_text_spacing,
-    display1: JsLogMuiTheme.typography.heading_text_spacing,
+    body1: Object.assign({}, JsLogMuiTheme.typography.body_text_spacing, JsLogMuiTheme.layout.responsive_page_gutter),
+    title: Object.assign({}, JsLogMuiTheme.typography.heading_text_spacing, JsLogMuiTheme.layout.responsive_page_gutter),
+    display1: Object.assign({}, JsLogMuiTheme.typography.heading_text_spacing, JsLogMuiTheme.layout.responsive_page_gutter),
 };
 
 export default JsLogMuiTheme;
