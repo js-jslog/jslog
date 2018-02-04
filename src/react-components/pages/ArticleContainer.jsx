@@ -7,12 +7,7 @@ import {withStyles} from 'material-ui/styles';
 
 import articles from './articles/articles.js';
 
-const styles = theme => ({
-    page_contents: {
-        marginTop: '3em',
-        marginBottom: '3em',
-    },
-});
+const styles = theme => ({});
 
 let link_keyed_article_components = {};
 articles.forEach((article_components) => {
@@ -26,9 +21,7 @@ const ArticleContainer = function (props) {
     return <div>
         <MaterialNavBar title={title} />
         <HeroBanner image={image} />
-        <div className={classes.page_contents} >
-            <StyledPageContents />
-        </div>
+        <StyledPageContents />
         <Footer />
     </div>
 };
