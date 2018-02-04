@@ -30,11 +30,20 @@ const size_root_m6 = '0.056rem';
 const size_root_m1_static_px = '11.124px';
 const size_root_p2_static_px = '47.124px';
 
-let JsLogMuiTheme = createMuiTheme({
+let Theme = createMuiTheme({
     typography: {
         margin_thin: size_root_p1,
         margin_thick: size_root_p3,
         line_height: size_root_p1,
+        font_body1: {
+            fontSize: size_root,
+        },
+        font_title: {
+            fontSize: size_root_p1,
+        },
+        font_caption: {
+            fontSize: size_root_m1,
+        },
     },
     layout: {
         // page_column_width_xs: size_root_p6, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
@@ -74,54 +83,60 @@ let JsLogMuiTheme = createMuiTheme({
     },
     overrides: {},
 });
-JsLogMuiTheme.layout.responsive_page_column = {
+Theme.layout.responsive_page_column = {
     marginLeft: size_root_m1,
     marginRight: size_root_m1,
-    [JsLogMuiTheme.breakpoints.up('sm')]: {
+    [Theme.breakpoints.up('sm')]: {
         marginLeft: size_root_p2,
         marginRight: size_root_p2,
     },
-    [JsLogMuiTheme.breakpoints.up('md')]: {
-        maxWidth: JsLogMuiTheme.layout.page_column_width_md,
+    [Theme.breakpoints.up('md')]: {
+        maxWidth: Theme.layout.page_column_width_md,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    [JsLogMuiTheme.breakpoints.up('lg')]: {
-        maxWidth: JsLogMuiTheme.layout.page_column_width_lg,
+    [Theme.breakpoints.up('lg')]: {
+        maxWidth: Theme.layout.page_column_width_lg,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    [JsLogMuiTheme.breakpoints.up('xl')]: {
-        maxWidth: JsLogMuiTheme.layout.page_column_width_xl,
+    [Theme.breakpoints.up('xl')]: {
+        maxWidth: Theme.layout.page_column_width_xl,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
 };
-JsLogMuiTheme.layout.vertical_spacing_even = {
-    marginTop: JsLogMuiTheme.typography.margin_thin,
-    marginBottom: JsLogMuiTheme.typography.margin_thin,
-    lineHeight: JsLogMuiTheme.typography.line_height,
+Theme.layout.vertical_spacing_even = {
+    marginTop: Theme.typography.margin_thin,
+    marginBottom: Theme.typography.margin_thin,
+    lineHeight: Theme.typography.line_height,
 };
-JsLogMuiTheme.layout.vertical_spacing_uneven = {
-    marginTop: JsLogMuiTheme.typography.margin_thick,
-    marginBottom: JsLogMuiTheme.typography.margin_thin,
+Theme.layout.vertical_spacing_uneven = {
+    marginTop: Theme.typography.margin_thick,
+    marginBottom: Theme.typography.margin_thin,
 };
-JsLogMuiTheme.overrides.MuiTypography = {
+Theme.overrides.MuiTypography = {
     body1: Object.assign(
         {},
-        JsLogMuiTheme.layout.vertical_spacing_even,
-        JsLogMuiTheme.layout.responsive_page_column
+        Theme.layout.vertical_spacing_even,
+        Theme.layout.responsive_page_column,
+        Theme.typography.font_body1,
     ),
     title: Object.assign(
         {},
-        JsLogMuiTheme.layout.vertical_spacing_uneven,
-        JsLogMuiTheme.layout.responsive_page_column
+        Theme.layout.vertical_spacing_uneven,
+        Theme.layout.responsive_page_column,
+        Theme.typography.font_title,
     ),
     display1: Object.assign(
         {},
-        JsLogMuiTheme.layout.vertical_spacing_uneven,
-        JsLogMuiTheme.layout.responsive_page_column
+        Theme.layout.vertical_spacing_uneven,
+        Theme.layout.responsive_page_column
+    ),
+    caption: Object.assign(
+        {},
+        Theme.typography.font_caption
     ),
 };
 
-export default JsLogMuiTheme;
+export default Theme;
