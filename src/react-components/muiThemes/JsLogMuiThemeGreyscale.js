@@ -35,6 +35,7 @@ let Theme = createMuiTheme({
         margin_thin: size_root_p1,
         margin_thick: size_root_p3,
         line_height: size_root_p1,
+        code_font_family: '"Droid Sans Mono", monospace',
         font_body1: {
             fontSize: size_root,
         },

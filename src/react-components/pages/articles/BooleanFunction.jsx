@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeBlock, {CodeBlockOutput} from '../../CodeBlock.jsx';
+import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../CodeBlock.jsx';
 import Figure, {FigureCaption} from '../../Figure.jsx';
 import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
@@ -75,7 +75,7 @@ class PageContents extends React.Component {
                 </Typography>
                 <CodeBlock gist_id="js-jslog/1f97ae4946a3c529283dd648e8c856f0">
                     <CodeBlockOutput>the Boolean() evaluation of the String true_bool ('false') is true</CodeBlockOutput>
-                    <CodeBlockOutput>Uncaught TypeError: Cannot read property 'length' of undefined</CodeBlockOutput>
+                    <CodeBlockErrorOutput>Uncaught TypeError: Cannot read property 'length' of undefined</CodeBlockErrorOutput>
                 </CodeBlock>
                 <CodeBlock gist_id="js-jslog/fe20761a27144a71a1b126edcce69dcd">
                     <CodeBlockOutput>the Boolean() evaluation of the String true_bool ('false') is true</CodeBlockOutput>
