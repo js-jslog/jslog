@@ -2,6 +2,14 @@ import React from 'react';
 import EmbeddedGist from './EmbeddedGist.jsx';
 import Figure from './Figure.jsx';
 
+const CodeBlockOutput = (props) => {
+    return (
+        <output>
+            {props.children}
+        </output>
+    );
+};
+
 const CodeBlock = (props) => {
     return (
         <Figure>
@@ -12,3 +20,4 @@ const CodeBlock = (props) => {
 };
 
 export default CodeBlock;
+export {CodeBlockOutput};

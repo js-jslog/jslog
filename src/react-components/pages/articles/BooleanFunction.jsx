@@ -1,6 +1,6 @@
 import React from 'react';
-import CodeBlock from '../../CodeBlock.jsx';
-import Figure from '../../Figure.jsx';
+import CodeBlock, {CodeBlockOutput} from '../../CodeBlock.jsx';
+import Figure, {FigureCaption} from '../../Figure.jsx';
 import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
@@ -53,7 +53,9 @@ function BooleanTable(props) {
                     </TableBody>
                 </Table>
             </Paper>
-        <figcaption>Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite></figcaption>
+            <FigureCaption>
+                Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite>
+            </FigureCaption>
         </Figure>
     );
 }
@@ -72,11 +74,11 @@ class PageContents extends React.Component {
                     This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
                 </Typography>
                 <CodeBlock gist_id="js-jslog/1f97ae4946a3c529283dd648e8c856f0">
-                  <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
-                  <output>Uncaught TypeError: Cannot read property 'length' of undefined</output>
+                    <CodeBlockOutput>the Boolean() evaluation of the String true_bool ('false') is true</CodeBlockOutput>
+                    <CodeBlockOutput>Uncaught TypeError: Cannot read property 'length' of undefined</CodeBlockOutput>
                 </CodeBlock>
                 <CodeBlock gist_id="js-jslog/fe20761a27144a71a1b126edcce69dcd">
-                  <output>the Boolean() evaluation of the String true_bool ('false') is true</output>
+                    <CodeBlockOutput>the Boolean() evaluation of the String true_bool ('false') is true</CodeBlockOutput>
                 </CodeBlock>
                 <Typography>
                     In the first example above, the coder has decided to check for the length of the String in order to determine whether or not it has been set with a meaningful value. However their effort is wasted as both of these will produce the same output (printed above).

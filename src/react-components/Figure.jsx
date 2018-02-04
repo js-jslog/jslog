@@ -1,4 +1,5 @@
 import React from 'react';
+import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
@@ -8,6 +9,14 @@ const styles = theme => ({
         theme.layout.vertical_spacing_even
     ),
 });
+
+const FigureCaption = (props) => {
+    return (
+        <Typography type='caption'>
+            {props.children}
+        </Typography>
+    );
+};
 
 const Figure = (props) => {
     const {classes} = props;
@@ -19,3 +28,4 @@ const Figure = (props) => {
 };
 
 export default withStyles(styles)(Figure);
+export {FigureCaption};
