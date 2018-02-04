@@ -25,6 +25,11 @@ const size_root_m4 = '0.146rem';
 const size_root_m5 = '0.09rem';
 const size_root_m6 = '0.056rem';
 
+// SIZES WHICH WILL NOT VARY WHEN ROOT FONT OF 18 IS MODIFIED
+// NEEDED TO PREVENT GUTTERS FROM EXPANDING WITH TEXT SIZE
+const size_root_m1_static_px = '11.124px';
+const size_root_p2_static_px = '47.124px';
+
 let JsLogMuiTheme = createMuiTheme({
     typography: {
         margin_thin: size_root_p1,
@@ -32,11 +37,13 @@ let JsLogMuiTheme = createMuiTheme({
         line_height: size_root_p1,
     },
     layout: {
-        page_gutter_xs: size_root_m1,
-        page_gutter_sm: size_root_p2,
-        page_gutter_md: size_root_p4,
-        page_gutter_lg: size_root_p6,
-        page_gutter_xl: size_root_p7,
+        // page_column_width_xs: size_root_p6, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
+        page_column_gutter_xs: size_root_m1_static_px,
+        // page_column_width_sm: size_root_p7, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
+        page_column_gutter_sm: size_root_p2_static_px,
+        page_column_width_md: size_root_p8,
+        page_column_width_lg: size_root_p8,
+        page_column_width_xl: size_root_p8,
         banner_image_height_xs: size_root_p7,
         banner_image_height_sm: size_root_p8,
         banner_image_height_md: size_root_p8,
@@ -67,58 +74,54 @@ let JsLogMuiTheme = createMuiTheme({
     },
     overrides: {},
 });
-
-JsLogMuiTheme.layout.banner_image = {
-    height: JsLogMuiTheme.layout.banner_image_height_xs,
+JsLogMuiTheme.layout.responsive_page_column = {
+    marginLeft: size_root_m1,
+    marginRight: size_root_m1,
     [JsLogMuiTheme.breakpoints.up('sm')]: {
-        height: JsLogMuiTheme.layout.banner_image_height_sm,
+        marginLeft: size_root_p2,
+        marginRight: size_root_p2,
     },
     [JsLogMuiTheme.breakpoints.up('md')]: {
-        height: JsLogMuiTheme.layout.banner_image_height_md,
+        maxWidth: JsLogMuiTheme.layout.page_column_width_md,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     [JsLogMuiTheme.breakpoints.up('lg')]: {
-        height: JsLogMuiTheme.layout.banner_image_height_lg,
+        maxWidth: JsLogMuiTheme.layout.page_column_width_lg,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     [JsLogMuiTheme.breakpoints.up('xl')]: {
-        height: JsLogMuiTheme.layout.banner_image_height_xl,
+        maxWidth: JsLogMuiTheme.layout.page_column_width_xl,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
 };
-JsLogMuiTheme.layout.responsive_page_gutter = {
-    marginLeft: JsLogMuiTheme.layout.page_gutter_xs,
-    marginRight: JsLogMuiTheme.layout.page_gutter_xs,
-    [JsLogMuiTheme.breakpoints.up('sm')]: {
-        marginLeft: JsLogMuiTheme.layout.page_gutter_sm,
-        marginRight: JsLogMuiTheme.layout.page_gutter_sm,
-    },
-    [JsLogMuiTheme.breakpoints.up('md')]: {
-        marginLeft: JsLogMuiTheme.layout.page_gutter_md,
-        marginRight: JsLogMuiTheme.layout.page_gutter_md,
-    },
-    [JsLogMuiTheme.breakpoints.up('lg')]: {
-        marginLeft: JsLogMuiTheme.layout.page_gutter_lg,
-        marginRight: JsLogMuiTheme.layout.page_gutter_lg,
-    },
-    [JsLogMuiTheme.breakpoints.up('xl')]: {
-        marginLeft: JsLogMuiTheme.layout.page_gutter_xl,
-        marginRight: JsLogMuiTheme.layout.page_gutter_xl,
-    },
-};
-JsLogMuiTheme.layout.body_text = JsLogMuiTheme.layout.responsive_page_gutter;
-JsLogMuiTheme.layout.figure = JsLogMuiTheme.layout.responsive_page_gutter;
-
-JsLogMuiTheme.typography.body_text_spacing = {
+JsLogMuiTheme.layout.vertical_spacing_even = {
     marginTop: JsLogMuiTheme.typography.margin_thin,
     marginBottom: JsLogMuiTheme.typography.margin_thin,
     lineHeight: JsLogMuiTheme.typography.line_height,
 };
-JsLogMuiTheme.typography.heading_text_spacing = {
+JsLogMuiTheme.layout.vertical_spacing_uneven = {
     marginTop: JsLogMuiTheme.typography.margin_thick,
     marginBottom: JsLogMuiTheme.typography.margin_thin,
 };
 JsLogMuiTheme.overrides.MuiTypography = {
-    body1: Object.assign({}, JsLogMuiTheme.typography.body_text_spacing, JsLogMuiTheme.layout.responsive_page_gutter),
-    title: Object.assign({}, JsLogMuiTheme.typography.heading_text_spacing, JsLogMuiTheme.layout.responsive_page_gutter),
-    display1: Object.assign({}, JsLogMuiTheme.typography.heading_text_spacing, JsLogMuiTheme.layout.responsive_page_gutter),
+    body1: Object.assign(
+        {},
+        JsLogMuiTheme.layout.vertical_spacing_even,
+        JsLogMuiTheme.layout.responsive_page_column
+    ),
+    title: Object.assign(
+        {},
+        JsLogMuiTheme.layout.vertical_spacing_uneven,
+        JsLogMuiTheme.layout.responsive_page_column
+    ),
+    display1: Object.assign(
+        {},
+        JsLogMuiTheme.layout.vertical_spacing_uneven,
+        JsLogMuiTheme.layout.responsive_page_column
+    ),
 };
 
 export default JsLogMuiTheme;

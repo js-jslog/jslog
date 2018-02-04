@@ -2,13 +2,17 @@ import React from 'react';
 import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
-    gutters: theme.layout.responsive_page_gutter,
+    page_content_spacing: Object.assign(
+        {},
+        theme.layout.responsive_page_column,
+        theme.layout.vertical_spacing_even
+    ),
 });
 
 const Figure = (props) => {
     const {classes} = props;
     return (
-        <figure className={classes.gutters}>
+        <figure className={classes.page_content_spacing}>
             {props.children}
         </figure>
     );
