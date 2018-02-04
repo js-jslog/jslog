@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {docco} from 'react-syntax-highlighter/styles/hljs';
 
+// COPIED FROM https://gist.github.com/aVolpe/b364a8fcd10f1ba833d97e9ab278f42c
 class EmbeddedGist extends Component {
 
     constructor(props) {
