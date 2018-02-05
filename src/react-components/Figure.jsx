@@ -8,11 +8,16 @@ const styles = theme => ({
         theme.layout.responsive_page_column,
         theme.layout.vertical_spacing_even
     ),
+    cite: {
+        textAlign: 'right',
+    },
 });
 
 const FigureCaption = (props) => {
+    const {classes} = props;
+    const classname = props.cite ? classes.cite : '';
     return (
-        <Typography type='caption'>
+        <Typography type='caption' className={classname}>
             {props.children}
         </Typography>
     );
@@ -20,9 +25,12 @@ const FigureCaption = (props) => {
 
 const Figure = (props) => {
     const {classes} = props;
+    const children = React.Children.map(props.children, child =>
+        React.cloneElement(child, {classes: classes})
+    );
     return (
         <figure className={classes.page_content_spacing}>
-            {props.children}
+            {children}
         </figure>
     );
 };

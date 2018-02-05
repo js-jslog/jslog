@@ -1,40 +1,25 @@
 import React from 'react';
 import EmbeddedGist from './EmbeddedGist.jsx';
-import Typography from 'material-ui/Typography';
+import Code from './Code.jsx';
 import {withStyles} from 'material-ui/styles';
 import Figure, {FigureCaption} from './Figure.jsx';
 
-const styles = theme => ({
-    output: {
-        fontFamily: theme.typography.code_font_family,
-        color: theme.palette.text.primary,
-    },
-    error_output: {
-        fontFamily: theme.typography.code_font_family,
-        color: theme.palette.error.main,
-    },
-});
+const styles = theme => ({});
 
 const CodeBlockOutput = (props) => {
     const {classes} = props;
     return (
-        <Typography
-            type='caption'
-            className={classes.output}
-        >
+        <Code block lead>
             {props.children}
-        </Typography>
+        </Code>
     );
 };
 const CodeBlockErrorOutput = (props) => {
     const {classes} = props;
     return (
-        <Typography
-            type='caption'
-            className={classes.error_output}
-        >
+        <Code block error lead>
             {props.children}
-        </Typography>
+        </Code>
     );
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../CodeBlock.jsx';
+import Code from '../../Code.jsx';
 import Figure, {FigureCaption} from '../../Figure.jsx';
 import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
@@ -54,7 +55,10 @@ function BooleanTable(props) {
                 </Table>
             </Paper>
             <FigureCaption>
-                Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function. Source : <cite>Professional JavaScript for Web Developers third edition pg34</cite>
+                Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function
+            </FigureCaption>
+            <FigureCaption cite>
+                Professional JavaScript for Web Developers third edition pg34
             </FigureCaption>
         </Figure>
     );
@@ -65,6 +69,9 @@ class PageContents extends React.Component {
         const {classes} = this.props;
         return (
             <div>
+                <Typography type='display1'>
+                    {title}
+                </Typography>
                 <Typography>
                     The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
                 </Typography>
@@ -85,13 +92,13 @@ class PageContents extends React.Component {
                 </Typography>
                 <Typography type='title'>Complexity leads to errors</Typography>
                 <Typography>
-                    Additionally there is a bug in the first code block. The <code>undefined</code> literal does not contain a <code>length</code> property and evaluation of <code className="language-javascript">undefined.length;</code> throws an error :
+                    Additionally there is a bug in the first code block. The <Code>undefined</Code> literal does not contain a <Code>length</Code> property and evaluation of <Code>undefined.length;</Code> throws an error :
                 </Typography>
                 <Typography>
-                    <output className="error">Uncaught TypeError: Cannot read property 'length' of undefined(…)</output> in Chrome45.0.
+                    <Code inline error>Uncaught TypeError: Cannot read property 'length' of undefined(…)</Code> in Chrome45.0.
                 </Typography>
                 <Typography>
-                    Evaluating an error inside an <i>if statement</i> will always produce a <code>false</code> result. As such, the bug will potentially go unnoticed.
+                    Evaluating an error inside an <i>if statement</i> will always produce a <Code inline>false</Code> result. As such, the bug will potentially go unnoticed.
                 </Typography>
                 <Typography type='title'>Conclusion</Typography>
                 <Typography>
