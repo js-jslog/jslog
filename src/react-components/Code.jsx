@@ -27,18 +27,16 @@ const styles = theme => ({
     },
 });
 
-const addLeadChar = (children) => {
-    const childrenWithLead = React.Children.map(children, child => (
-        '> ' + child
-    ));
-    return childrenWithLead;
-};
+const mapChildren = (children, lead) => (
+    React.Children.map(children, child => {
+        return (lead ? '> ' + child : child)
+    })
+);
 
 const Code = (props) => {
     const {classes} = props;
     const {code, block, error} = classes;
-    const children_with_lead = addLeadChar(props.children);
-    const renderable_children = props.lead ? children_with_lead : props.children;
+    const children = mapChildren(props.children, props.lead);
     let classnames = code;
     props.block ? classnames += (' ' + block) : classnames;
     props.error ? classnames += (' ' + error) : classnames;
@@ -47,7 +45,7 @@ const Code = (props) => {
             type='caption'
             className={classnames}
         >
-            {renderable_children}
+            {children}
         </Typography>
     );
 };

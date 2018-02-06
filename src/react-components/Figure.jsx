@@ -10,15 +10,20 @@ const styles = theme => ({
     ),
     cite: {
         textAlign: 'right',
+        fontStyle: 'italic',
     },
 });
 
 const FigureCaption = (props) => {
     const {classes} = props;
     const classname = props.cite ? classes.cite : '';
+    const children = React.Children.map(props.children, child => {
+        const output = props.cite ? '~ ' + child : child;
+        return output;
+    });
     return (
         <Typography type='caption' className={classname}>
-            {props.children}
+            {children}
         </Typography>
     );
 };
