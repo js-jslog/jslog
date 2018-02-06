@@ -63,8 +63,8 @@ let Theme = createMuiTheme({
         banner_image_height_xs: size_primary_p7,
         banner_image_height_sm: size_primary_p8,
         banner_image_height_md: size_primary_p8,
-        banner_image_height_lg: size_primary_p9,
-        banner_image_height_xl: size_primary_p10,
+        banner_image_height_lg: size_primary_p8,
+        banner_image_height_xl: size_primary_p9,
     },
     palette: {
         primary: {
