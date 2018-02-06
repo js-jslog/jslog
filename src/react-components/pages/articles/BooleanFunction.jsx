@@ -69,14 +69,14 @@ class PageContents extends React.Component {
         const {classes} = this.props;
         return (
             <div>
-                <Typography type='display1'>
+                <Typography variant='display1'>
                     {title}
                 </Typography>
                 <Typography>
                     The Boolean() function converts a variable of any data type into it's boolean literal equivalent.
                 </Typography>
                 <BooleanTable />
-                <Typography type='display1'>Why is this important?</Typography>
+                <Typography variant='display1'>Why is this important?</Typography>
                 <Typography>
                     This casting to boolean literals is performed automatically within flow controls like <i>if statements</i>. Understanding the mappings here means that you will be able to work concisely with flow controls. For example :
                 </Typography>
@@ -90,7 +90,7 @@ class PageContents extends React.Component {
                 <Typography>
                     In the first example above, the coder has decided to check for the length of the String in order to determine whether or not it has been set with a meaningful value. However their effort is wasted as both of these will produce the same output (printed above).
                 </Typography>
-                <Typography type='title'>Complexity leads to errors</Typography>
+                <Typography variant='title'>Complexity leads to errors</Typography>
                 <Typography>
                     Additionally there is a bug in the first code block. The <Code>undefined</Code> literal does not contain a <Code>length</Code> property and evaluation of <Code>undefined.length;</Code> throws an error :
                 </Typography>
@@ -100,7 +100,7 @@ class PageContents extends React.Component {
                 <Typography>
                     Evaluating an error inside an <i>if statement</i> will always produce a <Code inline>false</Code> result. As such, the bug will potentially go unnoticed.
                 </Typography>
-                <Typography type='title'>Conclusion</Typography>
+                <Typography variant='title'>Conclusion</Typography>
                 <Typography>
                     The first solution will produce the same result as the second, but is less concise and as a result introduces the potential for bugs.
                 </Typography>

@@ -22,7 +22,7 @@ const FigureCaption = (props) => {
         return output;
     });
     return (
-        <Typography type='caption' className={classname}>
+        <Typography variant='caption' className={classname}>
             {children}
         </Typography>
     );

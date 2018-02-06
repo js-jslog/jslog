@@ -78,7 +78,7 @@ class MaterialNavBar extends React.Component {
                         <Hidden xsDown>
                             <ToolbarNavItems classes={classes}/>
                         </Hidden>
-                        <Typography type='title' className={classes.page_title}>
+                        <Typography variant='title' className={classes.page_title}>
                             {this.props.title} 
                         </Typography>
                     </Toolbar>

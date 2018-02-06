@@ -42,7 +42,7 @@ const Code = (props) => {
     props.error ? classnames += (' ' + error) : classnames;
     return (
         <Typography
-            type='caption'
+            variant='caption'
             className={classnames}
         >
             {children}
