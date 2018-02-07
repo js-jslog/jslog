@@ -18,7 +18,29 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
     },
     page_title: {
+        display: 'none',
         margin: '0',
+        textAlign: 'center',
+        zIndex: theme.zIndex.appBar,
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            display: 'block',
+            position: 'fixed',
+            top: '3.142rem',
+            textAlign: 'right',
+            right: '3.142rem',
+            fontSize: '3.142rem',
+            color: theme.palette.background.paper,
+        },
+        [theme.breakpoints.up('md')]: {
+            top: '2.618rem',
+            right: '4.236rem',
+            fontSize: '4.236rem',
+        },
+        [theme.breakpoints.up('lg')]: {
+            right: '5.083rem',
+            fontSize: '5.083rem',
+        },
     },
 });
 
