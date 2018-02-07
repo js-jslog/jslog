@@ -25,6 +25,10 @@ const size_primary_m4 = '0.146rem';
 const size_primary_m5 = '0.09rem';
 const size_primary_m6 = '0.056rem';
 
+const size_secondary_p5 = '13.307rem';
+const size_secondary_p4 = '8.224rem';
+const size_secondary_p3 = '5.083rem';
+const size_secondary_p2 = '3.142rem';
 const size_secondary_p1 = '1.942rem';
 const size_secondary = '1.2rem';
 const size_secondary_m1 = '0.742rem';
