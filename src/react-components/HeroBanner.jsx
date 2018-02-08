@@ -5,18 +5,18 @@ import {Parallax, Background} from 'react-parallax';
 
 const styles = theme => ({
     banner_height: {
-        height: theme.layout.banner_image_height_xs,
+        height: theme.scales.primary.p7,
         [theme.breakpoints.up('sm')]: {
-            height: theme.layout.banner_image_height_sm,
+            height: theme.scales.primary.p8,
         },
         [theme.breakpoints.up('md')]: {
-            height: theme.layout.banner_image_height_md,
+            height: theme.scales.primary.p8,
         },
         [theme.breakpoints.up('lg')]: {
-            height: theme.layout.banner_image_height_lg,
+            height: theme.scales.primary.p8,
         },
         [theme.breakpoints.up('xl')]: {
-            height: theme.layout.banner_image_height_xl,
+            height: theme.scales.primary.p9,
         },
     },
 });

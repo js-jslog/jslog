@@ -26,20 +26,20 @@ const styles = theme => ({
         [theme.breakpoints.up('sm')]: {
             display: 'block',
             position: 'fixed',
-            top: '3.142rem',
+            top: theme.scales.secondary.p2,
             textAlign: 'right',
-            right: '3.142rem',
-            fontSize: '3.142rem',
+            right: theme.scales.secondary.p2,
+            fontSize: theme.scales.secondary.p2,
             color: theme.palette.background.paper,
         },
         [theme.breakpoints.up('md')]: {
-            top: '2.618rem',
-            right: '4.236rem',
-            fontSize: '4.236rem',
+            top: theme.scales.primary.p2,
+            right: theme.scales.primary.p3,
+            fontSize: theme.scales.primary.p3,
         },
         [theme.breakpoints.up('lg')]: {
-            right: '5.083rem',
-            fontSize: '5.083rem',
+            right: theme.scales.secondary.p3,
+            fontSize: theme.scales.secondary.p3,
         },
     },
 });
