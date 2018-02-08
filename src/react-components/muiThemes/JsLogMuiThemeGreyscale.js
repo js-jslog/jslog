@@ -46,11 +46,11 @@ let Theme = createMuiTheme({
     overrides: {},
 });
 Theme.layout.responsive_page_column = {
-    marginLeft: scales.primary.m1,
-    marginRight: scales.primary.m1,
+    marginLeft: Theme.layout.page_column_gutter_xs,
+    marginRight: Theme.layout.page_column_gutter_xs,
     [Theme.breakpoints.up('sm')]: {
-        marginLeft: scales.primary.p2,
-        marginRight: scales.primary.p2,
+        marginLeft: Theme.layout.page_column_gutter_sm,
+        marginRight: Theme.layout.page_column_gutter_sm,
     },
     [Theme.breakpoints.up('md')]: {
         maxWidth: Theme.layout.page_column_width_md,
