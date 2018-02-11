@@ -77,8 +77,10 @@ Theme.layout.vertical_spacing_uneven = {
     marginTop: Theme.typography.margin_thick,
     marginBottom: Theme.typography.margin_thin,
 };
+Theme.overrides.MuiButton = {root: {}};
 Theme.overrides.MuiTypography = {
     fontSize: 18,
+    root: {},
     body1: Object.assign(
         {},
         Theme.layout.vertical_spacing_even,

@@ -9,8 +9,8 @@ import Typography from 'material-ui/Typography';
 import Hidden from 'material-ui/Hidden';
 
 const styles = function (theme) {
-    theme.overrides.MuiTypography.body1.color= 'inherit';
-    theme.overrides.MuiTypography.title.color= 'inherit';
+    theme.overrides.MuiTypography.title.color = 'inherit';
+    theme.overrides.MuiButton.root.color = 'inherit';
     return {
     nav: {
         color: theme.palette.primary.main,
@@ -68,6 +68,14 @@ const nav_links = [
     },
 ];
 
+const NavLinks = function () {
+    return nav_links.map(link => (
+        <Button key={link.link} component={Link} to={link.link}>
+            {link.display_text}
+        </Button>
+    ));
+};
+
 class OverlayMenu extends React.Component {
 
     componentDidMount () {
@@ -110,11 +118,7 @@ class OverlayMenu extends React.Component {
                 >
                     {this.props.title}
                 </Typography>
-                <div className={classes.menu}>
-                    <Typography>
-                        Home
-                    </Typography>
-                </div>
+                <NavLinks className={classes.menu} />
             </nav>
         );
     };
