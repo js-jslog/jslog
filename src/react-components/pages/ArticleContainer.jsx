@@ -1,7 +1,6 @@
 import React from 'react';
 
-import MaterialNavBar from '../MaterialNavBar.jsx';
-import HeroBanner from '../HeroBanner.jsx';
+import BannerNav from '../nav/BannerNav.jsx';
 import Footer from '../Footer.jsx';
 import {withStyles} from 'material-ui/styles';
 
@@ -19,8 +18,7 @@ const ArticleContainer = function (props) {
     const {classes, match} = props;
     const {StyledPageContents, title, image} = link_keyed_article_components[match.params.article_id];
     return <div>
-        <MaterialNavBar title={title} />
-        <HeroBanner image={image} />
+        <BannerNav title={title} image={image} />
         <StyledPageContents />
         <Footer />
     </div>
