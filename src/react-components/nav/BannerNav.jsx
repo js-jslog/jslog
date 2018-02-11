@@ -22,7 +22,7 @@ const styles = theme => ({
     },
 });
 
-class HeroBanner2 extends React.Component {
+class BannerNav extends React.Component {
     componentDidMount () {
         this.updateElementSizeCache();
         window.addEventListener('scroll', this.handleScroll.bind(this));
@@ -71,4 +71,4 @@ class HeroBanner2 extends React.Component {
     };
 };
 
-export default withStyles(styles)(HeroBanner2);
+export default withStyles(styles)(BannerNav);
