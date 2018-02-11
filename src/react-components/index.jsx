@@ -11,6 +11,7 @@ import ArticleContainer from './pages/ArticleContainer.jsx';
 const JsLog = () => (
     <Router>
         <div>
+            <Route component={ScrollToTop} />
             <Route exact path="/" component={Home}/>
             <Route exact path="/articles" component={ArticlesIndex}/>
             <Route exact path="/articles/:article_id" component={ArticleContainer}/>
@@ -25,5 +26,10 @@ function App() {
         </MuiThemeProvider>
     );
 }
+
+const ScrollToTop = () => {
+    window.scrollTo(0, 0);
+    return null;
+};
 
 render(<App/>, document.getElementById("pageBody"));
