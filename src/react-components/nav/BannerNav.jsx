@@ -25,40 +25,24 @@ const styles = theme => ({
 class BannerNav extends React.Component {
     componentDidMount () {
         this.updateElementSizeCache();
-        window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
     };
     componentWillUnmount () {
-        window.removeEventListener('scroll', this.handleScroll.bind(this));
         window.removeEventListener('resize', this.updateElementSizeCache.bind(this));
     };
     updateElementSizeCache () {
-            const header_height = getComputedStyle(this.header).height.split('px')[0];
-            const nav_height = getComputedStyle(this.nav).height.split('px')[0];
-            const nav_padding = getComputedStyle(this.nav).paddingTop.split('px')[0];
-            const nav_total = parseFloat(nav_height) + parseFloat(nav_padding);
-            this.setState({header_height: header_height});
-            this.setState({nav_total: nav_total});
-    };
-    handleScroll (event) {
-        const diff = parseFloat(this.state.header_height) - parseFloat(this.state.nav_total);
-        if (window.scrollY < diff) {
-            this.nav.style.position = 'fixed';
-            this.nav.style.top = 0;
-        }
-        if (window.scrollY > diff) {
-            this.nav.style.position = 'absolute';
-            this.nav.style.top = diff + 'px';
-        }
+        const header_height = getComputedStyle(this.header).height.split('px')[0];
+        this.setState({header_height: header_height});
     };
     render () {
         const image_src = '/images/hero/' + this.props.image;
         const {classes} = this.props;
+        const container_height = this.state && this.state.header_height;
         return (
             <header ref={(header) => {this.header = header}}>
                 <OverlayMenu
                     title="Joseph Sinfield"
-                    navRef={nav => this.nav = nav}
+                    container_height={container_height}
                 />
                 <Parallax
                     bgImage={image_src}
