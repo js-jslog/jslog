@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MaterialNavBar from '../MaterialNavBar.jsx';
+import BannerNav from '../nav/BannerNav.jsx';
 import HeroBanner from '../HeroBanner.jsx';
 import Footer from '../Footer.jsx';
 
@@ -25,8 +25,7 @@ const PageContents = (props) => {
     const {classes} = props;
     return (
     <div>
-        <MaterialNavBar title="Joseph Sinfield" />
-        <HeroBanner image="index.jpg" />
+        <BannerNav image="index.jpg" />
         <div className="container">
           <div className="section">
         
