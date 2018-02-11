@@ -28,7 +28,7 @@ const styles = theme => ({
         top: '0',
         left: '0',
         right: '0',
-        background: theme.palette.primary.main,
+        background: theme.palette.background.paper,
         opacity: '0',
     },
 });
@@ -51,8 +51,7 @@ class BannerNav extends React.Component {
     handleScroll (event) {
         const h = this.state.header_height;
         const y = window.scrollY;
-        const val = y/h;
-        this.trans_overlay.style.opacity = val;
+        this.trans_overlay.style.opacity = y/h;
     };
     render () {
         const image_src = '/images/hero/' + this.props.image;
@@ -67,6 +66,7 @@ class BannerNav extends React.Component {
                     ref={menu => this.menu = menu}
                     title={this.props.title}
                     container_height={container_height}
+                    text_colour={this.props.text_colour}
                 />
                 <Parallax
                     bgImage={image_src}

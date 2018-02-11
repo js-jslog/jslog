@@ -8,8 +8,12 @@ import List, {ListItem} from 'material-ui/List';
 import Typography from 'material-ui/Typography';
 import Hidden from 'material-ui/Hidden';
 
-const styles = theme => ({
+const styles = function (theme) {
+    theme.overrides.MuiTypography.body1.color= 'inherit';
+    theme.overrides.MuiTypography.title.color= 'inherit';
+    return {
     nav: {
+        color: theme.palette.primary.main,
         position: 'fixed',
         top: '0',
         zIndex: theme.zIndex.appBar,
@@ -23,7 +27,6 @@ const styles = theme => ({
         },
     },
     page_title: {
-        color: theme.palette.background.paper,
         margin: '0',
         padding: '0',
         top: theme.scales.secondary.p1,
@@ -48,7 +51,7 @@ const styles = theme => ({
             fontSize: theme.scales.primary.p1,
         },
     }
-});
+}};
 
 const nav_links = [
     {
@@ -69,6 +72,7 @@ class OverlayMenu extends React.Component {
 
     componentDidMount () {
         this.updateElementSizeCache();
+        this.nav.style.color = this.props.text_colour;
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
     };
