@@ -51,7 +51,7 @@ class BannerNav extends React.Component {
     handleScroll (event) {
         const h = this.state.header_height;
         const y = window.scrollY;
-        this.trans_overlay.style.opacity = y/h;
+        this.trans_overlay.style.opacity = y/h/2;
     };
     render () {
         const image_src = '/images/hero/' + this.props.image;
