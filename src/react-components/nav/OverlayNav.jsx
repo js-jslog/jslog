@@ -19,11 +19,9 @@ const styles = function (theme) {
         zIndex: theme.zIndex.appBar,
         right: '0',
         textAlign: 'right',
-        paddingRight: theme.scales.primary.p1,
-        paddingTop: theme.scales.primary.p1,
+        padding: theme.scales.primary.p1,
         [theme.breakpoints.up('sm')]: {
-            paddingRight: theme.scales.primary.p2,
-            paddingTop: theme.scales.primary.p2,
+            padding: theme.scales.primary.p2,
         },
     },
     page_title: {
@@ -43,14 +41,6 @@ const styles = function (theme) {
             fontSize: theme.scales.secondary.p3,
         },
     },
-    menu: {
-        paddingRight: theme.scales.primary.main,
-        fontSize: theme.scales.primary.main,
-        [theme.breakpoints.up('sm')]: {
-            paddingRight: theme.scales.primary.p1,
-            fontSize: theme.scales.primary.p1,
-        },
-    }
 }};
 
 const nav_links = [
@@ -90,17 +80,18 @@ class OverlayMenu extends React.Component {
     };
     updateElementSizeCache () {
         const nav_height = getComputedStyle(this.nav).height.split('px')[0];
-        const nav_padding = getComputedStyle(this.nav).paddingTop.split('px')[0];
-        const nav_total = parseFloat(nav_height) + parseFloat(nav_padding);
+        const nav_padding_top = getComputedStyle(this.nav).paddingTop.split('px')[0];
+        const nav_padding_bottom = getComputedStyle(this.nav).paddingBottom.split('px')[0];
+        const nav_total = parseFloat(nav_height) + parseFloat(nav_padding_top) + parseFloat(nav_padding_bottom);
         this.setState({nav_total: nav_total});
     };
     handleScroll (event) {
         const diff = parseFloat(this.props.container_height) - parseFloat(this.state.nav_total);
-        if (window.scrollY < diff) {
+        if (window.scrollY < diff && this.nav.style) {
             this.nav.style.position = 'fixed';
             this.nav.style.top = 0;
         }
-        if (window.scrollY > diff) {
+        if (window.scrollY > diff && this.nav.style) {
             this.nav.style.position = 'absolute';
             this.nav.style.top = diff + 'px';
         }
@@ -118,7 +109,7 @@ class OverlayMenu extends React.Component {
                 >
                     {this.props.title}
                 </Typography>
-                <NavLinks className={classes.menu} />
+                <NavLinks />
             </nav>
         );
     };
