@@ -79,8 +79,9 @@ Theme.layout.vertical_spacing_uneven = {
 };
 Theme.overrides.MuiButton = {root: {}};
 Theme.overrides.MuiTypography = {
-    fontSize: 18,
-    root: {},
+    root: {
+        fontSize: 18,
+    },
     body1: Object.assign(
         {},
         Theme.layout.vertical_spacing_even,
