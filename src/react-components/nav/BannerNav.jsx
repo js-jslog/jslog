@@ -20,19 +20,39 @@ const styles = theme => ({
             height: theme.scales.primary.p9,
         },
     },
+    trans_overlay: {
+        content: " ",
+        zIndex: theme.zIndex.appBar,
+        display: 'block',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        background: theme.palette.primary.main,
+        opacity: '0',
+    },
 });
 
 class BannerNav extends React.Component {
     componentDidMount () {
         this.updateElementSizeCache();
+        window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
+        this.trans_overlay.style.background = this.props.background_colour;
     };
     componentWillUnmount () {
+        window.removeEventListener('scroll', this.handleScroll.bind(this));
         window.removeEventListener('resize', this.updateElementSizeCache.bind(this));
     };
     updateElementSizeCache () {
         const header_height = getComputedStyle(this.header).height.split('px')[0];
         this.setState({header_height: header_height});
+    };
+    handleScroll (event) {
+        const h = this.state.header_height;
+        const y = window.scrollY;
+        const val = y/h;
+        this.trans_overlay.style.opacity = val;
     };
     render () {
         const image_src = '/images/hero/' + this.props.image;
@@ -40,7 +60,11 @@ class BannerNav extends React.Component {
         const container_height = this.state && this.state.header_height;
         return (
             <header ref={(header) => {this.header = header}}>
+                <div
+                    ref={trans_overlay => this.trans_overlay = trans_overlay}
+                    className={classes.trans_overlay + ' ' + classes.banner_height} />
                 <OverlayMenu
+                    ref={menu => this.menu = menu}
                     title={this.props.title}
                     container_height={container_height}
                 />

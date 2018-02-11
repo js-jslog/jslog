@@ -50,7 +50,7 @@ class ArticlesGridList extends React.Component {
 
 const ArticlesIndex = (props) => (
     <div>
-        <BannerNav title='Articles' image="articles.jpg" />
+        <BannerNav title='Articles' image="articles.jpg" background_colour='#fff' />
         <ArticlesGridList {...props} />
         <Footer />
     </div>

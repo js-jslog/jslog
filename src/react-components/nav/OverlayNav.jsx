@@ -23,7 +23,7 @@ const styles = theme => ({
         },
     },
     page_title: {
-        color: theme.palette.primary.main,
+        color: theme.palette.background.paper,
         margin: '0',
         padding: '0',
         top: theme.scales.secondary.p1,
