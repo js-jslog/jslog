@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import {withStyles} from 'material-ui/styles';
 import MaterialNavBar from '../MaterialNavBar.jsx';
-import HeroBanner from '../HeroBanner.jsx';
+import BannerNav from '../nav/BannerNav.jsx';
 import Footer from '../Footer.jsx';
 
 import GridList, {GridListTile, GridListTileBar} from 'material-ui/GridList';
@@ -50,8 +50,7 @@ class ArticlesGridList extends React.Component {
 
 const ArticlesIndex = (props) => (
     <div>
-        <MaterialNavBar title="Articles" />
-        <HeroBanner image="articles.jpg" />
+        <BannerNav title='Articles' image="articles.jpg" />
         <ArticlesGridList {...props} />
         <Footer />
     </div>

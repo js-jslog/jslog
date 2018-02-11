@@ -41,7 +41,7 @@ class BannerNav extends React.Component {
         return (
             <header ref={(header) => {this.header = header}}>
                 <OverlayMenu
-                    title="Joseph Sinfield"
+                    title={this.props.title}
                     container_height={container_height}
                 />
                 <Parallax
