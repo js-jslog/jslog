@@ -16,9 +16,11 @@ articles.forEach((article_components) => {
 
 const ArticleContainer = function (props) {
     const {classes, match} = props;
-    const {StyledPageContents, title, image} = link_keyed_article_components[match.params.article_id];
+    const {StyledPageContents, title, image, overlayColours} = link_keyed_article_components[match.params.article_id];
+    const text_colour = overlayColours && overlayColours.text_colour;
+    const background_colour = overlayColours && overlayColours.background_colour;
     return <div>
-        <BannerNav title={title} image={image} />
+        <BannerNav title={title} image={image} background_colour={background_colour} text_colour={text_colour} />
         <StyledPageContents />
         <Footer />
     </div>
