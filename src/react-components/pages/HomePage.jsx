@@ -25,28 +25,20 @@ const PageContents = (props) => {
     const {classes} = props;
     return (
     <div>
-        <BannerNav image="index.jpg" />
-        <div className="container">
-          <div className="section">
-        
-          {/*<!--   Icon Section   -->*/}
-            <div className={classes.grid}>
-              <Grid container spacing={24}>
-                <Grid item sm={4} xs={12}>
-                    <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
-                </Grid>
-                <Grid item sm={4} xs={12}>
-                    <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
-                </Grid>
-                <Grid item sm={4} xs={12}>
-                    <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
-                </Grid>
-              </Grid>
-            </div>
-        
-          </div>
+        <BannerNav title='Joseph Sinfield' image="index.jpg" />
+        <div className={classes.grid}>
+          <Grid container spacing={24}>
+            <Grid item sm={4} xs={12}>
+                <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
+            </Grid>
+            <Grid item sm={4} xs={12}>
+                <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
+            </Grid>
+            <Grid item sm={4} xs={12}>
+                <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
+            </Grid>
+          </Grid>
         </div>
-
         <HeroBanner image="../highhope.jpg" overlayText="Open for business" />
         <Footer />
     </div>
