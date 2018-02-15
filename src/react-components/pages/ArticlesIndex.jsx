@@ -9,20 +9,22 @@ import GridList, {GridListTile, GridListTileBar} from 'material-ui/GridList';
 
 import articles_list from './articles/articles.js';
 
-const styles = {
+const styles = theme => ({
     grid_image: {
         width: "100%",
     },
-};
+    page_content: theme.layout.responsive_page_column,
+});
 
 class ArticlesGridList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cols: 4,
+            cols: 2,
         };
     };
     render () {
+        const { classes } = this.props
         return (
             <GridList
                 cellHeight={180}
@@ -33,7 +35,7 @@ class ArticlesGridList extends React.Component {
                         key={tile.image}
                     >
                         <Link to={"/articles/" + tile.link} >
-                            <img className={this.props.classes.grid_image} src={"images/hero/" + tile.image} href={"articles/" + tile.link} />
+                            <img className={classes.grid_image} src={"images/hero/" + tile.image} href={"articles/" + tile.link} />
                             <GridListTileBar
                                 title={tile.title}
                                 subtitle={tile.blurb}
