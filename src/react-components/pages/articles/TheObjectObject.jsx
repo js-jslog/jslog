@@ -1,4 +1,8 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+});
 
 const title = "The Object object";
 const image = "the-object-object.jpg";
@@ -678,13 +682,10 @@ console.log(obj2.meth2());      // Obj2Meth2
       </div>
 );
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
-export default exportable;
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
+export {title};
+export {image};
+export {blurb};
+export {link};
+export {published};

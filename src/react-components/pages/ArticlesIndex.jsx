@@ -1,45 +1,60 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import MaterialNavBar from '../MaterialNavBar.jsx';
-import HeroBanner from '../HeroBanner.jsx';
-import Footer from '../Footer.jsx';
+import {withStyles} from 'material-ui/styles';
+import BannerNav from '../layout/nav/BannerNav.jsx';
+import Footer from '../layout/nav/Footer.jsx';
 
-import {GridList, GridTile} from 'material-ui/GridList';
+import GridList, {GridListTile, GridListTileBar} from 'material-ui/GridList';
 
-import * as articles from './articles/articles.js';
+import articles_list from './articles/articles.js';
 
-const articles_list = Object.keys(articles).map((key) => articles[key]);
+const styles = theme => ({
+    grid_image: {
+        width: "100%",
+    },
+    page_content: theme.layout.responsive_page_column,
+});
 
-const ArticlesGridList = () => (
+class ArticlesGridList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cols: 2,
+        };
+    };
+    render () {
+        const { classes } = this.props
+        return (
+            <GridList
+                cellHeight={180}
+                cols={this.state.cols}
+            >
+                {articles_list.map((tile) => (
+                    <GridListTile
+                        key={tile.image}
+                    >
+                        <Link to={"/articles/" + tile.link} >
+                            <img className={classes.grid_image} src={"images/hero/" + tile.image} href={"articles/" + tile.link} />
+                            <GridListTileBar
+                                title={tile.title}
+                                subtitle={tile.blurb}
+                            >
+                            </GridListTileBar>
+                        </Link>
+                    </GridListTile>
+                ))}
+            </GridList>
+        );
+    };
+};
+
+const ArticlesIndex = (props) => (
     <div>
-        <GridList
-            cellHeight={180}
-        >
-            {articles_list.map((tile) => (
-                <GridTile
-                    key={tile.image}
-                    title={tile.title}
-                    subtitle={tile.blurb}
-                    subtitleStyle={{
-                        whiteSpace: "pre-line",
-                    }}
-                    containerElement={<Link to={"/articles/" + tile.link} />}
-                >
-                    <img src={"images/hero/" + tile.image} />
-                </GridTile>
-            ))}
-        </GridList>
-    </div>
-);
-
-const ArticlesIndex = () => (
-    <div>
-        <MaterialNavBar title="Articles" />
-        <HeroBanner image="articles.jpg" />
-        <ArticlesGridList />
+        <BannerNav title='Articles' image="articles.jpg" text_colour='#fff' background_colour='#94BBE2' />
+        <ArticlesGridList {...props} />
         <Footer />
     </div>
 );
 
-export default ArticlesIndex;
+export default withStyles(styles)(ArticlesIndex);

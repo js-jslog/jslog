@@ -1,6 +1,14 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+});
 
 const title = "The ultimate pseudo-classical inheritance pattern";
+const overlayColours = {
+    text_colour: '#fff',
+    background_colour: '#000',
+};
 const image = "ultimate-pseudo-classical-inheritance.jpg";
 const link = "ultimate-pseudo-classical-inheritance";
 const blurb = "A detailed examination of a less than ideal pattern";
@@ -282,13 +290,11 @@ It would be nice if we could add some instance property access restrictions by i
       </div>
 );
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
-export default exportable;
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
+export {title};
+export {overlayColours};
+export {image};
+export {blurb};
+export {link};
+export {published};

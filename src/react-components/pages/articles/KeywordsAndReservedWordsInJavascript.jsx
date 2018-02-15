@@ -1,4 +1,8 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+});
 
 const title = "Keywords and reserved words in Javascript";
 const image = "keywords-and-reserved-words-in-javascript.jpg";
@@ -473,13 +477,10 @@ The simple answer to this <em>is</em> quite simple. <i>Keywords</i> have a speci
       </div>
 );
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
-export default exportable;
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
+export {title};
+export {image};
+export {blurb};
+export {link};
+export {published};

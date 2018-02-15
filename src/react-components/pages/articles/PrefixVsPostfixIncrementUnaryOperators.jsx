@@ -1,4 +1,8 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+});
 
 const title = "Prefix vs postfix increment unary operators";
 const image = "prefix-vs-postfix-increment-unary-operators.jpg";
@@ -68,13 +72,10 @@ The prefix operator ensures that it is the first operation to occur in the state
       </div>
 );
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
-export default exportable;
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
+export {title};
+export {image};
+export {blurb};
+export {link};
+export {published};

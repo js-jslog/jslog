@@ -1,4 +1,8 @@
 import React from 'react';
+import {withStyles} from 'material-ui/styles';
+
+const styles = theme => ({
+});
 
 const title = "Modularisation without obstruction";
 const image = "modularisation-without-obstruction.jpg";
@@ -140,13 +144,10 @@ define(["./module1", "./module2"], function (module1, module2) {
       </div>
 );
 
-const exportable = {
-    published: published,
-    PageContents: PageContents,
-    title: title,
-    image: image,
-    blurb: blurb,
-    link: link,
-}
-
-export default exportable;
+const StyledPageContents = withStyles(styles)(PageContents);
+export {StyledPageContents}
+export {title};
+export {image};
+export {blurb};
+export {link};
+export {published};

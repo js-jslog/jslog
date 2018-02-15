@@ -1,25 +1,29 @@
 import React from 'react';
 
-import MaterialNavBar from '../MaterialNavBar.jsx';
-import HeroBanner from '../HeroBanner.jsx';
-import Footer from '../Footer.jsx';
+import BannerNav from '../layout/nav/BannerNav.jsx';
+import Footer from '../layout/nav/Footer.jsx';
+import {withStyles} from 'material-ui/styles';
 
-import * as articles from './articles/articles.js';
+import articles from './articles/articles.js';
 
-let articles_keyed_list = {};
-Object.keys(articles).forEach((init_key) => {
-    const article_info = articles[init_key];
-    articles_keyed_list[article_info.link] = article_info;
+const styles = theme => ({});
+
+let link_keyed_article_components = {};
+articles.forEach((article_components) => {
+    const link = article_components.link;
+    link_keyed_article_components[link] = article_components;
 });
 
-const ArticleContainer = function ({match}) {
-    const article_contents = articles_keyed_list[match.params.article_id];
+const ArticleContainer = function (props) {
+    const {classes, match} = props;
+    const {StyledPageContents, title, image, overlayColours} = link_keyed_article_components[match.params.article_id];
+    const text_colour = overlayColours && overlayColours.text_colour;
+    const background_colour = overlayColours && overlayColours.background_colour;
     return <div>
-        <MaterialNavBar title={article_contents.title} />
-        <HeroBanner image={article_contents.image} />
-        {article_contents.PageContents()}
+        <BannerNav title={title} image={image} background_colour={background_colour} text_colour={text_colour} />
+        <StyledPageContents />
         <Footer />
     </div>
 };
 
-export default ArticleContainer;
+export default withStyles(styles)(ArticleContainer);

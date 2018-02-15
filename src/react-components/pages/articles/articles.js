@@ -1,13 +1,29 @@
-export {default as Boolean} from './BooleanFunction.jsx';
-export {default as Tdd} from './BuildAGameWithTdd.jsx';
-export {default as FloatingPointVisualisation} from './FloatingPointVisualisation.jsx';
-export {default as FunctionsAreObjects} from './FunctionsAreObjectsToo.jsx';
-export {default as IterativeArrayMethods} from './IterativeArrayMethods.jsx';
-export {default as KeyworkdsAndReservedWordsInJavascript} from './KeywordsAndReservedWordsInJavascript.jsx';
-export {default as LoopsOrArrayMethods} from './LoopsOrArrayMethods.jsx';
-export {default as ModularisationWithoutObstruction} from './ModularisationWithoutObstruction.jsx';
-export {default as NumberConversion} from './NumberConversion.jsx';
-export {default as PrefixVsPostfixIncrementUnaryOperators} from './PrefixVsPostfixIncrementUnaryOperators.jsx';
-export {default as TheObjectObject} from './TheObjectObject.jsx';
-export {default as TheTwoPillarsOfJavascript} from './TheTwoPillarsOfJavascript.jsx';
-export {default as UltimatePseudoClassicalInheritance} from './UltimatePseudoClassicalInheritance.jsx';
+import * as Boolean from './BooleanFunction.jsx';
+import * as TDD from './BuildAGameWithTdd.jsx';
+import * as Float from './FloatingPointVisualisation.jsx';
+import * as Iterate from './IterativeArrayMethods.jsx';
+import * as Keywords from './KeywordsAndReservedWordsInJavascript.jsx';
+import * as Loops from './LoopsOrArrayMethods.jsx';
+import * as Modular from './ModularisationWithoutObstruction.jsx';
+import * as Number from './NumberConversion.jsx';
+import * as Prefix from './PrefixVsPostfixIncrementUnaryOperators.jsx';
+import * as ObjObj from './TheObjectObject.jsx';
+import * as Pillars from './TheTwoPillarsOfJavascript.jsx';
+import * as Ultimate from './UltimatePseudoClassicalInheritance.jsx';
+
+const articles = [
+    Boolean, 
+    TDD, 
+    Float, 
+    Iterate, 
+    Keywords, 
+    Loops, 
+    Modular, 
+    Number, 
+    Prefix, 
+    ObjObj, 
+    Pillars, 
+    Ultimate, 
+];
+
+export default articles;
