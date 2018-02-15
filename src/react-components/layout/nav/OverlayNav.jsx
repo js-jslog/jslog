@@ -31,14 +31,14 @@ const styles = function (theme) {
         fontSize: theme.scales.secondary.p1,
         [theme.breakpoints.up('sm')]: {
             top: theme.scales.secondary.p2,
-            fontSize: theme.scales.secondary.p2,
+            fontSize: theme.scales.secondary.p3,
         },
         [theme.breakpoints.up('md')]: {
             top: theme.scales.primary.p2,
-            fontSize: theme.scales.primary.p3,
+            fontSize: theme.scales.secondary.p3,
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: theme.scales.secondary.p3,
+            fontSize: theme.scales.primary.p4,
         },
     },
 }};
@@ -79,6 +79,7 @@ class OverlayMenu extends React.Component {
         window.removeEventListener('resize', this.updateElementSizeCache.bind(this));
     };
     updateElementSizeCache () {
+        if (!this.nav) { return false };
         const nav_height = getComputedStyle(this.nav).height.split('px')[0];
         const nav_padding_top = getComputedStyle(this.nav).paddingTop.split('px')[0];
         const nav_padding_bottom = getComputedStyle(this.nav).paddingBottom.split('px')[0];
@@ -86,6 +87,7 @@ class OverlayMenu extends React.Component {
         this.setState({nav_total: nav_total});
     };
     handleScroll (event) {
+        if (!this.nav) { return false };
         const diff = parseFloat(this.props.container_height) - parseFloat(this.state.nav_total);
         if (window.scrollY < diff && this.nav.style) {
             this.nav.style.position = 'fixed';

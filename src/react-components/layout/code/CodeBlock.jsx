@@ -2,7 +2,7 @@ import React from 'react';
 import EmbeddedGist from './EmbeddedGist.jsx';
 import Code from './Code.jsx';
 import {withStyles} from 'material-ui/styles';
-import Figure, {FigureCaption} from './Figure.jsx';
+import Figure, {FigureCaption} from '../figure/Figure.jsx';
 
 const styles = theme => ({});
 

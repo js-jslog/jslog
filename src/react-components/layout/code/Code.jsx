@@ -5,15 +5,15 @@ import grey from 'material-ui/colors/grey';
 
 const styles = theme => ({
     code: {
-        fontFamily: theme.typography.code_font_family,
+        fontFamily: '"Droid Sans Mono", monospace',
         color: theme.palette.text.primary,
         backgroundColor: grey[50],
         borderTop: '1px solid',
         borderBottom: '1px solid',
         borderTopColor: grey[100],
         borderBottomColor: grey[100],
-        paddingTop: theme.typography.code_vertical_padding,
-        paddingBottom: theme.typography.code_vertical_padding,
+        paddingTop: theme.scales.primary.m3,
+        paddingBottom: theme.scales.primary.m3,
         display: 'inline',
     },
     block: {

@@ -11,6 +11,7 @@ const styles = theme => ({
     cite: {
         textAlign: 'right',
         fontStyle: 'italic',
+        fontSize: theme.scales.primary.m1,
     },
 });
 

@@ -7,17 +7,18 @@ let Theme = createMuiTheme({
     typography: {
         margin_thin: scales.primary.p1,
         margin_thick: scales.primary.p3,
-        line_height: scales.primary.p1,
-        code_font_family: '"Droid Sans Mono", monospace',
-        code_vertical_padding: scales.primary.m3,
         font_body1: {
             fontSize: scales.primary.main,
+            lineHeight: scales.primary.p2,
         },
         font_title: {
             fontSize: scales.primary.p1,
         },
+        font_display1: {
+            fontSize: scales.primary.p2,
+        },
         font_caption: {
-            fontSize: scales.secondary_m1,
+            fontSize: scales.secondary.m1,
         },
     },
     layout: {
@@ -71,7 +72,6 @@ Theme.layout.responsive_page_column = {
 Theme.layout.vertical_spacing_even = {
     marginTop: Theme.typography.margin_thin,
     marginBottom: Theme.typography.margin_thin,
-    lineHeight: Theme.typography.line_height,
 };
 Theme.layout.vertical_spacing_uneven = {
     marginTop: Theme.typography.margin_thick,
@@ -97,7 +97,8 @@ Theme.overrides.MuiTypography = {
     display1: Object.assign(
         {},
         Theme.layout.vertical_spacing_uneven,
-        Theme.layout.responsive_page_column
+        Theme.layout.responsive_page_column,
+        Theme.typography.font_display1
     ),
     caption: Object.assign(
         {},

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BannerNav from '../nav/BannerNav.jsx';
-import Footer from '../Footer.jsx';
+import BannerNav from '../layout/nav/BannerNav.jsx';
+import Footer from '../layout/nav/Footer.jsx';
 import {withStyles} from 'material-ui/styles';
 
 import articles from './articles/articles.js';

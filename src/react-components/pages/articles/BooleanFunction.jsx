@@ -1,7 +1,7 @@
 import React from 'react';
-import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../CodeBlock.jsx';
-import Code from '../../Code.jsx';
-import Figure, {FigureCaption} from '../../Figure.jsx';
+import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/code/CodeBlock.jsx';
+import Code from '../../layout/code/Code.jsx';
+import Figure, {FigureCaption} from '../../layout/figure/Figure.jsx';
 import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';

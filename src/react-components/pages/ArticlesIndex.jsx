@@ -2,9 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import {withStyles} from 'material-ui/styles';
-import MaterialNavBar from '../MaterialNavBar.jsx';
-import BannerNav from '../nav/BannerNav.jsx';
-import Footer from '../Footer.jsx';
+import BannerNav from '../layout/nav/BannerNav.jsx';
+import Footer from '../layout/nav/Footer.jsx';
 
 import GridList, {GridListTile, GridListTileBar} from 'material-ui/GridList';
 

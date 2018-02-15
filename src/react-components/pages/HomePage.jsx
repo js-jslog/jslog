@@ -1,8 +1,7 @@
 import React from 'react';
 
-import BannerNav from '../nav/BannerNav.jsx';
-import HeroBanner from '../HeroBanner.jsx';
-import Footer from '../Footer.jsx';
+import BannerNav from '../layout/nav/BannerNav.jsx';
+import Footer from '../layout/nav/Footer.jsx';
 
 import {withStyles} from 'material-ui/styles';
 
@@ -39,7 +38,6 @@ const PageContents = (props) => {
             </Grid>
           </Grid>
         </div>
-        <HeroBanner image="../highhope.jpg" overlayText="Open for business" />
         <Footer />
     </div>
     );

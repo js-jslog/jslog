@@ -2,7 +2,7 @@ import React from 'react';
 import {withStyles} from 'material-ui/styles';
 
 import Typography from 'material-ui/Typography';
-import VideoFigure from '../../VideoFigure.jsx';
+import VideoFigure from '../../layout/figure/VideoFigure.jsx';
 
 const styles = theme => ({
 });
