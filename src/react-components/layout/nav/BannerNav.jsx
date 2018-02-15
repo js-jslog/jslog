@@ -6,17 +6,8 @@ import {Parallax, Background} from 'react-parallax';
 
 const styles = theme => ({
     banner_height: {
-        height: theme.scales.primary.p7,
+        height: theme.scales.primary.p8,
         [theme.breakpoints.up('sm')]: {
-            height: theme.scales.primary.p8,
-        },
-        [theme.breakpoints.up('md')]: {
-            height: theme.scales.primary.p8,
-        },
-        [theme.breakpoints.up('lg')]: {
-            height: theme.scales.primary.p8,
-        },
-        [theme.breakpoints.up('xl')]: {
             height: theme.scales.primary.p9,
         },
     },
@@ -51,7 +42,7 @@ class BannerNav extends React.Component {
     handleScroll (event) {
         const h = this.state.header_height;
         const y = window.scrollY;
-        this.trans_overlay && (this.trans_overlay.style.opacity = y/h/2);
+        this.trans_overlay && (this.trans_overlay.style.opacity = y/h);
     };
     render () {
         const image_src = '/images/hero/' + this.props.image;

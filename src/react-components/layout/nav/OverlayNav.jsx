@@ -11,6 +11,7 @@ import Hidden from 'material-ui/Hidden';
 const styles = function (theme) {
     theme.overrides.MuiTypography.title.color = 'inherit';
     theme.overrides.MuiButton.root.color = 'inherit';
+    theme.overrides.MuiButton.root.paddingRight = '0';
     return {
     nav: {
         color: theme.palette.primary.main,
@@ -23,22 +24,23 @@ const styles = function (theme) {
         [theme.breakpoints.up('sm')]: {
             padding: theme.scales.primary.p2,
         },
+        [theme.breakpoints.up('md')]: {
+            paddingRight: theme.scales.primary.p4,
+        },
     },
     page_title: {
         margin: '0',
         padding: '0',
-        top: theme.scales.secondary.p1,
-        fontSize: theme.scales.secondary.p1,
+        fontSize: theme.scales.primary.p3,
         [theme.breakpoints.up('sm')]: {
-            top: theme.scales.secondary.p2,
-            fontSize: theme.scales.secondary.p3,
-        },
-        [theme.breakpoints.up('md')]: {
-            top: theme.scales.primary.p2,
-            fontSize: theme.scales.secondary.p3,
-        },
-        [theme.breakpoints.up('lg')]: {
             fontSize: theme.scales.primary.p4,
+        },
+    },
+    nav_button: {
+        fontSize: theme.scales.primary.main,
+        [theme.breakpoints.up('md')]: {
+            fontSize: theme.scales.secondary.main,
+            paddingLeft: theme.scales.primary.p2,
         },
     },
 }};
@@ -58,9 +60,14 @@ const nav_links = [
     },
 ];
 
-const NavLinks = function () {
+const NavLinks = function (props) {
     return nav_links.map(link => (
-        <Button key={link.link} component={Link} to={link.link}>
+        <Button 
+            key={link.link}
+            component={Link}
+            to={link.link}
+            className={props.classes.nav_button}
+        >
             {link.display_text}
         </Button>
     ));
@@ -111,7 +118,7 @@ class OverlayMenu extends React.Component {
                 >
                     {this.props.title}
                 </Typography>
-                <NavLinks />
+                <NavLinks classes={classes}/>
             </nav>
         );
     };
