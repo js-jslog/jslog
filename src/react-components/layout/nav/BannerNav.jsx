@@ -26,9 +26,9 @@ const styles = theme => ({
 
 class BannerNav extends React.Component {
     componentDidMount () {
-        this.updateElementSizeCache();
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
+        this.updateElementSizeCache();
         this.trans_overlay.style.background = this.props.background_colour;
     };
     componentWillUnmount () {

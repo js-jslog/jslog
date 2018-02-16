@@ -7,6 +7,7 @@ import Button from 'material-ui/Button';
 import List, {ListItem} from 'material-ui/List';
 import Typography from 'material-ui/Typography';
 import Hidden from 'material-ui/Hidden';
+import * as Scroll from 'react-scroll';
 
 const styles = function (theme) {
     theme.overrides.MuiTypography.title.color = 'inherit';
@@ -76,34 +77,48 @@ const NavLinks = function (props) {
 class OverlayMenu extends React.Component {
 
     componentDidMount () {
-        this.updateElementSizeCache();
         this.nav.style.color = this.props.text_colour;
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
+    };
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.container_height !== this.props.container_height) {
+            this.updateElementSizeCache();
+            if (!this.initial_scroll_performed) {
+                this.scrollToContent(nextProps.container_height);
+                this.initial_scroll_performed = true;
+            }
+        }
     };
     componentWillUnmount () {
         window.removeEventListener('scroll', this.handleScroll.bind(this));
         window.removeEventListener('resize', this.updateElementSizeCache.bind(this));
     };
     updateElementSizeCache () {
-        if (!this.nav) { return false };
         const nav_height = getComputedStyle(this.nav).height.split('px')[0];
         const nav_padding_top = getComputedStyle(this.nav).paddingTop.split('px')[0];
         const nav_padding_bottom = getComputedStyle(this.nav).paddingBottom.split('px')[0];
         const nav_total = parseFloat(nav_height) + parseFloat(nav_padding_top) + parseFloat(nav_padding_bottom);
-        this.setState({nav_total: nav_total});
+        this.nav_total = nav_total;
     };
     handleScroll (event) {
-        if (!this.nav) { return false };
-        const diff = parseFloat(this.props.container_height) - parseFloat(this.state.nav_total);
-        if (window.scrollY < diff && this.nav.style) {
+        const diff = parseFloat(this.props.container_height) - parseFloat(this.nav_total);
+        if (window.scrollY < diff) {
             this.nav.style.position = 'fixed';
             this.nav.style.top = 0;
         }
-        if (window.scrollY > diff && this.nav.style) {
+        if (window.scrollY > diff) {
             this.nav.style.position = 'absolute';
             this.nav.style.top = diff + 'px';
         }
+    };
+    scrollToContent (container_height) {
+        const diff = parseFloat(container_height) - parseFloat(this.nav_total)
+        const scroll = Scroll.animateScroll;
+        scroll.scrollTo(diff, {
+            delay: 250,
+            duration: 2500,
+        });
     };
     render() {
         const {classes} = this.props;
