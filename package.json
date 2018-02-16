@@ -44,6 +44,7 @@
     "react-dom": "^16.2.0",
     "react-parallax": "^1.6.0",
     "react-router-dom": "^4.2.2",
+    "react-scroll": "^1.7.6",
     "react-syntax-highlighter": "^6.1.2",
     "react-youtube-player": "^2.0.1",
     "serve-favicon": "~2.4.5",

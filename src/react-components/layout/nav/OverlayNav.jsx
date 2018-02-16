@@ -7,10 +7,12 @@ import Button from 'material-ui/Button';
 import List, {ListItem} from 'material-ui/List';
 import Typography from 'material-ui/Typography';
 import Hidden from 'material-ui/Hidden';
+import * as Scroll from 'react-scroll';
 
 const styles = function (theme) {
     theme.overrides.MuiTypography.title.color = 'inherit';
     theme.overrides.MuiButton.root.color = 'inherit';
+    theme.overrides.MuiButton.root.paddingRight = '0';
     return {
     nav: {
         color: theme.palette.primary.main,
@@ -23,22 +25,23 @@ const styles = function (theme) {
         [theme.breakpoints.up('sm')]: {
             padding: theme.scales.primary.p2,
         },
+        [theme.breakpoints.up('md')]: {
+            paddingRight: theme.scales.primary.p4,
+        },
     },
     page_title: {
         margin: '0',
         padding: '0',
-        top: theme.scales.secondary.p1,
-        fontSize: theme.scales.secondary.p1,
+        fontSize: theme.scales.primary.p3,
         [theme.breakpoints.up('sm')]: {
-            top: theme.scales.secondary.p2,
-            fontSize: theme.scales.secondary.p3,
-        },
-        [theme.breakpoints.up('md')]: {
-            top: theme.scales.primary.p2,
-            fontSize: theme.scales.secondary.p3,
-        },
-        [theme.breakpoints.up('lg')]: {
             fontSize: theme.scales.primary.p4,
+        },
+    },
+    nav_button: {
+        fontSize: theme.scales.primary.main,
+        [theme.breakpoints.up('md')]: {
+            fontSize: theme.scales.secondary.main,
+            paddingLeft: theme.scales.primary.p2,
         },
     },
 }};
@@ -58,9 +61,14 @@ const nav_links = [
     },
 ];
 
-const NavLinks = function () {
+const NavLinks = function (props) {
     return nav_links.map(link => (
-        <Button key={link.link} component={Link} to={link.link}>
+        <Button 
+            key={link.link}
+            component={Link}
+            to={link.link}
+            className={props.classes.nav_button}
+        >
             {link.display_text}
         </Button>
     ));
@@ -69,34 +77,48 @@ const NavLinks = function () {
 class OverlayMenu extends React.Component {
 
     componentDidMount () {
-        this.updateElementSizeCache();
         this.nav.style.color = this.props.text_colour;
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
+    };
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.container_height !== this.props.container_height) {
+            this.updateElementSizeCache();
+            if (!this.initial_scroll_performed) {
+                this.scrollToContent(nextProps.container_height);
+                this.initial_scroll_performed = true;
+            }
+        }
     };
     componentWillUnmount () {
         window.removeEventListener('scroll', this.handleScroll.bind(this));
         window.removeEventListener('resize', this.updateElementSizeCache.bind(this));
     };
     updateElementSizeCache () {
-        if (!this.nav) { return false };
         const nav_height = getComputedStyle(this.nav).height.split('px')[0];
         const nav_padding_top = getComputedStyle(this.nav).paddingTop.split('px')[0];
         const nav_padding_bottom = getComputedStyle(this.nav).paddingBottom.split('px')[0];
         const nav_total = parseFloat(nav_height) + parseFloat(nav_padding_top) + parseFloat(nav_padding_bottom);
-        this.setState({nav_total: nav_total});
+        this.nav_total = nav_total;
     };
     handleScroll (event) {
-        if (!this.nav) { return false };
-        const diff = parseFloat(this.props.container_height) - parseFloat(this.state.nav_total);
-        if (window.scrollY < diff && this.nav.style) {
+        const diff = parseFloat(this.props.container_height) - parseFloat(this.nav_total);
+        if (window.scrollY < diff) {
             this.nav.style.position = 'fixed';
             this.nav.style.top = 0;
         }
-        if (window.scrollY > diff && this.nav.style) {
+        if (window.scrollY > diff) {
             this.nav.style.position = 'absolute';
             this.nav.style.top = diff + 'px';
         }
+    };
+    scrollToContent (container_height) {
+        const diff = parseFloat(container_height) - parseFloat(this.nav_total)
+        const scroll = Scroll.animateScroll;
+        scroll.scrollTo(diff, {
+            delay: 250,
+            duration: 2500,
+        });
     };
     render() {
         const {classes} = this.props;
@@ -111,7 +133,7 @@ class OverlayMenu extends React.Component {
                 >
                     {this.props.title}
                 </Typography>
-                <NavLinks />
+                <NavLinks classes={classes}/>
             </nav>
         );
     };
