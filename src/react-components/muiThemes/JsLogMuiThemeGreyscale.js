@@ -17,6 +17,9 @@ let Theme = createMuiTheme({
         font_display1: {
             fontSize: scales.primary.p2,
         },
+        font_display2: {
+            fontSize: scales.primary.main,
+        },
         font_caption: {
             fontSize: scales.secondary.m1,
         },
@@ -100,6 +103,11 @@ Theme.overrides.MuiTypography = {
         Theme.layout.vertical_spacing_uneven,
         Theme.layout.responsive_page_column,
         Theme.typography.font_display1
+    ),
+    display2: Object.assign(
+        {},
+        Theme.layout.vertical_spacing_uneven,
+        Theme.layout.responsive_page_column,
     ),
     headline: Object.assign(
         {},

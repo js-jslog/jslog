@@ -17,6 +17,7 @@ const styles = theme => ({
         marginLeft: theme.scales.primary.m3,
         marginRight: theme.scales.primary.m3,
         display: 'inline',
+        fontSize: theme.scales.primary.m1.split('rem')[0] + 'em',
     },
     block: {
         margin: 0,
@@ -45,7 +46,6 @@ const Code = (props) => {
     props.error ? classnames += (' ' + error) : classnames;
     return (
         <Typography
-            variant='caption'
             className={classnames}
         >
             {children}
