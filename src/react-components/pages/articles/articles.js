@@ -10,20 +10,22 @@ import * as Prefix from './PrefixVsPostfixIncrementUnaryOperators.jsx';
 import * as ObjObj from './TheObjectObject.jsx';
 import * as Pillars from './TheTwoPillarsOfJavascript.jsx';
 import * as Ultimate from './UltimatePseudoClassicalInheritance.jsx';
+import * as FunctionObject from './FunctionsAreObjectsToo.jsx';
 
 const articles = [
-    Boolean, 
-    TDD, 
-    Float, 
-    Iterate, 
-    Keywords, 
-    Loops, 
-    Modular, 
-    Number, 
-    Prefix, 
-    ObjObj, 
-    Pillars, 
-    Ultimate, 
+  Boolean, 
+  TDD, 
+  Float, 
+  Iterate, 
+  Keywords, 
+  Loops, 
+  Modular, 
+  Number, 
+  Prefix, 
+  ObjObj, 
+  Pillars, 
+  Ultimate, 
+  FunctionObject,
 ];
 
 export default articles;

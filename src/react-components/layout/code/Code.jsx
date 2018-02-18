@@ -12,11 +12,14 @@ const styles = theme => ({
         borderBottom: '1px solid',
         borderTopColor: grey[100],
         borderBottomColor: grey[100],
-        paddingTop: theme.scales.primary.m3,
+        paddingTop: theme.scales.primary.m2,
         paddingBottom: theme.scales.primary.m3,
+        marginLeft: theme.scales.primary.m3,
+        marginRight: theme.scales.primary.m3,
         display: 'inline',
     },
     block: {
+        margin: 0,
         display: 'block',
     },
     error: {
