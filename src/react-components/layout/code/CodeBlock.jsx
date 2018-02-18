@@ -30,7 +30,10 @@ const CodeBlock = (props) => {
     );
     return (
         <Figure>
-            <EmbeddedGist gist={props.gist_id} />
+            <EmbeddedGist
+                gist={props.gist_id}
+                file={props.file}
+            />
             {childrenWithProps}
         </Figure>
     );

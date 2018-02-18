@@ -50,7 +50,6 @@ class EmbeddedGist extends Component {
             url += "&file=" + this.props.file;
         }
 
-
         // Add the JSONP script tag to the document.
         let script = document.createElement('script');
         script.type = 'text/javascript';
