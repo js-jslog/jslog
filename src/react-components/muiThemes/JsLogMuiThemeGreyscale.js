@@ -100,6 +100,11 @@ Theme.overrides.MuiTypography = {
         Theme.layout.responsive_page_column,
         Theme.typography.font_display1
     ),
+    headline: Object.assign(
+        {},
+        Theme.layout.vertical_spacing_even,
+        Theme.layout.responsive_page_column,
+    ),
     caption: Object.assign(
         {},
         Theme.typography.font_caption
