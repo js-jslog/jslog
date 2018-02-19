@@ -21,7 +21,7 @@ function createData(type, true_val, false_val) {
 }
 
 const data = [
-    createData('Boolean', '<code>true</code>', 'false'),
+    createData('Boolean', 'true', 'false'),
     createData('String', 'Any nonempty string', '"" (empty string)'),
     createData('Number', 'Any nonzero number (including infinity)', '0 or NaN'),
     createData('Object', 'Any object', 'null'),
