@@ -167,37 +167,6 @@ const TableBuilder = function (props) {
 }
 
 function Edition1Table(props) {
-    const { classes } = props;
-
-    return (
-      <div>
-        <Typography variant='title'>EMCA-262 edition 1 (June 1997)</Typography>
-        <Figure>
-            <Paper>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                        <TableCell>Keyword</TableCell>
-                        <TableCell>Explanation</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {edition1_data.map(n => {
-                    return (
-                        <TableRow key={n.id}>
-                            <TableCell>{n.keyword}</TableCell>
-                            <TableCell>{n.explanation}</TableCell>
-                        </TableRow>
-                    );
-                    })}
-                    </TableBody>
-                </Table>
-            </Paper>
-        </Figure>
-      </div>
-    );
-}
-function Edition1Table(props) {
   return <TableBuilder title='EMCA-262 edition 1 (June 1997)' data={edition1_data} />
 }
 
