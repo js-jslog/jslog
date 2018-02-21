@@ -28,7 +28,7 @@ const PageContents = () => (
       Object methods
     </Typography>
     <Typography>
-      The methods on the <code>Object</code> object itself. These methods are not inherited by any created objects through normal instantiation, but they can be if the Object is used as a prototype - <code>var obj = Object.create(Object);</code>
+      The methods on the <Code>Object</Code> object itself. These methods are not inherited by any created objects through normal instantiation, but they can be if the Object is used as a prototype - <Code>var obj = Object.create(Object);</Code>
     </Typography>
     <Typography variant='title'>
       assign (ES6)
@@ -126,7 +126,7 @@ const PageContents = () => (
           {`{ get: [Function], set: [Function], enumerable: false, configurable: false }`}
         </CodeBlockOutput>
         <FigureCaption>
-          Demonstrating that the non-enumerable values are included in the output of <code>getOwnPropertyDescriptor</code>. Also demonstrating the difference in a property's default attribute value when set through literal vs <code>defineProperty</code>.
+          Demonstrating that the non-enumerable values are included in the output of <Code>getOwnPropertyDescriptor</Code>. Also demonstrating the difference in a property's default attribute value when set through literal vs <Code>defineProperty</Code>.
         </FigureCaption>
     </CodeBlock>
     <Typography variant='title'>
@@ -202,7 +202,7 @@ const PageContents = () => (
         false
       </CodeBlockOutput>
       <FigureCaption>
-        Demonstrating two of the problems with the <code>===</code> operator which <code>is</code> resolves
+        Demonstrating two of the problems with the <Code>===</Code> operator which <Code>is</Code> resolves
       </FigureCaption>
     </CodeBlock>
     <Typography variant='title'>
@@ -286,7 +286,7 @@ const PageContents = () => (
         [ 'prop1', 'prop4', 'prop5', 'prop2', 'prop3' ]
       </CodeBlockOutput>
       <FigureCaption>
-        Demonstrating the difference between <code>keys</code> & <code>getOwnPropertyNames</code>
+        Demonstrating the difference between <Code>keys</Code> & <Code>getOwnPropertyNames</Code>
       </FigureCaption>
     </CodeBlock>
     <Typography variant='title'>
@@ -342,7 +342,7 @@ const PageContents = () => (
         Some other kind of change.. preventExtensions
       </CodeBlockOutput>
       <FigureCaption>
-        Demonstrating the use of the <code>observe</code> method
+        Demonstrating the use of the <Code>observe</Code> method
       </FigureCaption>
     </CodeBlock>
     <Typography>
@@ -410,7 +410,7 @@ const PageContents = () => (
         undefined
       </CodeBlockOutput>
       <FigureCaption>
-        Demonstrating the use of the <code>preventExtensions</code>
+        Demonstrating the use of the <Code>preventExtensions</Code>
       </FigureCaption>
     </CodeBlock>
     <Typography variant='title'>
@@ -520,7 +520,7 @@ const PageContents = () => (
         false
       </CodeBlockOutput>
       <FigureCaption>
-        Demonstrating the difference between setting values using literal notation vs <code>defineProperty</code>.
+        Demonstrating the difference between setting values using literal notation vs <Code>defineProperty</Code>.
       </FigureCaption>
     </CodeBlock>
     <Typography variant='title'>
