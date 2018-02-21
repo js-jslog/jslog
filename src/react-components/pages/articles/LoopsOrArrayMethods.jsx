@@ -116,13 +116,11 @@ const PageContents = () => (
     <Typography variant='display1'>
       References
     </Typography>
-    <Typography>
-      <List>
-        <ListItem id="bib01"><cite><Link to="https://www.youtube.com/watch?v=PSGEjv3Tqo0#t=10m54s">Douglas Crockford : The Better Parts - Nordic JS 2014. 10m54s</Link></cite></ListItem>
-        <ListItem id="bib02"><cite><Link to="https://jsperf.com/for-vs-foreach/37">jsPerf - for vs forEach</Link></cite></ListItem>
-        <ListItem id="bib03"><cite><Link to="http://benhollis.net/blog/2009/12/13/investigating-javascript-array-iteration-performance/">BenHollis.net - Investigating JavaScript Array Iteration Performance</Link></cite></ListItem>
-      </List>
-    </Typography>
+    <List>
+      <ListItem id="bib01"><cite><Link to="https://www.youtube.com/watch?v=PSGEjv3Tqo0#t=10m54s">Douglas Crockford : The Better Parts - Nordic JS 2014. 10m54s</Link></cite></ListItem>
+      <ListItem id="bib02"><cite><Link to="https://jsperf.com/for-vs-foreach/37">jsPerf - for vs forEach</Link></cite></ListItem>
+      <ListItem id="bib03"><cite><Link to="http://benhollis.net/blog/2009/12/13/investigating-javascript-array-iteration-performance/">BenHollis.net - Investigating JavaScript Array Iteration Performance</Link></cite></ListItem>
+    </List>
   </div>
 );
 

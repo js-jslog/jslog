@@ -27,55 +27,51 @@ const PageContents = () => (
     <Typography>
       The functions
     </Typography>
-    <Typography>
-      <List>
-        <ListItem>
-          <Link to='#everyMethod'>every</Link> - check whether <b>all</b> elements of an array match a criteria
-        </ListItem>
-        <ListItem>
-          <Link to='#someMethod'>some</Link> - check whether <b>some</b> elements of an array match a criteria
-        </ListItem>
-        <ListItem>
-          <Link to='#filterMethod'>filter</Link> - return a copy of the original array <b>containing only the elements which match a criteria</b>
-        </ListItem>
-        <ListItem>
-          <Link to='#mapMethod'>map</Link> - return a copy of the original with a <b>transform applied to each element</b>
-        </ListItem>
-        <ListItem>
-          <Link to='#foreachMethod'>forEach</Link> - iterate through each element of an array
-        </ListItem>
-      </List>
-    </Typography>
+    <List>
+      <ListItem>
+        <Link to='#everyMethod'>every</Link> - check whether <b>all</b> elements of an array match a criteria
+      </ListItem>
+      <ListItem>
+        <Link to='#someMethod'>some</Link> - check whether <b>some</b> elements of an array match a criteria
+      </ListItem>
+      <ListItem>
+        <Link to='#filterMethod'>filter</Link> - return a copy of the original array <b>containing only the elements which match a criteria</b>
+      </ListItem>
+      <ListItem>
+        <Link to='#mapMethod'>map</Link> - return a copy of the original with a <b>transform applied to each element</b>
+      </ListItem>
+      <ListItem>
+        <Link to='#foreachMethod'>forEach</Link> - iterate through each element of an array
+      </ListItem>
+    </List>
     <Typography variant='display1'>
       The arguments
     </Typography>
     <Typography>
       As each of the methods works by a similar principle, each of the methods takes the same arguments
     </Typography>
-    <Typography>
+    <List>
+      <ListItem>
+        a function which itself takes 3 arguments :
+      </ListItem>
       <List>
         <ListItem>
-          a function which itself takes 3 arguments :
-        </ListItem>
-        <List>
-          <ListItem>
-            item - the item which is the subject of this iteration
-          </ListItem>
-          <ListItem>
-            index - the index this item is within the array
-          </ListItem>
-          <ListItem>
-            array - the array itself
-          </ListItem>
-        </List>
-        <ListItem>
-          These parameters are used within the function to create a return value - the purpose of which varies depending on the function being used.
+          item - the item which is the subject of this iteration
         </ListItem>
         <ListItem>
-          an optional scope object which affects the value of <Code>this</Code>
+          index - the index this item is within the array
+        </ListItem>
+        <ListItem>
+          array - the array itself
         </ListItem>
       </List>
-    </Typography>
+      <ListItem>
+        These parameters are used within the function to create a return value - the purpose of which varies depending on the function being used.
+      </ListItem>
+      <ListItem>
+        an optional scope object which affects the value of <Code>this</Code>
+      </ListItem>
+    </List>
     <Typography variant='display1'>
       Syntax
     </Typography>
