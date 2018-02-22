@@ -17,6 +17,9 @@ let Theme = createMuiTheme({
         font_display1: {
             fontSize: scales.primary.p2,
         },
+        font_display2: {
+            fontSize: scales.primary.main,
+        },
         font_caption: {
             fontSize: scales.secondary.m1,
         },
@@ -79,19 +82,20 @@ Theme.layout.vertical_spacing_uneven = {
 };
 Theme.overrides.MuiButton = {root: {}};
 Theme.overrides.MuiTypography = {
-    root: {
-        fontSize: 18,
-    },
+    root: Object.assign(
+        {
+          fontSize: 18,
+        },
+        Theme.layout.responsive_page_column,
+    ),
     body1: Object.assign(
         {},
         Theme.layout.vertical_spacing_even,
-        Theme.layout.responsive_page_column,
         Theme.typography.font_body1,
     ),
     title: Object.assign(
         {},
         Theme.layout.vertical_spacing_uneven,
-        Theme.layout.responsive_page_column,
         Theme.typography.font_title,
     ),
     display1: Object.assign(
@@ -100,8 +104,19 @@ Theme.overrides.MuiTypography = {
         Theme.layout.responsive_page_column,
         Theme.typography.font_display1
     ),
-    caption: Object.assign(
+    display2: Object.assign(
         {},
+        Theme.layout.vertical_spacing_uneven,
+        Theme.layout.responsive_page_column,
+    ),
+    headline: Object.assign(
+        {},
+        Theme.layout.vertical_spacing_even,
+    ),
+    caption: Object.assign(
+        {
+          margin: 0,
+        },
         Theme.typography.font_caption
     ),
 };
