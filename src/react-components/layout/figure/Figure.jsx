@@ -4,8 +4,10 @@ import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
     page_content_spacing: Object.assign(
-        {},
-        theme.layout.responsive_page_column,
+        {
+            marginRight: '-40px',
+            marginLeft: '-40px',
+        },
         theme.layout.vertical_spacing_even
     ),
     cite: {

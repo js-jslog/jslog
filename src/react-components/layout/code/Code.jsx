@@ -1,5 +1,4 @@
 import React from 'react';
-import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
 import grey from 'material-ui/colors/grey';
 
@@ -45,11 +44,11 @@ const Code = (props) => {
     props.block ? classnames += (' ' + block) : classnames;
     props.error ? classnames += (' ' + error) : classnames;
     return (
-        <Typography
+        <code
             className={classnames}
         >
             {children}
-        </Typography>
+        </code>
     );
 };
 
