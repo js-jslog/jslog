@@ -3,9 +3,13 @@ import Typography from 'material-ui/Typography';
 import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
-  heading: {
-    textAlign: 'center',
-  }
+  heading: Object.assign(
+    {
+      fontSize: theme.scales.primary.p2,
+      textAlign: 'center',
+    },
+    theme.layout.vertical_spacing_uneven
+  )
 });
 
 class SectionHeading extends React.Component {
