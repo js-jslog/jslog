@@ -62,13 +62,13 @@ Theme.layout.vertical_spacing_even = {
     marginBottom: Theme.scales.primary.p2,
 };
 Theme.layout.vertical_spacing_uneven = {
-    marginTop: Theme.scales.primary.p2,
+    marginTop: Theme.scales.primary.p3,
     marginBottom: Theme.scales.primary.p1,
 };
 Theme.overrides.MuiButton = {root: {}};
 Theme.overrides.MuiTypography = {
    root: {
-      fontSize: 18,
+      fontSize: 14,
       color: Theme.palette.text.main,
       lineHeight: Theme.scales.primary.p2.split('rem')[0] + 'em',
    },
