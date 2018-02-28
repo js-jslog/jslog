@@ -5,8 +5,8 @@ import {withStyles} from 'material-ui/styles';
 const styles = theme => ({
     page_content_spacing: Object.assign(
         {
-            marginRight: '-40px',
-            marginLeft: '-40px',
+            marginRight: '-' + theme.scales.primary.p1,
+            marginLeft: '-' + theme.scales.primary.p1,
         },
         theme.layout.vertical_spacing_even
     ),

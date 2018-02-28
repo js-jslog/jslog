@@ -24,6 +24,12 @@ let Theme = createMuiTheme({
             dark: '#707070',
             contrastText: '#000000',
         },
+       text: {
+          light: '#999',
+          main: '#555',
+          dark: '#333',
+          contrastText: '#ffffff',
+       },
     },
     overrides: {},
 });
@@ -56,16 +62,44 @@ Theme.layout.vertical_spacing_even = {
     marginBottom: Theme.scales.primary.p2,
 };
 Theme.layout.vertical_spacing_uneven = {
-    marginTop: Theme.scales.primary.p3,
-    marginBottom: Theme.scales.primary.p2,
+    marginTop: Theme.scales.primary.p2,
+    marginBottom: Theme.scales.primary.p1,
 };
 Theme.overrides.MuiButton = {root: {}};
 Theme.overrides.MuiTypography = {
    root: {
       fontSize: 18,
-      color: 'blue',
+      color: Theme.palette.text.main,
+      lineHeight: Theme.scales.primary.p2.split('rem')[0] + 'em',
    },
-   title: {},
+   headline: {
+      color: Theme.palette.text.dark,
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
+   },
+   title: {
+      color: Theme.palette.text.dark,
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
+   },
+   subheading: {
+      color: Theme.palette.text.dark,
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
+   },
+   body2: {
+      color: undefined,
+      lineHeight: undefined,
+   },
+   body1: {
+      color: undefined,
+      lineHeight: undefined,
+   },
+   caption: {
+      color: undefined,
+      lineHeight: undefined,
+   },
+   button: {
+      color: undefined,
+      lineHeight: undefined,
+   },
 };
 
 export default Theme;
