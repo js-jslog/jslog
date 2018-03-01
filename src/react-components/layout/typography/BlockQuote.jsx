@@ -3,15 +3,18 @@ import {withStyles} from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
+  blockquote: {
+    fontStyle: 'italic',
+  }
 });
 
 class BlockQuote extends React.Component {
   render () {
     const {classes, cite, children} = this.props;
     return (
-      <Typography>
+      <Typography variant='body2' className={classes.blockquote}>
         <blockquote cite={cite}>
-          {children}
+          "{children}"
         </blockquote>
       </Typography>
     );

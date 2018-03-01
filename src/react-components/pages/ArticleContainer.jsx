@@ -2,6 +2,7 @@ import React from 'react';
 
 import BannerNav from '../layout/nav/BannerNav.jsx';
 import Footer from '../layout/nav/Footer.jsx';
+import MinimalBanner from '../layout/nav/MinimalBanner.jsx';
 import {withStyles} from 'material-ui/styles';
 
 import articles from './articles/articles.js';
@@ -20,6 +21,7 @@ const ArticleContainer = function (props) {
     const text_colour = overlayColours && overlayColours.text_colour;
     const background_colour = overlayColours && overlayColours.background_colour;
     return <div>
+        <MinimalBanner />
         <StyledPageContents />
         <Footer />
     </div>

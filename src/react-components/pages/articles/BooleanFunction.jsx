@@ -1,10 +1,10 @@
 import React from 'react';
-import { BlockQuote, BodyText, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
+import { BlockQuote, BodyText, Caption, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
 import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
 import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/figure/CodeBlock.jsx';
 import Code from '../../layout/typography/Code.jsx';
-import Figure, {FigureCaption} from '../../layout/figure/Figure.jsx';
+import Figure from '../../layout/figure/Figure.jsx';
 import {withStyles} from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
@@ -33,7 +33,7 @@ function BooleanTable(props) {
     const { classes } = props;
 
     return (
-        <Figure margin="-100px">
+        <Figure>
             <Paper>
                 <Table>
                     <TableHead>
@@ -56,12 +56,12 @@ function BooleanTable(props) {
                     </TableBody>
                 </Table>
             </Paper>
-            <FigureCaption>
+            <Caption>
                 Mapping of JavaScript's datatypes to boolean literals using Boolean() casting function
-            </FigureCaption>
-            <FigureCaption cite>
+            </Caption>
+            <Caption cite>
                 Professional JavaScript for Web Developers third edition pg34
-            </FigureCaption>
+            </Caption>
         </Figure>
     );
 }
