@@ -1,6 +1,6 @@
 import React from 'react';
 import EmbeddedGist from './EmbeddedGist.jsx';
-import Code from './Code.jsx';
+import Code from '../typography/Code.jsx';
 import {withStyles} from 'material-ui/styles';
 import Figure, {FigureCaption} from '../figure/Figure.jsx';
 

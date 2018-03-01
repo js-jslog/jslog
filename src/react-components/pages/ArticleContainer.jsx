@@ -20,7 +20,6 @@ const ArticleContainer = function (props) {
     const text_colour = overlayColours && overlayColours.text_colour;
     const background_colour = overlayColours && overlayColours.background_colour;
     return <div>
-        <BannerNav title={title} image={image} background_colour={background_colour} text_colour={text_colour} />
         <StyledPageContents />
         <Footer />
     </div>
