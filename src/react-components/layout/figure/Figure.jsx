@@ -32,12 +32,18 @@ const FigureCaption = (props) => {
 };
 
 const Figure = (props) => {
-    const {classes} = props;
+    const {classes, margin} = props;
     const children = React.Children.map(props.children, child =>
         React.cloneElement(child, {classes: classes})
     );
     return (
-        <figure className={classes.page_content_spacing}>
+        <figure 
+            className={classes.page_content_spacing}
+            style={{
+                marginRight: margin || undefined,
+                marginLeft: margin || undefined,
+            }}
+        >
             {children}
         </figure>
     );

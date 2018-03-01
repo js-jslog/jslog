@@ -2,7 +2,7 @@ import React from 'react';
 import { BlockQuote, BodyText, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
 import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
-import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/code/CodeBlock.jsx';
+import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/figure/CodeBlock.jsx';
 import Code from '../../layout/typography/Code.jsx';
 import Figure, {FigureCaption} from '../../layout/figure/Figure.jsx';
 import {withStyles} from 'material-ui/styles';
@@ -33,7 +33,7 @@ function BooleanTable(props) {
     const { classes } = props;
 
     return (
-        <Figure>
+        <Figure margin="-100px">
             <Paper>
                 <Table>
                     <TableHead>
