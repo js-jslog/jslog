@@ -12,6 +12,7 @@ const styles = theme => ({
         display: 'inline',
         fontSize: theme.scales.secondary.m1.split('rem')[0] + 'em',
         fontWeight: 'bold',
+        lineHeight: theme.scales.primary.p1.split('rem')[0] + 'em',
     },
     block: {
         margin: 0,

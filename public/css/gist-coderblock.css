@@ -8,12 +8,17 @@ body .gist .gist-file {
 }
 
 body .gist .gist-data {
-    padding-left: 4.236rem; 
+    padding-left: 1rem;
     padding-top: 0.618rem;
     padding-bottom: 0.618rem;
     border: none;
     border-radius: 0.382rem;
     background-color: #ebeef2;
+}
+@media (min-width: 600px) {
+    body .gist .gist-data {
+        padding-left: 4.236rem; 
+    }
 }
 
 body .gist .blob-wrapper {
@@ -24,7 +29,7 @@ body .gist .blob-wrapper {
 body .gist .highlight {
     background-color: transparent;
     font-family: 'Cutive Mono', 'Droid Sans Mono', monospace;
-    font-size: 1rem;
+    font-size: 0.742rem;
 }
 
 body .gist .highlight td {

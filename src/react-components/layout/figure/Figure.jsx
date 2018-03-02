@@ -2,10 +2,14 @@ import React from 'react';
 import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
-    page_content_spacing: Object.assign(
+    figure_spacing: Object.assign(
         {
-            marginRight: '-' + theme.scales.primary.p3,
-            marginLeft: '-' + theme.scales.primary.p3,
+            marginRight: 0,
+            marginLeft: 0,
+            [theme.breakpoints.up('sm')]: {
+                marginRight: '-' + theme.scales.primary.p3,
+                marginLeft: '-' + theme.scales.primary.p3,
+            },
         },
         theme.layout.vertical_spacing_even
     ),
@@ -18,7 +22,7 @@ const Figure = (props) => {
     );
     return (
         <figure 
-            className={classes.page_content_spacing}
+            className={classes.figure_spacing}
             style={{
                 marginRight: margin || undefined,
                 marginLeft: margin || undefined,
