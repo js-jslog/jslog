@@ -3,41 +3,39 @@
  */
 body .gist .gist-file {
     margin-bottom: 0;
-    border-radius: 10px;
+    border: none;
+    border-radius: 0.382rem;
 }
 
 body .gist .gist-data {
-    border-bottom: none;
-    border-radius: 10px;
-    background-color: #f1f3f5;
+    padding-left: 4.236rem; 
+    padding-top: 0.618rem;
+    padding-bottom: 0.618rem;
+    border: none;
+    border-radius: 0.382rem;
+    background-color: #ebeef2;
 }
 
 body .gist .blob-wrapper {
     border-radius: 0;
+    overflow: hidden;
 }
 
 body .gist .highlight {
     background-color: transparent;
-    font-family: 'Droid Sans Mono', monospace;
+    font-family: 'Cutive Mono', 'Droid Sans Mono', monospace;
     font-size: 1rem;
 }
 
 body .gist .highlight td {
-    padding: 0.618rem 1rem !important;
-    line-height: 1rem;
+    padding-left: 0 !important;
+    line-height: 1.618rem;
     font-family: inherit;
     font-size: inherit;
 }
 
-body .gist tr:first-child td {
-    padding-top: 1rem !important;
-}
-
-body .gist tr:last-child td {
-    padding-bottom: 1rem !important;
-}
-
 body .gist .blob-num {
+    display: none;
     color: #ced4da;
     pointer-events: none;
 }
