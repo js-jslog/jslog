@@ -1,37 +1,15 @@
 import {createMuiTheme} from 'material-ui/styles';
-import red from 'material-ui/colors/red';
 import scales from './scales.js';
 
 let Theme = createMuiTheme({
-   scales: scales,
-    typography: {
-        margin_thin: scales.primary.p1,
-        margin_thick: scales.primary.p3,
-        font_body1: {
-            fontSize: scales.primary.main,
-            lineHeight: scales.primary.p2,
-        },
-        font_title: {
-            fontSize: scales.primary.p1,
-        },
-        font_display1: {
-            fontSize: scales.primary.p2,
-        },
-        font_display2: {
-            fontSize: scales.primary.main,
-        },
-        font_caption: {
-            fontSize: scales.secondary.m1,
-        },
-    },
+    scales: scales,
     layout: {
         // page_column_width_xs: scales.primary.p6, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
         page_column_gutter_xs: scales.px.primary.m1,
-        // page_column_width_sm: scale.primary.p7, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
-        page_column_gutter_sm: scales.px.primary.p2,
-        page_column_width_md: scales.primary.p8,
-        page_column_width_lg: scales.primary.p8,
-        page_column_width_xl: scales.primary.p8,
+        page_column_width_sm: scales.primary.p7,
+        page_column_width_md: scales.primary.p7,
+        page_column_width_lg: scales.primary.p7,
+        page_column_width_xl: scales.primary.p7,
     },
     palette: {
         primary: {
@@ -46,6 +24,12 @@ let Theme = createMuiTheme({
             dark: '#707070',
             contrastText: '#000000',
         },
+       text: {
+          light: '#999',
+          main: '#555',
+          dark: '#333',
+          contrastText: '#ffffff',
+       },
     },
     overrides: {},
 });
@@ -53,8 +37,9 @@ Theme.layout.responsive_page_column = {
     marginLeft: Theme.layout.page_column_gutter_xs,
     marginRight: Theme.layout.page_column_gutter_xs,
     [Theme.breakpoints.up('sm')]: {
-        marginLeft: Theme.layout.page_column_gutter_sm,
-        marginRight: Theme.layout.page_column_gutter_sm,
+        maxWidth: Theme.layout.page_column_width_sm,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     [Theme.breakpoints.up('md')]: {
         maxWidth: Theme.layout.page_column_width_md,
@@ -73,52 +58,48 @@ Theme.layout.responsive_page_column = {
     },
 };
 Theme.layout.vertical_spacing_even = {
-    marginTop: Theme.typography.margin_thin,
-    marginBottom: Theme.typography.margin_thin,
+    marginTop: Theme.scales.primary.p2,
+    marginBottom: Theme.scales.primary.p2,
 };
 Theme.layout.vertical_spacing_uneven = {
-    marginTop: Theme.typography.margin_thick,
-    marginBottom: Theme.typography.margin_thin,
+    marginTop: Theme.scales.primary.p3,
+    marginBottom: Theme.scales.primary.p1,
 };
 Theme.overrides.MuiButton = {root: {}};
 Theme.overrides.MuiTypography = {
-    root: Object.assign(
-        {
-          fontSize: 18,
-        },
-        Theme.layout.responsive_page_column,
-    ),
-    body1: Object.assign(
-        {},
-        Theme.layout.vertical_spacing_even,
-        Theme.typography.font_body1,
-    ),
-    title: Object.assign(
-        {},
-        Theme.layout.vertical_spacing_uneven,
-        Theme.typography.font_title,
-    ),
-    display1: Object.assign(
-        {},
-        Theme.layout.vertical_spacing_uneven,
-        Theme.layout.responsive_page_column,
-        Theme.typography.font_display1
-    ),
-    display2: Object.assign(
-        {},
-        Theme.layout.vertical_spacing_uneven,
-        Theme.layout.responsive_page_column,
-    ),
-    headline: Object.assign(
-        {},
-        Theme.layout.vertical_spacing_even,
-    ),
-    caption: Object.assign(
-        {
-          margin: 0,
-        },
-        Theme.typography.font_caption
-    ),
+   root: {
+      fontSize: 14,
+      color: Theme.palette.text.main,
+      lineHeight: Theme.scales.primary.p2.split('rem')[0] + 'em',
+   },
+   headline: {
+      color: Theme.palette.text.dark,
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
+   },
+   title: {
+      color: Theme.palette.text.dark,
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
+   },
+   subheading: {
+      color: Theme.palette.text.dark,
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
+   },
+   body2: {
+      color: undefined,
+      lineHeight: undefined,
+   },
+   body1: {
+      color: undefined,
+      lineHeight: undefined,
+   },
+   caption: {
+      color: undefined,
+      lineHeight: undefined,
+   },
+   button: {
+      color: undefined,
+      lineHeight: undefined,
+   },
 };
 
 export default Theme;

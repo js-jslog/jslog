@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BannerNav from '../layout/nav/BannerNav.jsx';
+import ContentList from '../layout/nav/ContentList.jsx';
 import Footer from '../layout/nav/Footer.jsx';
 
 import {withStyles} from 'material-ui/styles';
@@ -25,19 +26,15 @@ const PageContents = (props) => {
     return (
     <div>
         <BannerNav title='Joseph Sinfield' image="index.jpg" />
-        <div className={classes.grid}>
-          <Grid container spacing={24}>
-            <Grid item sm={4} xs={12}>
-                <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
-            </Grid>
-            <Grid item sm={4} xs={12}>
-                <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
-            </Grid>
-            <Grid item sm={4} xs={12}>
-                <Paper className={classes.paper}>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</Paper>
-            </Grid>
-          </Grid>
-        </div>
+        <ContentList />
+        <ContentList />
+        <ContentList />
+        <ContentList />
+        <ContentList />
+        <ContentList />
+        <ContentList />
+        <ContentList />
+        <ContentList />
         <Footer />
     </div>
     );

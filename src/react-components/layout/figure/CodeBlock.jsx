@@ -1,10 +1,18 @@
 import React from 'react';
-import EmbeddedGist from './EmbeddedGist.jsx';
-import Code from './Code.jsx';
+import EmbeddedGist from './helpers/EmbeddedGist.jsx';
+import Code from '../typography/Code.jsx';
 import {withStyles} from 'material-ui/styles';
-import Figure, {FigureCaption} from '../figure/Figure.jsx';
+import Figure from '../figure/Figure.jsx';
+import Paper from 'material-ui/Paper';
 
-const styles = theme => ({});
+const styles = theme => ({
+    paper: {
+        [theme.breakpoints.up('sm')]: {
+            borderRadius: theme.scales.primary.m2,
+            marginBottom: theme.scales.primary.m2,
+        },
+    }
+});
 
 const CodeBlockOutput = (props) => {
     const {classes} = props;
@@ -30,11 +38,13 @@ const CodeBlock = (props) => {
     );
     return (
         <Figure>
-            <EmbeddedGist
-                gist={props.gist_id}
-                file={props.file}
-            />
-            {childrenWithProps}
+            <Paper className={classes.paper}>
+                <EmbeddedGist
+                    gist={props.gist_id}
+                    file={props.file}
+                />
+            </Paper>
+            {children}
         </Figure>
     );
 };
