@@ -10,3 +10,12 @@ figure {
 body {
     margin: 0;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #659edb
+}

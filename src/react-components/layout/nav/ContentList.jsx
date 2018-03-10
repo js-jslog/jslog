@@ -10,16 +10,24 @@ import articles_list from '../../pages/articles/articles.js';
 const styles = theme => ({
   row: {
     display: 'block',
-    borderTop: '1px solid',
+    color: theme.palette.primary.main,
+    borderTop: '1px solid ' + theme.palette.primary.light,
     padding: theme.scales.primary.m1 + ' ' + theme.scales.primary.p1,
   },
   date: {
     display: 'inline-flex',
+    fontFamily: '"Nanum Gothic", sans-serif',
+    fontSize: theme.scales.secondary.m1,
+    color: theme.palette.primary.light,
     width: theme.scales.primary.p5,
   },
   page: {
   },
   tag: {
+    fontFamily: '"Nanum Gothic", sans-serif',
+    fontSize: theme.scales.secondary.m1,
+    paddingTop: theme.scales.primary.m3,
+    color: theme.palette.primary.light,
     float: 'right',
   }
 });
