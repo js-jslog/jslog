@@ -1,6 +1,5 @@
 import React from 'react';
 
-import BannerNav from '../layout/nav/BannerNav.jsx';
 import Footer from '../layout/nav/Footer.jsx';
 import MinimalBanner from '../layout/nav/MinimalBanner.jsx';
 import {withStyles} from 'material-ui/styles';
