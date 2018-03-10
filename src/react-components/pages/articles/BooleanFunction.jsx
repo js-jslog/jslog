@@ -14,6 +14,7 @@ const image = "boolean-function.png";
 const link = "boolean-function";
 const blurb = "An description of the native Boolean function and explanation of why understanding this simple function might be more important than you think";
 const published = true;
+const date = new Date('01/01/2016');
 const styles = theme => ({});
 
 let id = 0;
@@ -138,3 +139,4 @@ export {image};
 export {blurb};
 export {link};
 export {published};
+export {date};

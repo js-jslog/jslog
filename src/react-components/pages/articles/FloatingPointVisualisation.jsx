@@ -15,6 +15,7 @@ const image = "floating-point-visualisation.jpg";
 const link = "floating-point-visualisation";
 const blurb = "A video shining some light on the mechanisms and limitations behind floating point number representation";
 const published = true;
+const date = new Date('01/01/2016');
 
 class PageContents extends React.Component {
     render () {
@@ -49,3 +50,4 @@ export {image};
 export {blurb};
 export {link};
 export {published};
+export {date};
