@@ -4,6 +4,8 @@ import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
   blurb: {
+    fontFamily: '"Nanum Gothic", sans-serif',
+    fontStyle: 'italic',
   }
 });
 

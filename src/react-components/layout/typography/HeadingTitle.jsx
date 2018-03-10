@@ -5,6 +5,7 @@ import {withStyles} from 'material-ui/styles';
 const styles = theme => ({
   title: Object.assign(
     {
+      fontFamily: '"Playfair Display", serif',
       textAlign: 'center',
       fontSize: theme.scales.primary.p3,
       fontWeight: 500,

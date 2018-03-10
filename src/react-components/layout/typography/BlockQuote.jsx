@@ -4,6 +4,7 @@ import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   blockquote: {
+    fontFamily: '"Nanum Gothic", sans-serif',
     fontStyle: 'italic',
   }
 });
