@@ -17,22 +17,18 @@ const styles = theme => ({
     block: {
         margin: 0,
         display: 'block',
+        [theme.breakpoints.up('sm')]: {
+          marginLeft: theme.scales.primary.p3,
+        },
     },
     error: {
         color: theme.palette.error.main,
     },
 });
 
-const mapChildren = (children, lead) => (
-    React.Children.map(children, child => {
-        return (lead ? '> ' + child : child)
-    })
-);
-
 const Code = (props) => {
-    const {classes} = props;
+    const {classes, children} = props;
     const {code, block, error} = classes;
-    const children = mapChildren(props.children, props.lead);
     let classnames = code;
     props.block ? classnames += (' ' + block) : classnames;
     props.error ? classnames += (' ' + error) : classnames;

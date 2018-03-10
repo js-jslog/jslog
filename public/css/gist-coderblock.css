@@ -5,11 +5,6 @@ body .gist .gist-file {
     margin-bottom: 0;
     border: none;
 }
-@media (min-width: 600px) {
-    body .gist .gist-data {
-        border-radius: 0.382rem;
-    }
-}
 
 body .gist .gist-data {
     padding-left: 1rem;
@@ -22,6 +17,8 @@ body .gist .gist-data {
     body .gist .gist-data {
         padding-left: 4.236rem; 
         border-radius: 0.382rem;
+        border-bottom-right-radius: unset;
+        border-bottom-left-radius: unset;
     }
 }
 
@@ -50,5 +47,14 @@ body .gist .blob-num {
 }
 
 body .gist .gist-meta {
-    display: none;
+    color: #ddd;
+}
+@media (min-width: 600px) {
+    body .gist .gist-meta {
+        padding-left: 4.236rem; 
+        border-radius: 0.382rem;
+    }
+}
+body .gist .gist-meta a {
+    color: #ccc;
 }
