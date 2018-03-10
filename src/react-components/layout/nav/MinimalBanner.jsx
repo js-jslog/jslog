@@ -8,7 +8,14 @@ import {withStyles} from 'material-ui/styles';
 const styles = theme => ({
     nav: {
         color: theme.palette.primary.main,
-    }
+    },
+    link_container: {
+        textAlign: 'center',
+    },
+    link: {
+        padding: theme.scales.primary.p1,
+        fontFamily: '"Nanum Gothic", sans-serif',
+    },
 });
 
 const MinimalBanner = function (props) { 
@@ -18,9 +25,20 @@ const MinimalBanner = function (props) {
             <AppBar className={classes.nav} position='static'>
                 JS
             </AppBar>
-            <Link to='/'>
-                Home
-            </Link>
+            <div className={classes.link_container}>
+                <Link
+                    to='/'
+                    className={classes.link}
+                >
+                    Home
+                </Link>
+                <Link
+                    to='/articles'
+                    className={classes.link}
+                >
+                    Articles
+                </Link>
+            </div>
         </div>
     );
 };
