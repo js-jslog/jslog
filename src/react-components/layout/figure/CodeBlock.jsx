@@ -7,8 +7,10 @@ import Paper from 'material-ui/Paper';
 
 const styles = theme => ({
     paper: {
-        borderRadius: theme.scales.primary.m2,
-        marginBottom: theme.scales.primary.m2,
+        [theme.breakpoints.up('sm')]: {
+            borderRadius: theme.scales.primary.m2,
+            marginBottom: theme.scales.primary.m2,
+        },
     }
 });
 

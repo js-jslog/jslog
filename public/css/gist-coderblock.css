@@ -4,7 +4,11 @@
 body .gist .gist-file {
     margin-bottom: 0;
     border: none;
-    border-radius: 0.382rem;
+}
+@media (min-width: 600px) {
+    body .gist .gist-data {
+        border-radius: 0.382rem;
+    }
 }
 
 body .gist .gist-data {
@@ -12,12 +16,12 @@ body .gist .gist-data {
     padding-top: 0.618rem;
     padding-bottom: 0.618rem;
     border: none;
-    border-radius: 0.382rem;
     background-color: #ebeef2;
 }
 @media (min-width: 600px) {
     body .gist .gist-data {
         padding-left: 4.236rem; 
+        border-radius: 0.382rem;
     }
 }
 

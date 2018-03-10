@@ -4,8 +4,8 @@ import {withStyles} from 'material-ui/styles';
 const styles = theme => ({
     figure_spacing: Object.assign(
         {
-            marginRight: 0,
-            marginLeft: 0,
+            marginRight: '-' + theme.layout.page_column_gutter_xs,
+            marginLeft: '-' + theme.layout.page_column_gutter_xs,
             [theme.breakpoints.up('sm')]: {
                 marginRight: '-' + theme.scales.primary.p3,
                 marginLeft: '-' + theme.scales.primary.p3,
