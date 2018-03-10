@@ -15,20 +15,26 @@ const styles = theme => ({
     padding: theme.scales.primary.m1 + ' ' + theme.scales.primary.p1,
   },
   date: {
-    display: 'inline-flex',
     fontFamily: '"Nanum Gothic", sans-serif',
     fontSize: theme.scales.secondary.m1,
     color: theme.palette.primary.light,
-    width: theme.scales.primary.p5,
+    display: 'block',
+    [theme.breakpoints.up('md')]: {
+      display: 'inline-flex',
+      width: theme.scales.primary.p5,
+    }
   },
   page: {
   },
   tag: {
     fontFamily: '"Nanum Gothic", sans-serif',
     fontSize: theme.scales.secondary.m1,
-    paddingTop: theme.scales.primary.m3,
     color: theme.palette.primary.light,
-    float: 'right',
+    paddingLeft: theme.scales.primary.m1,
+    [theme.breakpoints.up('md')]: {
+      paddingTop: theme.scales.primary.m3,
+      float: 'right',
+    }
   }
 });
 
