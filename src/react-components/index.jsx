@@ -5,7 +5,6 @@ import JsLogTheme from './muiThemes/JsLogMuiThemeGreyscale.js';
 import {MuiThemeProvider} from 'material-ui/styles';
 
 import Home from './pages/HomePage.jsx';
-import ArticlesIndex from './pages/ArticlesIndex.jsx';
 import ArticleContainer from './pages/ArticleContainer.jsx';
 
 const JsLog = () => (
@@ -13,7 +12,6 @@ const JsLog = () => (
         <div>
             <Route component={ScrollToTop} />
             <Route exact path="/" component={Home}/>
-            <Route exact path="/articles" component={ArticlesIndex}/>
             <Route exact path="/articles/:article_id" component={ArticleContainer}/>
         </div>
     </Router>
