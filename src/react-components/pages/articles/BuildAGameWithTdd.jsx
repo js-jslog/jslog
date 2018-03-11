@@ -6,7 +6,7 @@ import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/fig
 import Code from '../../layout/typography/Code.jsx';
 import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
-import Figure, {FigureCaption} from '../../layout/figure/Figure.jsx';
+import Figure from '../../layout/figure/Figure.jsx';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import List, {ListItem} from 'material-ui/List';
@@ -62,7 +62,7 @@ const PageContents = () => (
     gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
     file='markup.html'
   >
-    <FigureCaption>The starting wingTron.html file</FigureCaption>
+    <Caption>The starting wingTron.html file</Caption>
   </CodeBlock>
   <BodyText>
     Everything here makes sense, but we do not yet have a bower_components folder to contain the jQuery & QUnit files referenced here. The dependencies can be installed manually by running  <Code>bower install jquery</Code> & <Code>bower install qunit</Code> from inside the project folder, but better is to create a <Code>bower.json</Code> file which will allow us to define the dependencies for the project, and then install them with the more simple <Code>bower install</Code>.
@@ -80,7 +80,7 @@ const PageContents = () => (
     gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
     file='bower.json'
   >
-    <FigureCaption>The bower.json file we create to let bower know what dependencies the project has for it to download</FigureCaption>
+    <Caption>The bower.json file we create to let bower know what dependencies the project has for it to download</Caption>
   </CodeBlock>
   <BodyText>
     Using bower in this way allows us to commit just the <Code>bower.json</Code> file to the repository rather than the whole dependency folder. This reduces the size of the project and makes it more stable across different machines who may need different binaries of the dependencies for their operating syste, However, in order to prevent git from picking the bower_components folder up, we need to add a <Code>.gitignore</Code> file to the project root.
@@ -105,7 +105,7 @@ const PageContents = () => (
   </BodyText>
   <List>
     <ListItem>
-      <BodyText>Field - an object which defines the boundaries of play</BodyText>
+      Field - an object which defines the boundaries of play
     </ListItem>
     <ListItem>
       <BodyText>Player - an object which moves within boundaries defined by the field. It must know it's location & whether it is alive. It must have the ability to turn left or right, and incrementally move forward, logging the points of the changes of direction as dictated by it's speed & direction. When a player is dead it must not move any longer</BodyText>
@@ -118,13 +118,13 @@ const PageContents = () => (
     gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
     file='wingTron_test.js'
   >
-    <FigureCaption>The tests which we have after the first iteration</FigureCaption>
+    <Caption>The tests which we have after the first iteration</Caption>
   </CodeBlock>
   <CodeBlock
     gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
     file='wingTron.js'
   >
-    <FigureCaption>The code for the two modules which make up the field and the player objects</FigureCaption>
+    <Caption>The code for the two modules which make up the field and the player objects</Caption>
   </CodeBlock>
   <BodyText>
     Before we go any further, since we have something that works & our next step is to refactor, we need to commit this work to version control. <Code>git add -A</Code>, <Code>git commit -m "First milestone. Minimum requirements"</Code>, <Code>git push -u origin master</Code>.
@@ -174,7 +174,7 @@ const PageContents = () => (
     gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
     file='fieldFactory.js'
   >
-    <FigureCaption>The fieldFactory.js file. Nothing surprising here.</FigureCaption>
+    <Caption>The fieldFactory.js file. Nothing surprising here.</Caption>
   </CodeBlock>
   </Grid>
   <Grid item xs={12} sm={6}>
@@ -182,7 +182,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='playerFactory.js'
     >
-      <FigureCaption>The playerFactory.js file. Note that the pure functions have been moved from inside the getPlayer function body</FigureCaption>
+      <Caption>The playerFactory.js file. Note that the pure functions have been moved from inside the getPlayer function body</Caption>
     </CodeBlock>
   </Grid>
   <BodyText>
@@ -196,7 +196,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='refereeFactory.js'
     >
-      <FigureCaption>The refereeFactory.js. Again, the pure function <Code>isPointWithinPath</Code> is encapsulated with the module and will only be loaded once</FigureCaption>
+      <Caption>The refereeFactory.js. Again, the pure function <Code>isPointWithinPath</Code> is encapsulated with the module and will only be loaded once</Caption>
     </CodeBlock>
   </Grid>
   <Grid item xs={12} sm={6}>
@@ -204,7 +204,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='matchFactory.js'
     >
-      <FigureCaption>The matchFactory.js has dependencies on all 3 of the previously defined modules</FigureCaption>
+      <Caption>The matchFactory.js has dependencies on all 3 of the previously defined modules</Caption>
     </CodeBlock>
   </Grid>
   <BodyText>
@@ -215,7 +215,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='markup2.html'
     >
-      <FigureCaption>Only one line has been modified here to reference the require.js file we downloaded following the standard syntax for single entry point applications as ours will be</FigureCaption>
+      <Caption>Only one line has been modified here to reference the require.js file we downloaded following the standard syntax for single entry point applications as ours will be</Caption>
     </CodeBlock>
   </Grid>
   <Grid item xs={12} sm={6}>
@@ -223,7 +223,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='wingTron_test2.js'
     >
-      <FigureCaption>The tests here are simply wrapped in requirejs statements to define the dependencies these tests have. Even though the refereeFactory module itself doesn't have dependencies on fieldFactory & playerFactory, the tests do as we need to define new fileds & players for testing with.</FigureCaption>
+      <Caption>The tests here are simply wrapped in requirejs statements to define the dependencies these tests have. Even though the refereeFactory module itself doesn't have dependencies on fieldFactory & playerFactory, the tests do as we need to define new fileds & players for testing with.</Caption>
     </CodeBlock>
   </Grid>
   <BodyText>
@@ -237,7 +237,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='fieldFactory2.js'
     >
-      <FigureCaption>Only the return statement is changed here</FigureCaption>
+      <Caption>Only the return statement is changed here</Caption>
     </CodeBlock>
   </Grid>
   <Grid item xs={12} sm={6}>
@@ -245,7 +245,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='playerFactory2.js'
     >
-      <FigureCaption>Only the return statement is changed here</FigureCaption>
+      <Caption>Only the return statement is changed here</Caption>
     </CodeBlock>
   </Grid>
   <Grid item xs={12} sm={6}>
@@ -253,7 +253,7 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='refereeFactory2.js'
     >
-      <FigureCaption>Only the return statement is changed here</FigureCaption>
+      <Caption>Only the return statement is changed here</Caption>
     </CodeBlock>
   </Grid>
   <Grid item xs={12} sm={6}>
@@ -261,14 +261,14 @@ const PageContents = () => (
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
       file='matchFactory2.js'
     >
-      <FigureCaption>The return statement, the parameters which are passed in, and the use of those parameters has changed. This is what needs to be done to a much larger extent within wingTron_test.js.</FigureCaption>
+      <Caption>The return statement, the parameters which are passed in, and the use of those parameters has changed. This is what needs to be done to a much larger extent within wingTron_test.js.</Caption>
     </CodeBlock>
   </Grid>
   <CodeBlock
     gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
     file='wingTron_test3.js'
   >
-    <FigureCaption>Both the parameters which are passed into the requirejs function, and the use of those parameters has changed</FigureCaption>
+    <Caption>Both the parameters which are passed into the requirejs function, and the use of those parameters has changed</Caption>
   </CodeBlock>
   <BodyText>
     I will endeavour to finish this guide, unfortunately now I have run out of time. You can finish the analysis yourself however by looking at the two codebases included in the links at the top of this article.
