@@ -3,47 +3,57 @@
  */
 body .gist .gist-file {
     margin-bottom: 0;
-    border: 1px dashed #adb5bd;
-    border-radius: 0;
+    border: none;
 }
 
 body .gist .gist-data {
-    border-bottom: none;
-    border-radius: 0;
-    background-color: #f1f3f5;
+    padding-left: 1rem;
+    padding-top: 0.618rem;
+    padding-bottom: 0.618rem;
+    border: none;
+    background-color: #ebeef2;
+}
+@media (min-width: 600px) {
+    body .gist .gist-data {
+        padding-left: 4.236rem; 
+        border-radius: 0.382rem;
+        border-bottom-right-radius: unset;
+        border-bottom-left-radius: unset;
+    }
 }
 
 body .gist .blob-wrapper {
     border-radius: 0;
+    overflow: hidden;
 }
 
 body .gist .highlight {
     background-color: transparent;
-    font-family: 'Droid Sans Mono', monospace;
+    font-family: 'Cutive Mono', 'Droid Sans Mono', monospace;
     font-size: 0.742rem;
 }
 
 body .gist .highlight td {
-    padding: 0.458rem 0.742rem !important;
-    line-height: 0.742rem;
+    padding-left: 0 !important;
+    line-height: 1.618rem;
     font-family: inherit;
     font-size: inherit;
 }
 
-body .gist tr:first-child td {
-    padding-top: 0.742rem !important;
-}
-
-body .gist tr:last-child td {
-    padding-bottom: 0.742rem !important;
-}
-
 body .gist .blob-num {
+    display: none;
     color: #ced4da;
-    background-color: #495057;
     pointer-events: none;
 }
 
 body .gist .gist-meta {
-    display: none;
+    color: #ddd;
+}
+@media (min-width: 600px) {
+    body .gist .gist-meta {
+        border-radius: 0.382rem;
+    }
+}
+body .gist .gist-meta a {
+    color: #ccc;
 }

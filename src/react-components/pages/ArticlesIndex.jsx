@@ -7,6 +7,7 @@ import Footer from '../layout/nav/Footer.jsx';
 
 import GridList, {GridListTile, GridListTileBar} from 'material-ui/GridList';
 
+import ContentList from '../layout/nav/ContentList.jsx';
 import articles_list from './articles/articles.js';
 
 const styles = theme => ({
@@ -52,7 +53,7 @@ class ArticlesGridList extends React.Component {
 const ArticlesIndex = (props) => (
     <div>
         <BannerNav title='Articles' image="articles.jpg" text_colour='#fff' background_colour='#94BBE2' />
-        <ArticlesGridList {...props} />
+        <ContentList />
         <Footer />
     </div>
 );

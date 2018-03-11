@@ -1,10 +1,15 @@
 import React from 'react';
+import Paper from 'material-ui/Paper';
 import {withStyles} from 'material-ui/styles';
 
 import Figure from './Figure.jsx';
 import YoutubePlayer from 'react-youtube-player';
 
-const styles = theme => ({});
+const styles = theme => ({
+    paper: {
+        boxShadow: theme.shadows[10],
+    }
+});
 
 class VideoFigure extends React.Component {
     componentDidMount () {
@@ -20,15 +25,17 @@ class VideoFigure extends React.Component {
         this.fig.style.height = height;
     };
     render () {
-        const {classes} = this.props;
+        const {classes, children} = this.props;
         return (
-                <Figure>
-            <div ref={fig => this.fig = fig}>
-                    <YoutubePlayer
-                        videoId={this.props.videoId}
-                    />
-        </div>
-                </Figure>
+            <Figure>
+                <Paper className={classes.paper}>
+                    <div ref={fig => this.fig = fig}>
+                        <YoutubePlayer
+                            videoId={this.props.videoId}
+                        />
+                    </div>
+                </Paper>
+            </Figure>
         );
     }
 };
