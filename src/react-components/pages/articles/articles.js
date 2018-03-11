@@ -1,5 +1,5 @@
 import * as Boolean from './BooleanFunction.jsx';
-//import * as TDD from './BuildAGameWithTdd.jsx';
+import * as TDD from './BuildAGameWithTdd.jsx';
 import * as Float from './FloatingPointVisualisation.jsx';
 //import * as Iterate from './IterativeArrayMethods.jsx';
 //import * as Keywords from './KeywordsAndReservedWordsInJavascript.jsx';
@@ -14,7 +14,7 @@ import * as Float from './FloatingPointVisualisation.jsx';
 
 const articles = [
   Boolean, 
-  //TDD, 
+  TDD, 
   Float, 
   //Iterate, 
   //Keywords, 
