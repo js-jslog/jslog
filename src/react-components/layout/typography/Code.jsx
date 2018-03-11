@@ -17,6 +17,7 @@ const styles = theme => ({
     block: {
         margin: 0,
         display: 'block',
+        marginLeft: theme.layout.page_column_gutter_xs,
         [theme.breakpoints.up('sm')]: {
           marginLeft: theme.scales.primary.p3,
         },

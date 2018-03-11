@@ -51,7 +51,6 @@ body .gist .gist-meta {
 }
 @media (min-width: 600px) {
     body .gist .gist-meta {
-        padding-left: 4.236rem; 
         border-radius: 0.382rem;
     }
 }

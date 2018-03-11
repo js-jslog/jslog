@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {withStyles} from 'material-ui/styles';
-import OverlayMenu from './OverlayNav.jsx';
+import BannerOverlay from './BannerOverlay.jsx';
 
 import {Parallax, Background} from 'react-parallax';
 
@@ -24,41 +25,47 @@ const styles = theme => ({
     },
 });
 
-class BannerNav extends React.Component {
+class Banner extends React.Component {
     componentDidMount () {
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
         this.updateElementSizeCache();
         this.trans_overlay.style.background = this.props.background_colour;
-    };
+    }
     componentWillUnmount () {
         window.removeEventListener('scroll', this.handleScroll.bind(this));
         window.removeEventListener('resize', this.updateElementSizeCache.bind(this));
-    };
+    }
     updateElementSizeCache () {
-        const header_height = getComputedStyle(this.header).height.split('px')[0];
-        this.setState({header_height: header_height});
-    };
+        const banner_height = getComputedStyle(this.banner).height.split('px')[0];
+        const overlay_height = getComputedStyle(ReactDOM.findDOMNode(this.overlay)).height.split('px')[0];
+        this.setState({banner_height: banner_height});
+        this.setState({overlay_height: overlay_height});
+    }
     handleScroll (event) {
-        const h = this.state.header_height;
+        const h1 = this.state.banner_height;
+        const h2 = this.state.overlay_height;
+        const h = h1 - h2 - 70;
         const y = window.scrollY;
         this.trans_overlay && (this.trans_overlay.style.opacity = y/h);
-    };
+    }
     render () {
         const image_src = '/images/hero/' + this.props.image;
-        const {classes} = this.props;
-        const container_height = this.state && this.state.header_height;
+        const {classes, children} = this.props;
+        const container_height = this.state && this.state.banner_height;
         return (
-            <header ref={(header) => {this.header = header}}>
+            <header ref={(banner) => {this.banner = banner}}>
                 <div
                     ref={trans_overlay => this.trans_overlay = trans_overlay}
                     className={classes.trans_overlay + ' ' + classes.banner_height} />
-                <OverlayMenu
-                    ref={menu => this.menu = menu}
-                    title={this.props.title}
-                    container_height={container_height}
-                    text_colour={this.props.text_colour}
-                />
+                    <BannerOverlay
+                        ref={(overlay) => {this.overlay = overlay}}
+                        title={this.props.title}
+                        container_height={container_height}
+                        text_colour={this.props.text_colour}
+                    >
+                        {children}
+                    </BannerOverlay>
                 <Parallax
                     bgImage={image_src}
                     strength={200}
@@ -70,4 +77,4 @@ class BannerNav extends React.Component {
     };
 };
 
-export default withStyles(styles)(BannerNav);
+export default withStyles(styles)(Banner);

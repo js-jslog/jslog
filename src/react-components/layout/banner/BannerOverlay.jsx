@@ -1,12 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 import {withStyles} from 'material-ui/styles';
 
-import Button from 'material-ui/Button';
-import List, {ListItem} from 'material-ui/List';
 import Typography from 'material-ui/Typography';
-import Hidden from 'material-ui/Hidden';
 import * as Scroll from 'react-scroll';
 
 const styles = function (theme) {
@@ -14,7 +10,7 @@ const styles = function (theme) {
     theme.overrides.MuiButton.root.color = 'inherit';
     theme.overrides.MuiButton.root.paddingRight = '0';
     return {
-    nav: {
+    overlay: {
         color: theme.palette.primary.main,
         position: 'fixed',
         top: '0',
@@ -37,47 +33,16 @@ const styles = function (theme) {
             fontSize: theme.scales.primary.p4,
         },
     },
-    nav_button: {
-        fontSize: theme.scales.primary.main,
-        [theme.breakpoints.up('md')]: {
-            fontSize: theme.scales.secondary.main,
-            paddingLeft: theme.scales.primary.p2,
-        },
+    childContent: {
+        float: 'right',
+        visibility: 'hidden',
     },
 }};
 
-const nav_links = [
-    {
-        link: "/",
-        display_text: "Home",
-    },
-    {
-        link: "/articles",
-        display_text: "Articles",
-    },
-    {
-        link: "/apps",
-        display_text: "Apps",
-    },
-];
-
-const NavLinks = function (props) {
-    return nav_links.map(link => (
-        <Button 
-            key={link.link}
-            component={Link}
-            to={link.link}
-            className={props.classes.nav_button}
-        >
-            {link.display_text}
-        </Button>
-    ));
-};
-
-class OverlayMenu extends React.Component {
+class BannerOverlay extends React.Component {
 
     componentDidMount () {
-        this.nav.style.color = this.props.text_colour;
+        this.overlay.style.color = this.props.text_colour;
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.updateElementSizeCache.bind(this));
     };
@@ -95,25 +60,27 @@ class OverlayMenu extends React.Component {
         window.removeEventListener('resize', this.updateElementSizeCache.bind(this));
     };
     updateElementSizeCache () {
-        const nav_height = getComputedStyle(this.nav).height.split('px')[0];
-        const nav_padding_top = getComputedStyle(this.nav).paddingTop.split('px')[0];
-        const nav_padding_bottom = getComputedStyle(this.nav).paddingBottom.split('px')[0];
-        const nav_total = parseFloat(nav_height) + parseFloat(nav_padding_top) + parseFloat(nav_padding_bottom);
-        this.nav_total = nav_total;
+        const overlay_height = getComputedStyle(this.overlay).height.split('px')[0];
+        const overlay_padding_top = getComputedStyle(this.overlay).paddingTop.split('px')[0];
+        const overlay_padding_bottom = getComputedStyle(this.overlay).paddingBottom.split('px')[0];
+        const overlay_total = parseFloat(overlay_height) + parseFloat(overlay_padding_top) + parseFloat(overlay_padding_bottom);
+        this.overlay_total = overlay_total;
     };
     handleScroll (event) {
-        const diff = parseFloat(this.props.container_height) - parseFloat(this.nav_total);
-        if (window.scrollY < diff) {
-            this.nav.style.position = 'fixed';
-            this.nav.style.top = 0;
+        const diff = parseFloat(this.props.container_height) - parseFloat(this.overlay_total);
+        if (window.scrollY < diff - 1) {
+            this.overlay.style.position = 'fixed';
+            this.overlay.style.top = 0;
+            this.childContent.style.visibility = 'hidden';
         }
-        if (window.scrollY > diff) {
-            this.nav.style.position = 'absolute';
-            this.nav.style.top = diff + 'px';
+        if (window.scrollY > diff - 1) {
+            this.overlay.style.position = 'absolute';
+            this.overlay.style.top = diff + 'px';
+            this.childContent.style.visibility = 'visible';
         }
     };
     scrollToContent (container_height) {
-        const diff = parseFloat(container_height) - parseFloat(this.nav_total)
+        const diff = parseFloat(container_height) - parseFloat(this.overlay_total)
         const scroll = Scroll.animateScroll;
         scroll.scrollTo(diff, {
             delay: 250,
@@ -121,11 +88,11 @@ class OverlayMenu extends React.Component {
         });
     };
     render() {
-        const {classes} = this.props;
+        const {classes, children} = this.props;
         return (
-            <nav
-                className={classes.nav}
-                ref={nav => this.nav = nav}
+            <div
+                className={classes.overlay}
+                ref={overlay => this.overlay = overlay}
             >
                 <Typography
                     variant='title'
@@ -133,10 +100,15 @@ class OverlayMenu extends React.Component {
                 >
                     {this.props.title}
                 </Typography>
-                <NavLinks classes={classes}/>
-            </nav>
+                <div
+                    className={classes.childContent}
+                    ref={childContent => this.childContent = childContent}
+                >
+                    {children}
+                </div>
+            </div>
         );
     };
 }
 
-export default withStyles(styles)(OverlayMenu);
+export default withStyles(styles)(BannerOverlay);
