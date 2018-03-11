@@ -35,6 +35,7 @@ const styles = function (theme) {
     },
     childContent: {
         float: 'right',
+        visibility: 'hidden',
     },
 }};
 
@@ -67,13 +68,15 @@ class BannerOverlay extends React.Component {
     };
     handleScroll (event) {
         const diff = parseFloat(this.props.container_height) - parseFloat(this.overlay_total);
-        if (window.scrollY < diff) {
+        if (window.scrollY < diff - 1) {
             this.overlay.style.position = 'fixed';
             this.overlay.style.top = 0;
+            this.childContent.style.visibility = 'hidden';
         }
-        if (window.scrollY > diff) {
+        if (window.scrollY > diff - 1) {
             this.overlay.style.position = 'absolute';
             this.overlay.style.top = diff + 'px';
+            this.childContent.style.visibility = 'visible';
         }
     };
     scrollToContent (container_height) {
@@ -97,7 +100,10 @@ class BannerOverlay extends React.Component {
                 >
                     {this.props.title}
                 </Typography>
-                <div className={classes.childContent}>
+                <div
+                    className={classes.childContent}
+                    ref={childContent => this.childContent = childContent}
+                >
                     {children}
                 </div>
             </div>

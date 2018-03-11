@@ -14,6 +14,7 @@ const styles = theme => ({
     },
     link: {
         padding: theme.scales.primary.p1,
+        fontSize: theme.scales.secondary.main,
         fontFamily: '"Nanum Gothic", sans-serif',
     },
 });
@@ -31,12 +32,6 @@ const MinimalBanner = function (props) {
                     className={classes.link}
                 >
                     Home
-                </Link>
-                <Link
-                    to='/articles'
-                    className={classes.link}
-                >
-                    Articles
                 </Link>
             </div>
         </div>
