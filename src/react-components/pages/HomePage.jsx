@@ -51,14 +51,6 @@ const PageContents = (props) => {
                 Recently added
             </Typography>
             <ContentList />
-            <ContentList />
-            <ContentList />
-            <ContentList />
-            <ContentList />
-            <ContentList />
-            <ContentList />
-            <ContentList />
-            <ContentList />
         </PostContent>
         <Footer />
     </div>
