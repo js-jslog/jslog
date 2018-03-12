@@ -24,13 +24,21 @@ const date = new Date('01/01/2016');
 
 const PageContents = () => (
 <div>
-  <PostContent>
-    <BodyText>
-      Here we will see the effect a TDD workflow has on application design by revisiting a game I created a few weeks ago. My coding ability may have improved slightly, but I expect an interesting deviation to arise purely from the use of the TDD workflow. This article will also serve as a simple demonstration of how to set up a basic project with version control in Git & GitHub and dependency management using bower.
-    </BodyText>
-    <BodyText>
+  <PostHeader>
+      <HeadingTitle>
+          {title}
+      </HeadingTitle>
+      <HeadingBlurb>
+          {blurb}
+      </HeadingBlurb>
+      <HeadingBlurb>
+        Here we will see the effect a TDD workflow has on application design by revisiting a game I created a few weeks ago. My coding ability may have improved slightly, but I expect an interesting deviation to arise purely from the use of the TDD workflow. This article will also serve as a simple demonstration of how to set up a basic project with version control in Git & GitHub and dependency management using bower.
+      </HeadingBlurb>
+      <HeadingBlurb>
     The original and modified games along with their source code can be found <Link to='tron-game'>here (original)</Link> & <Link to='wing-tron-game'>here (updated)</Link>
-  </BodyText>
+      </HeadingBlurb>
+  </PostHeader>
+  <PostContent>
   <SectionHeading>
     Introduction
   </SectionHeading>
