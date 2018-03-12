@@ -6,8 +6,6 @@ import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/fig
 import Code from '../../layout/typography/Code.jsx';
 import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
-import Figure from '../../layout/figure/Figure.jsx';
-import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import List, {ListItem} from 'material-ui/List';
 import {Link} from 'react-router-dom';

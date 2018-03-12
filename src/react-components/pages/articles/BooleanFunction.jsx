@@ -12,7 +12,7 @@ import Paper from 'material-ui/Paper';
 const title = "The boolean function";
 const image = "boolean-function.png";
 const link = "boolean-function";
-const blurb = "An description of the native Boolean function and explanation of why understanding this simple function might be more important than you think";
+const blurb = "A description of the native Boolean function and explanation of why understanding this simple function might be more important than you think";
 const published = true;
 const date = new Date('01/01/2016');
 const styles = theme => ({});

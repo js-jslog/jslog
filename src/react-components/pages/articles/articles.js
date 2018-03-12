@@ -10,7 +10,7 @@ import * as Float from './FloatingPointVisualisation.jsx';
 //import * as ObjObj from './TheObjectObject.jsx';
 //import * as Pillars from './TheTwoPillarsOfJavascript.jsx';
 //import * as Ultimate from './UltimatePseudoClassicalInheritance.jsx';
-//import * as FunctionObject from './FunctionsAreObjectsToo.jsx';
+import * as FunctionObject from './FunctionsAreObjectsToo.jsx';
 
 const articles = [
   Boolean, 
@@ -25,7 +25,7 @@ const articles = [
   //ObjObj, 
   //Pillars, 
   //Ultimate, 
-  //FunctionObject,
+  FunctionObject,
 ];
 
 export default articles;
