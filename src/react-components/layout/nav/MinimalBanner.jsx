@@ -13,9 +13,11 @@ const styles = theme => ({
         textAlign: 'center',
     },
     link: {
-        padding: theme.scales.primary.p1,
+        padding: theme.scales.primary.m1,
         fontSize: theme.scales.secondary.main,
         fontFamily: '"Nanum Gothic", sans-serif',
+        position: 'relative',
+        top: theme.scales.primary.p1,
     },
 });
 

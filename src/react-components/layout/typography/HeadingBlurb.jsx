@@ -7,7 +7,7 @@ const styles = theme => ({
     fontFamily: '"Nanum Gothic", sans-serif',
     fontStyle: 'italic',
     textAlign: 'center',
-    paddingBottom: theme.scales.primary.main,
+    marginBottom: theme.scales.primary.main,
   }
 });
 

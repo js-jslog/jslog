@@ -5,6 +5,7 @@ import {withStyles} from 'material-ui/styles';
 const styles = theme => ({
   body: {
     fontSize: theme.scales.primary.main,
+    marginBottom: theme.scales.primary.p2,
   }
 });
 

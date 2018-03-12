@@ -12,6 +12,7 @@ const styles = theme => ({
     display: 'block',
     color: theme.palette.primary.main,
     borderTop: '1px solid ' + theme.palette.primary.light,
+    borderBottom: 0,
     padding: theme.scales.primary.m1 + ' ' + theme.scales.primary.p1,
   },
   date: {
