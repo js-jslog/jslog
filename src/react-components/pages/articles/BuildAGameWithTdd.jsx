@@ -108,10 +108,10 @@ const PageContents = () => (
       Field - an object which defines the boundaries of play
     </ListItem>
     <ListItem>
-      <BodyText>Player - an object which moves within boundaries defined by the field. It must know it's location & whether it is alive. It must have the ability to turn left or right, and incrementally move forward, logging the points of the changes of direction as dictated by it's speed & direction. When a player is dead it must not move any longer</BodyText>
+      Player - an object which moves within boundaries defined by the field. It must know it's location & whether it is alive. It must have the ability to turn left or right, and incrementally move forward, logging the points of the changes of direction as dictated by it's speed & direction. When a player is dead it must not move any longer
     </ListItem>
     <ListItem>
-      <BodyText>Referee - an object which 'owns' the field and any number of players. It will define the timeline in which the player objects must move & inform the players when they have hit a wall or a path & consequentially mark them as dead.</BodyText>
+      Referee - an object which 'owns' the field and any number of players. It will define the timeline in which the player objects must move & inform the players when they have hit a wall or a path & consequentially mark them as dead.
     </ListItem>
   </List>
   <CodeBlock
@@ -137,10 +137,10 @@ const PageContents = () => (
   </BodyText>
   <List>
     <ListItem>
-      <BodyText>Pollution of the global namespace</BodyText>
+      Pollution of the global namespace
     </ListItem>
     <ListItem>
-      <BodyText>Pure functions being contained inside factory functions</BodyText>
+      Pure functions being contained inside factory functions
     </ListItem>
   </List>
   <BodyText>
@@ -151,10 +151,10 @@ const PageContents = () => (
   </BodyText>
   <List>
     <ListItem>
-      <BodyText>Modularise the code so that only the matchFactory will be externally exposed, while leaving ALL modules APIs exposed for testing</BodyText>
+      Modularise the code so that only the matchFactory will be externally exposed, while leaving ALL modules APIs exposed for testing
     </ListItem>
     <ListItem>
-      <BodyText>Place the pure functions & utility objects in a scope which shelters them from unnecessary access, and duplication, whilst being available where ever necessary</BodyText>
+      Place the pure functions & utility objects in a scope which shelters them from unnecessary access, and duplication, whilst being available where ever necessary
     </ListItem>
   </List>
   <BodyText>

@@ -66,9 +66,17 @@ Theme.layout.vertical_spacing_uneven = {
     marginBottom: Theme.scales.primary.p1,
 };
 Theme.overrides.MuiButton = {root: {}};
-Theme.overrides.MuiList = {root: {
-   marginLeft: Theme.scales.primary.p1,
-}};
+Theme.overrides.MuiList = {
+   root: {
+      marginLeft: Theme.scales.primary.p1,
+      marginTop: Theme.scales.primary.p2,
+      marginBottom: Theme.scales.primary.p2,
+   },
+   padding: {
+      paddingTop: 0,
+      paddingBottom: 0,
+   },
+};
 Theme.overrides.MuiListItem = {
    root: {
       fontFamily: '"Nanum Gothic", sans-serif',

@@ -52,6 +52,8 @@ body .gist .gist-meta {
 @media (min-width: 600px) {
     body .gist .gist-meta {
         border-radius: 0.382rem;
+        border-top-right-radius: unset;
+        border-top-left-radius: unset;
     }
 }
 body .gist .gist-meta a {
