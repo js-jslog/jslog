@@ -5,11 +5,6 @@ import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
 import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/figure/CodeBlock.jsx';
 import { BlockQuote, BodyText, Caption, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
-import {Link} from 'react-router-dom';
-import Figure from '../../layout/figure/Figure.jsx';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
-import Paper from 'material-ui/Paper';
-import Grid from 'material-ui/Grid';
 import List, {ListItem} from 'material-ui/List';
 
 const styles = theme => ({
@@ -25,12 +20,12 @@ const date = new Date('01/01/2016');
 const PageContents = () => (
   <div>
     <PostHeader>
-        <HeadingTitle>
-            {title}
-        </HeadingTitle>
-        <HeadingBlurb>
-            {blurb}
-        </HeadingBlurb>
+      <HeadingTitle>
+        {title}
+      </HeadingTitle>
+      <HeadingBlurb>
+        {blurb}
+      </HeadingBlurb>
     </PostHeader>
     <PostContent>
       <BodyText>
