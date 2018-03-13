@@ -9,7 +9,7 @@ import * as Number from './NumberConversion.jsx';
 import * as Prefix from './PrefixVsPostfixIncrementUnaryOperators.jsx';
 import * as ObjObj from './TheObjectObject.jsx';
 import * as Pillars from './TheTwoPillarsOfJavascript.jsx';
-//import * as Ultimate from './UltimatePseudoClassicalInheritance.jsx';
+import * as Ultimate from './UltimatePseudoClassicalInheritance.jsx';
 import * as FunctionObject from './FunctionsAreObjectsToo.jsx';
 
 const articles = [
@@ -24,7 +24,7 @@ const articles = [
   Prefix, 
   ObjObj, 
   Pillars, 
-  //Ultimate, 
+  Ultimate, 
   FunctionObject,
 ];
 
