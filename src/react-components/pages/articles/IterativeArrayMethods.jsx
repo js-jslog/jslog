@@ -11,11 +11,10 @@ import {Link} from 'react-router-dom';
 
 const styles = theme => ({
   left_listbox: {
+    width: theme.scales.primary.p4,
     display: 'inline-flex',
-    width: '25%',
   },
   right_listbox: {
-    display: 'inline-flex',
   },
 });
 
@@ -24,6 +23,7 @@ const image = "iterative-array-methods.jpg";
 const link = "iterative-array-methods";
 const blurb = "A rundown of the 5 higher order iterative functions which exist on Arrays as of ES2015";
 const published = true;
+const date = new Date('01/01/2016');
 
 class PageContents extends React.Component {
   render () {
@@ -50,24 +50,40 @@ class PageContents extends React.Component {
           </BodyText>
           <List>
             <ListItem>
-              <span className={classes.left_listbox}>
+              <div className={classes.left_listbox}>
                 <Link to='#everyMethod'>every</Link>
-              </span>
-              <span className={classes.right_listbox}>
-                - check whether <b>all</b> elements of an array match a criteria
-              </span>
+              </div>
+              <div className={classes.right_listbox}>
+                check whether all elements of an array match a criteria
+              </div>
             </ListItem>
             <ListItem>
-              <Link to='#someMethod'>some</Link> - check whether <b>some</b> elements of an array match a criteria
+              <div className={classes.left_listbox}>
+                <Link to='#someMethod'>some</Link>
+              </div>
+              <div className={classes.right_listbox}>
+                check whether some elements of an array match a criteria
+              </div>
             </ListItem>
             <ListItem>
-              <Link to='#filterMethod'>filter</Link> - return a copy of the original array <b>containing only the elements which match a criteria</b>
+              <div className={classes.left_listbox}>
+                <Link to='#filterMethod'>filter</Link>
+              </div>
+              <div className={classes.right_listbox}>
+                return a copy of the original array containing only the elements which match a criteria
+              </div>
             </ListItem>
             <ListItem>
-              <Link to='#mapMethod'>map</Link> - return a copy of the original with a <b>transform applied to each element</b>
+              <div className={classes.left_listbox}>
+                <Link to='#mapMethod'>map</Link>
+              </div>
+              return a copy of the original with a transform applied to each element
             </ListItem>
             <ListItem>
-              <Link to='#foreachMethod'>forEach</Link> - iterate through each element of an array
+              <div className={classes.left_listbox}>
+                <Link to='#foreachMethod'>forEach</Link>
+              </div>
+              iterate through each element of an array
             </ListItem>
           </List>
           <SectionHeading>
@@ -222,3 +238,4 @@ export {image};
 export {blurb};
 export {link};
 export {published};
+export {date};
