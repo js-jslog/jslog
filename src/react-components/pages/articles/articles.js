@@ -7,7 +7,7 @@ import * as Loops from './LoopsOrArrayMethods.jsx';
 import * as Modular from './ModularisationWithoutObstruction.jsx';
 import * as Number from './NumberConversion.jsx';
 import * as Prefix from './PrefixVsPostfixIncrementUnaryOperators.jsx';
-//import * as ObjObj from './TheObjectObject.jsx';
+import * as ObjObj from './TheObjectObject.jsx';
 //import * as Pillars from './TheTwoPillarsOfJavascript.jsx';
 //import * as Ultimate from './UltimatePseudoClassicalInheritance.jsx';
 import * as FunctionObject from './FunctionsAreObjectsToo.jsx';
@@ -22,7 +22,7 @@ const articles = [
   Modular, 
   Number, 
   Prefix, 
-  //ObjObj, 
+  ObjObj, 
   //Pillars, 
   //Ultimate, 
   FunctionObject,
