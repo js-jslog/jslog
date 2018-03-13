@@ -3,7 +3,7 @@ import * as TDD from './BuildAGameWithTdd.jsx';
 import * as Float from './FloatingPointVisualisation.jsx';
 import * as Iterate from './IterativeArrayMethods.jsx';
 import * as Keywords from './KeywordsAndReservedWordsInJavascript.jsx';
-//import * as Loops from './LoopsOrArrayMethods.jsx';
+import * as Loops from './LoopsOrArrayMethods.jsx';
 import * as Modular from './ModularisationWithoutObstruction.jsx';
 //import * as Number from './NumberConversion.jsx';
 //import * as Prefix from './PrefixVsPostfixIncrementUnaryOperators.jsx';
@@ -18,7 +18,7 @@ const articles = [
   Float, 
   Iterate, 
   Keywords, 
-  //Loops, 
+  Loops, 
   Modular, 
   //Number, 
   //Prefix, 
