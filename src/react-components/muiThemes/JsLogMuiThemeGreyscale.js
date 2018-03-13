@@ -81,11 +81,11 @@ Theme.overrides.MuiListItem = {
    root: {
       fontFamily: '"Nanum Gothic", sans-serif',
       color: Theme.palette.primary.light,
-      lineHeight: Theme.scales.primary.p2.split('rem')[0] + 'em',
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
    },
    default: {
       paddingTop: 0,
-      paddingBottom: Theme.scales.primary.p3,
+      paddingBottom: Theme.scales.primary.main,
       marginTop: 0,
       marginBottom: 0,
    },
