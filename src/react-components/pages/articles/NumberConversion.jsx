@@ -1,13 +1,14 @@
 import React from 'react';
 import {withStyles} from 'material-ui/styles';
-
-import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/code/CodeBlock.jsx';
-import Code from '../../layout/code/Code.jsx';
-import Figure, {FigureCaption} from '../../layout/figure/Figure.jsx';
-import Typography from 'material-ui/Typography';
+import Code from '../../layout/typography/Code.jsx';
+import PostContent from '../../layout/wrapping/PostContent.jsx';
+import PostHeader from '../../layout/wrapping/PostHeader.jsx';
+import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/figure/CodeBlock.jsx';
+import { BlockQuote, BodyText, Caption, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
+import {Link} from 'react-router-dom';
+import Figure from '../../layout/figure/Figure.jsx';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
-import {Link} from 'react-router-dom';
 import Grid from 'material-ui/Grid';
 import List, {ListItem} from 'material-ui/List';
 
@@ -106,9 +107,9 @@ const NumberConversionTable = function () {
                     </TableBody>
                 </Table>
             </Paper>
-            <FigureCaption>
+            <Caption>
               Rules for converting various types to numbers using the Number() function
-            </FigureCaption>
+            </Caption>
         </Figure>
     );
 }
@@ -140,9 +141,9 @@ const ParseIntConversionTable = function () {
                     </TableBody>
                 </Table>
             </Paper>
-            <FigureCaption>
+            <Caption>
               Rules for converting various types to numbers using the parseInt() function
-            </FigureCaption>
+            </Caption>
         </Figure>
     );
 }
@@ -172,7 +173,7 @@ const RadixConversionTable = function () {
           </TableBody>
         </Table>
       </Paper>
-      <FigureCaption>The effect of the <i>radix</i> on parseInt() string interpretation</FigureCaption>
+      <Caption>The effect of the <i>radix</i> on parseInt() string interpretation</Caption>
     </Figure>
   );
 }
@@ -200,7 +201,7 @@ const ParseFloatConversionTable = function () {
           </TableBody>
         </Table>
       </Paper>
-      <FigureCaption>The use of decimal points in the parseFloat() function</FigureCaption>
+      <Caption>The use of decimal points in the parseFloat() function</Caption>
     </Figure>
   );
 }
@@ -213,52 +214,63 @@ const image = "number-conversion.jpg";
 const link = "number-conversion";
 const blurb = "A look at number conversion in JavaScript";
 const published = true;
+const date = new Date('01/01/2016');
 
 const PageContents = () => (
   <div>
-    <Typography>
-      Type conversion is at the heart of JavaScript's flexibility. The earlier article on the type conversion implicit in flow control statements discussed the <a href="boolean_function">Boolean() casting function</a> demonstrated how various types are converted to the boolean type. Converting to the numeric type is one of the most common conversions you will come across in JavaScript development. However despite its ease of use, it is not necessarily as straight forward as it appears.
-    </Typography>
-    <Typography variant='display1'>
-      3 Functions
-    </Typography>
-    <Typography>
-      There are 3 functions with which you can convert to numeric values :
-    </Typography>
-    <List>
-      <ListItem>Number()</ListItem>
-      <ListItem>parseInt()</ListItem>
-      <ListItem>parseFloat()</ListItem>
-    </List>
-    <Typography>
-      The rules governing each of these may be most simply understood in the following tables.
-    </Typography>
-    <Typography variant='display1'>
-      Number()
-    </Typography>
-    <NumberConversionTable />
-    <Typography>
-      We are about to see a pair of much more reliable conversion functions. However it is important to understand the Number() function as <i>it is the function which defines the auto-casting to numbers when using bitwise operators</i>.
-    </Typography>
-    <Typography variant='display1'>
-      parseInt()
-    </Typography>
-    <Typography>
-      The parsInt() function behaves the same as the Number() function, other than it's effect on strings. For strings it will convert according to the following rules:
-      <detail>The rules are applied in the order listed. If a rule does not apply, the next rule will be applied.</detail>
-    </Typography>
-    <ParseIntConversionTable />
-    <Typography>
-      As you can see there is a lot of potential confusion involved in using parseInt() with number formats which are up for interpretation. To avoid this & because you are likely to know what format your number should be coming in, even if it might look like another format, an additional parameter is available for the parseInt() function. This parameter enables you to define what base the number coming in should be interpreted in. It is called the <i>radix</i>.
-    </Typography>
-    <RadixConversionTable />
-    <Typography variant='display1'>
-      parseFloat()
-    </Typography>
-    <Typography>
-      The parseFloat() function operates in the same way as parseInt() except that it has <b>no radix parameter</b>, only accepts <b>decimal form</b> at at stage 3 it will also accept a <b>single decimal point</b> followed once again only by numeric characters.
-    </Typography>
-    <ParseFloatConversionTable />
+    <PostHeader>
+      <HeadingTitle>
+        {title}
+      </HeadingTitle>
+      <HeadingBlurb>
+        {blurb}
+      </HeadingBlurb>
+    </PostHeader>
+    <PostContent>
+      <BodyText>
+        Type conversion is at the heart of JavaScript's flexibility. The earlier article on the type conversion implicit in flow control statements discussed the <a href="boolean_function">Boolean() casting function</a> demonstrated how various types are converted to the boolean type. Converting to the numeric type is one of the most common conversions you will come across in JavaScript development. However despite its ease of use, it is not necessarily as straight forward as it appears.
+      </BodyText>
+      <SectionHeading>
+        3 Functions
+      </SectionHeading>
+      <BodyText>
+        There are 3 functions with which you can convert to numeric values :
+      </BodyText>
+      <List>
+        <ListItem>Number()</ListItem>
+        <ListItem>parseInt()</ListItem>
+        <ListItem>parseFloat()</ListItem>
+      </List>
+      <BodyText>
+        The rules governing each of these may be most simply understood in the following tables.
+      </BodyText>
+      <SectionHeading>
+        Number()
+      </SectionHeading>
+      <NumberConversionTable />
+      <BodyText>
+        We are about to see a pair of much more reliable conversion functions. However it is important to understand the Number() function as <i>it is the function which defines the auto-casting to numbers when using bitwise operators</i>.
+      </BodyText>
+      <SectionHeading>
+        parseInt()
+      </SectionHeading>
+      <BodyText>
+        The parsInt() function behaves the same as the Number() function, other than it's effect on strings. For strings it will convert according to the following rules:
+        <detail>The rules are applied in the order listed. If a rule does not apply, the next rule will be applied.</detail>
+      </BodyText>
+      <ParseIntConversionTable />
+      <BodyText>
+        As you can see there is a lot of potential confusion involved in using parseInt() with number formats which are up for interpretation. To avoid this & because you are likely to know what format your number should be coming in, even if it might look like another format, an additional parameter is available for the parseInt() function. This parameter enables you to define what base the number coming in should be interpreted in. It is called the <i>radix</i>.
+      </BodyText>
+      <RadixConversionTable />
+      <SectionHeading>
+        parseFloat()
+      </SectionHeading>
+      <BodyText>
+        The parseFloat() function operates in the same way as parseInt() except that it has <b>no radix parameter</b>, only accepts <b>decimal form</b> at at stage 3 it will also accept a <b>single decimal point</b> followed once again only by numeric characters.
+      </BodyText>
+      <ParseFloatConversionTable />
+    </PostContent>
   </div>
 );
 
@@ -269,3 +281,4 @@ export {image};
 export {blurb};
 export {link};
 export {published};
+export {date};
