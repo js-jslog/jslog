@@ -85,7 +85,7 @@ Theme.overrides.MuiListItem = {
    },
    default: {
       paddingTop: 0,
-      paddingBottom: 0,
+      paddingBottom: Theme.scales.primary.p3,
       marginTop: 0,
       marginBottom: 0,
    },
