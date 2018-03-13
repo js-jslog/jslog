@@ -4,7 +4,7 @@ import * as Float from './FloatingPointVisualisation.jsx';
 import * as Iterate from './IterativeArrayMethods.jsx';
 import * as Keywords from './KeywordsAndReservedWordsInJavascript.jsx';
 //import * as Loops from './LoopsOrArrayMethods.jsx';
-//import * as Modular from './ModularisationWithoutObstruction.jsx';
+import * as Modular from './ModularisationWithoutObstruction.jsx';
 //import * as Number from './NumberConversion.jsx';
 //import * as Prefix from './PrefixVsPostfixIncrementUnaryOperators.jsx';
 //import * as ObjObj from './TheObjectObject.jsx';
@@ -19,7 +19,7 @@ const articles = [
   Iterate, 
   Keywords, 
   //Loops, 
-  //Modular, 
+  Modular, 
   //Number, 
   //Prefix, 
   //ObjObj, 
