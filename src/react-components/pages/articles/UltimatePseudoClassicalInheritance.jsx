@@ -23,6 +23,7 @@ const image = "ultimate-pseudo-classical-inheritance.jpg";
 const link = "ultimate-pseudo-classical-inheritance";
 const blurb = "A detailed examination of a less than ideal pattern";
 const published = true;
+const date = new Date('01/01/2016');
 
 const PageContents = () => (
   <div>
@@ -287,3 +288,4 @@ export {image};
 export {blurb};
 export {link};
 export {published};
+export {date};

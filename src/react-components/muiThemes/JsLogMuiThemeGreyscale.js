@@ -79,6 +79,7 @@ Theme.overrides.MuiList = {
 };
 Theme.overrides.MuiListItem = {
    root: {
+      display: 'block',
       fontFamily: '"Nanum Gothic", sans-serif',
       color: Theme.palette.primary.light,
       lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
