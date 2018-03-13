@@ -16,10 +16,7 @@ const styles = theme => ({
 });
 
 const Figure = (props) => {
-    const {classes, margin} = props;
-    const children = React.Children.map(props.children, child =>
-        React.cloneElement(child, {classes: classes})
-    );
+    const {classes, children, margin} = props;
     return (
         <figure 
             className={classes.figure_spacing}
