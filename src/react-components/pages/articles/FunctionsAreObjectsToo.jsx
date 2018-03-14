@@ -40,22 +40,30 @@ One of the reasons people struggle to accept this is because of the syntax diffe
     <BodyText>
 We all know that there are two ways of creating a function right?
     </BodyText>
-    <Grid item xs={12} sm={6}>
-      <CodeBlock
-        gist_id='js-jslog/4856ad531bf8955867a6b93b139b870d'
-        file='functions_are_objects_too.js'
-      >
-      <Caption>The two sensible ways to create a function</Caption>
-      </CodeBlock>
+  </PostContent>
+  <PostContent wide>
+    <Grid container spacing={12}>
+      <Grid item xs={12} sm={6}>
+        <CodeBlock
+          parallel
+          gist_id='js-jslog/4856ad531bf8955867a6b93b139b870d'
+          file='functions_are_objects_too.js'
+        >
+        <Caption>The two sensible ways to create a function</Caption>
+        </CodeBlock>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <CodeBlock
+          parallel
+          gist_id='js-jslog/4856ad531bf8955867a6b93b139b870d'
+          file='functions_are_objects_too2.js'
+        >
+        <Caption>The two sensible ways to create a function</Caption>
+        </CodeBlock>
+      </Grid>
     </Grid>
-    <Grid item xs={12} sm={6}>
-      <CodeBlock
-        gist_id='js-jslog/4856ad531bf8955867a6b93b139b870d'
-        file='functions_are_objects_too2.js'
-      >
-      <Caption>The two sensible ways to create a function</Caption>
-      </CodeBlock>
-    </Grid>
+  </PostContent>
+  <PostContent>
     <BodyText>
       Wrong! There is one further method. A constructor method which suddenly makes functions look a lot more like objects.
     </BodyText>

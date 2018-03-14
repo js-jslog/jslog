@@ -6,6 +6,7 @@ const styles = theme => ({
   blockquote: {
     fontFamily: '"Nanum Gothic", sans-serif',
     fontStyle: 'italic',
+    marginBottom: theme.scales.primary.p2,
   }
 });
 
