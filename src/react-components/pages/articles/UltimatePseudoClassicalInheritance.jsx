@@ -7,11 +7,16 @@ import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/fig
 import { BlockQuote, BodyText, Caption, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
 import {Link} from 'react-router-dom';
 import Figure from '../../layout/figure/Figure.jsx';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import List, {ListItem} from 'material-ui/List';
 
 const styles = theme => ({
+  paper: {
+    margin: theme.scales.primary.p1,
+    paddingLeft: theme.scales.primary.p4,
+    padding: theme.scales.primary.m1,
+  }
 });
 
 const title = "The ultimate pseudo-classical inheritance pattern";
@@ -25,7 +30,10 @@ const blurb = "A detailed examination of a less than ideal pattern";
 const published = true;
 const date = new Date('01/01/2016');
 
-const PageContents = () => (
+class PageContents extends React.Component {
+  render() {
+    const {classes} = this.props;
+    return (
   <div>
     <PostHeader>
       <HeadingTitle>
@@ -48,59 +56,69 @@ const PageContents = () => (
       <BodyText>
         For those willing to look a little deeper, the concept of <i>Class-like</i> inheritance in JavaScript is extremely nuanced and interesting. In the absence of <i>actual</i> classes, objects can fulfil a <i>pseudo-class-like</i> role, permitting <i>sub-types</i> to inherit methods and properties. We call this <i>pseudo-classical inheritance</i> and it's comprehension requires a detailed knowledge of how objects work. I advise looking in detail at the following custom reference type (object) & inheritance patterns :
       </BodyText>
-      <Grid item xs={12} sm={6}>
-        <SectionSubheading>
-          Defining custom reference types
-        </SectionSubheading>
-        <List>
-          <ListItem>
-            Factory
-          </ListItem>
-          <ListItem>
-            Constructor
-          </ListItem>
-          <ListItem>
-            Prototype
-          </ListItem>
-          <ListItem>
-            Combined constructor / prototype
-          </ListItem>
-          <ListItem>
-            Dynamic prototype
-          </ListItem>
-          <ListItem>
-            Parasitic prototype
-          </ListItem>
-          <ListItem>
-            Durable
-          </ListItem>
-        </List>
+    </PostContent>
+    <PostContent wide>
+      <Grid container spacing={12}>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+            <SectionSubheading>
+              Defining custom reference types
+            </SectionSubheading>
+            <List>
+              <ListItem>
+                Factory
+              </ListItem>
+              <ListItem>
+                Constructor
+              </ListItem>
+              <ListItem>
+                Prototype
+              </ListItem>
+              <ListItem>
+                Combined constructor / prototype
+              </ListItem>
+              <ListItem>
+                Dynamic prototype
+              </ListItem>
+              <ListItem>
+                Parasitic prototype
+              </ListItem>
+              <ListItem>
+                Durable
+              </ListItem>
+            </List>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+            <SectionSubheading>
+              Inheritance
+            </SectionSubheading>
+            <List>
+              <ListItem>
+                Prototype chaining
+              </ListItem>
+              <ListItem>
+                Constructor stealing
+              </ListItem>
+              <ListItem>
+                Combination inheritance
+              </ListItem>
+              <ListItem>
+                Prototypal inheritance
+              </ListItem>
+              <ListItem>
+                Parasitic prototypal inheritance
+              </ListItem>
+              <ListItem>
+                Parasitic combination inheritance
+              </ListItem>
+            </List>
+          </Paper>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <SectionSubheading>
-          Inheritance
-        </SectionSubheading>
-        <List>
-          <ListItem>
-            Prototype chaining
-          </ListItem>
-          <ListItem>
-            Constructor stealing
-          </ListItem>
-          <ListItem>
-            Combination inheritance
-          </ListItem>
-          <ListItem>
-            Prototypal inheritance
-          </ListItem>
-          <ListItem>
-            Parasitic prototypal inheritance
-          </ListItem>
-          <ListItem>
-            Parasitic combination inheritance
-          </ListItem>
-        </List>
-      </Grid>
+    </PostContent>
+    <PostContent>
       <BodyText>
         As ever, my key source is Nicolas C. Zakas book<sup>1</sup>, but I returned to a number of other sources over and over again as my understanding grew to really solidify these ideas, some through advocating the approach, some by criticising it. I can't recommend the sources in the reference section below highly enough.
       </BodyText>
@@ -278,7 +296,9 @@ const PageContents = () => (
       </List>
     </PostContent>
   </div>
-);
+    )
+  }
+}
 
 const StyledPageContents = withStyles(styles)(PageContents);
 export {StyledPageContents}
