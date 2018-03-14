@@ -45,45 +45,61 @@ const PageContents = () => (
       <BodyText>
         Douglas' only point during his brief comment on this subject was with regards to expressiveness. <q cite="#bib01">For was invented originally for Fortran to deal with arrays. We don't need those in JavaScript any more, we can do Array's with methods, and it's so much cleaner & so much better</q>. He's not very specific here but I think his intention is clear. Lets compare a for loop and an array method.
       </BodyText>
-      <Grid item xs={12} sm={6}>
-        <CodeBlock
-          gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
-          file='loops_or_array_methods.js'
-        >
-          <CodeBlockOutput>2</CodeBlockOutput>
-          <Caption>Counting occurences within an array using <Code>for</Code> loop</Caption>
-        </CodeBlock>
+    </PostContent>
+    <PostContent wide>
+      <Grid container spacing={12}>
+        <Grid item xs={12} sm={6}>
+          <CodeBlock
+            parallel
+            gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
+            file='loops_or_array_methods.js'
+          >
+            <CodeBlockOutput>2</CodeBlockOutput>
+            <Caption>Counting occurences within an array using <Code>for</Code> loop</Caption>
+          </CodeBlock>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <CodeBlock
+            parallel
+            gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
+            file='loops_or_array_methods2.js'
+          >
+            <CodeBlockOutput>2</CodeBlockOutput>
+            <Caption>Counting occurrences within an array using <Code>forEach</Code> method</Caption>
+          </CodeBlock>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <CodeBlock
-          gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
-          file='loops_or_array_methods2.js'
-        >
-          <CodeBlockOutput>2</CodeBlockOutput>
-          <Caption>Counting occurrences within an array using <Code>forEach</Code> method</Caption>
-        </CodeBlock>
-      </Grid>
+    </PostContent>
+    <PostContent>
       <BodyText>
         The <Code>forEach</Code> method is really the direct counterpart of the for loop. As you can see we still need to perform all of the same logic within the iterating logic. The additional verbosity of having the words 'for' and 'each' in the method name might be debatable to seasoned programmers of any type as we have all become used to deciphering for loops on sight, but the slight reduction in cognitive load may be valuable when trying to grasp a complex piece of code.
       </BodyText>
-      <Grid item xs={12} sm={6}>
-        <CodeBlock
-          gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
-          file='loops_or_array_methods3.js'
-        >
-          <CodeBlockOutput>true</CodeBlockOutput>
-          <figcaption>Using a <Code>for</Code> loop to determine whether both a blue and green exist inside the array and then exiting as soon as a conclusion has been reached.</figcaption>
-        </CodeBlock>
+    </PostContent>
+    <PostContent wide>
+      <Grid container spacing={12}>
+        <Grid item xs={12} sm={6}>
+          <CodeBlock
+            parallel
+            gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
+            file='loops_or_array_methods3.js'
+          >
+            <CodeBlockOutput>true</CodeBlockOutput>
+            <figcaption>Using a <Code>for</Code> loop to determine whether both a blue and green exist inside the array and then exiting as soon as a conclusion has been reached.</figcaption>
+          </CodeBlock>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <CodeBlock
+            parallel
+            gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
+            file='loops_or_array_methods4.js'
+          >
+            <CodeBlockOutput>true</CodeBlockOutput>
+            <Caption>Using a pair of <Code>some</Code> methods to determine whether the array contains blue & then green.</Caption>
+          </CodeBlock>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <CodeBlock
-          gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
-          file='loops_or_array_methods4.js'
-        >
-          <CodeBlockOutput>true</CodeBlockOutput>
-          <Caption>Using a pair of <Code>some</Code> methods to determine whether the array contains blue & then green.</Caption>
-        </CodeBlock>
-      </Grid>
+    </PostContent>
+    <PostContent>
       <BodyText>
         These two solutions are not equivalent. In the first we are looping through the array once, keeping track of green & blue & breaking out once we know we have an answer, while in the second we loop through once for each value. However, this would be a natural approach to using the two different methods & the difference in clarity is striking.
       </BodyText>
