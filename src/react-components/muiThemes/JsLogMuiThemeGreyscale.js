@@ -6,10 +6,8 @@ let Theme = createMuiTheme({
     layout: {
         // page_column_width_xs: scales.primary.p6, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
         page_column_gutter_xs: scales.px.primary.m1,
-        page_column_width_sm: scales.primary.p7,
         page_column_width_md: scales.primary.p7,
-        page_column_width_lg: scales.primary.p7,
-        page_column_width_xl: scales.primary.p7,
+        page_column_width_lg: scales.primary.p9,
     },
     palette: {
         primary: {
@@ -37,22 +35,21 @@ Theme.layout.responsive_page_column = {
     marginLeft: Theme.layout.page_column_gutter_xs,
     marginRight: Theme.layout.page_column_gutter_xs,
     [Theme.breakpoints.up('sm')]: {
-        maxWidth: Theme.layout.page_column_width_sm,
+        maxWidth: Theme.layout.page_column_width_md,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    [Theme.breakpoints.up('md')]: {
+};
+Theme.layout.responsive_page_column_wide = {
+    marginLeft: Theme.layout.page_column_gutter_xs,
+    marginRight: Theme.layout.page_column_gutter_xs,
+    [Theme.breakpoints.up('sm')]: {
         maxWidth: Theme.layout.page_column_width_md,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
     [Theme.breakpoints.up('lg')]: {
         maxWidth: Theme.layout.page_column_width_lg,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    },
-    [Theme.breakpoints.up('xl')]: {
-        maxWidth: Theme.layout.page_column_width_xl,
         marginLeft: 'auto',
         marginRight: 'auto',
     },

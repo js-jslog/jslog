@@ -32,12 +32,12 @@ const CodeBlockErrorOutput = (props) => {
 };
 
 const CodeBlock = (props) => {
-    const {children, classes} = props;
+    const {children, classes, parallel} = props;
     const childrenWithProps = React.Children.map(children, child => 
         React.cloneElement(child, {classes: classes})
     );
     return (
-        <Figure>
+        <Figure parallel={parallel}>
             <Paper className={classes.paper}>
                 <EmbeddedGist
                     gist={props.gist_id}
