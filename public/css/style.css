@@ -28,7 +28,7 @@ ul>li:before {
     display: block;
     position: absolute;
     left: -1.4em;
-    top: 0;
+    top: -0.382rem;
     margin-top: 1em;
     width: 4px;
     height: 4px;
