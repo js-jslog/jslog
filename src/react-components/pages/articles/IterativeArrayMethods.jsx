@@ -12,9 +12,10 @@ import {Link} from 'react-router-dom';
 const styles = theme => ({
   left_listbox: {
     width: theme.scales.primary.p4,
-    display: 'inline-flex',
+    display: 'table-cell',
   },
   right_listbox: {
+    display: 'table-cell',
   },
 });
 
@@ -45,9 +46,9 @@ class PageContents extends React.Component {
           <BodyText>
             The simplicity of these tasks may account for why so many people are unaware of the, However, having these functions under your belt will save an enormous amount of time in the long run and also standardise your code for improved maintainability.
           </BodyText>
-          <BodyText>
+          <SectionHeading>
             The functions
-          </BodyText>
+          </SectionHeading>
           <List>
             <ListItem>
               <div className={classes.left_listbox}>
@@ -77,13 +78,17 @@ class PageContents extends React.Component {
               <div className={classes.left_listbox}>
                 <Link to='#mapMethod'>map</Link>
               </div>
-              return a copy of the original with a transform applied to each element
+              <div className={classes.right_listbox}>
+                return a copy of the original with a transform applied to each element
+              </div>
             </ListItem>
             <ListItem>
               <div className={classes.left_listbox}>
                 <Link to='#foreachMethod'>forEach</Link>
               </div>
-              iterate through each element of an array
+              <div className={classes.right_listbox}>
+                iterate through each element of an array
+              </div>
             </ListItem>
           </List>
           <SectionHeading>
@@ -95,18 +100,18 @@ class PageContents extends React.Component {
           <List>
             <ListItem>
               a function which itself takes 3 arguments :
+              <ol>
+                <li>
+                  item - the item which is the subject of this iteration
+                </li>
+                <li>
+                  index - the index this item is within the array
+                </li>
+                <li>
+                  array - the array itself
+                </li>
+              </ol>
             </ListItem>
-            <List>
-              <ListItem>
-                item - the item which is the subject of this iteration
-              </ListItem>
-              <ListItem>
-                index - the index this item is within the array
-              </ListItem>
-              <ListItem>
-                array - the array itself
-              </ListItem>
-            </List>
             <ListItem>
               These parameters are used within the function to create a return value - the purpose of which varies depending on the function being used.
             </ListItem>
@@ -132,9 +137,11 @@ class PageContents extends React.Component {
           <BodyText>
             As ever, examples will make this significantly easier to explain & understand
           </BodyText>
-          <SectionSubheading id='everyMethod' variant='display2'>
-            The <Code>every</Code> method
-          </SectionSubheading>
+          <div id='everyMethod'>
+            <SectionSubheading>
+              The <Code>every</Code> method
+            </SectionSubheading>
+          </div>
           <BodyText>
             The <Code>every</Code> method will return true if all of its iterations return true on the criteria defined in the function.
           </BodyText>
@@ -147,9 +154,11 @@ class PageContents extends React.Component {
           <BodyText>
             In this case we are asking whether the item under question in each iteration is less than 2. As all but one of these iterations returns false, the <Code>every</Code> method will return false for this input.
           </BodyText>
-          <SectionSubheading id='someMethod' variant='display2'>
-            The <Code>some</Code> method
-          </SectionSubheading>
+          <div id='someMethod'>
+            <SectionSubheading>
+              The <Code>some</Code> method
+            </SectionSubheading>
+          </div>
           <BodyText>
             The <Code>some</Code> method will return true if any of its iterations return true on the criteria defined in the function.
           </BodyText>
@@ -159,9 +168,11 @@ class PageContents extends React.Component {
           >
             <CodeBlockOutput>true</CodeBlockOutput>
           </CodeBlock>
-          <SectionSubheading id='filterMethod' variant='display2'>
-            The <Code>filter</Code> method
-          </SectionSubheading>
+          <div id='filterMethod'>
+            <SectionSubheading>
+              The <Code>filter</Code> method
+            </SectionSubheading>
+          </div>
           <BodyText>
             The <Code>filter</Code> method will return an array which includes all of the elements from the original array which meet the criteria defined in the function argument.
           </BodyText>
@@ -183,9 +194,11 @@ class PageContents extends React.Component {
           >
             <CodeBlockOutput>[true, false, false, false, false, false, false, false, false]</CodeBlockOutput>
           </CodeBlock>
-          <SectionSubheading id='foreachMethod' variant='display2'>
-            The <Code>forEach</Code> method
-          </SectionSubheading>
+          <div id='foreachMethod'>
+            <SectionSubheading>
+              The <Code>forEach</Code> method
+            </SectionSubheading>
+          </div>
           <BodyText>
             The <Code>forEach</Code> method simply acts as a convenient operator for iterating through all of the elements in an array. It does not return a value and should be used simply as a way to gain access to each element in the array.
           </BodyText>
