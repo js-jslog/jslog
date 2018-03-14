@@ -2,7 +2,10 @@ import React from 'react';
 import {withStyles} from 'material-ui/styles';
 
 const styles = theme => ({
-  page_gutter: theme.layout.responsive_page_column_wide,
+  page_gutter: Object.assign(
+    theme.layout.responsive_page_column,
+    theme.layout.responsive_page_column_wide
+  )
 });
 
 class WidePostContent extends React.Component {

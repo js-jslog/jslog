@@ -41,13 +41,6 @@ Theme.layout.responsive_page_column = {
     },
 };
 Theme.layout.responsive_page_column_wide = {
-    marginLeft: Theme.layout.page_column_gutter_xs,
-    marginRight: Theme.layout.page_column_gutter_xs,
-    [Theme.breakpoints.up('sm')]: {
-        maxWidth: Theme.layout.page_column_width_md,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    },
     [Theme.breakpoints.up('lg')]: {
         maxWidth: Theme.layout.page_column_width_lg,
         marginLeft: 'auto',
