@@ -6,7 +6,6 @@ import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/fig
 import Code from '../../layout/typography/Code.jsx';
 import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
-import WidePostContent from '../../layout/wrapping/WidePostContent.jsx';
 import Grid from 'material-ui/Grid';
 import List, {ListItem} from 'material-ui/List';
 import {Link} from 'react-router-dom';
@@ -177,7 +176,7 @@ const PageContents = () => (
       The fieldFactory & playerFactory modules have no dependencies, so we simply turn them into RequireJS modules by using the <Code>define</Code> keyword at the top & returning the <Code>getField</Code> or <Code>getPlayer</Code> function at the end.
     </BodyText>
   </PostContent>
-  <WidePostContent>
+  <PostContent wide>
     <Grid container spacing={12}>
       <Grid item xs={12} lg={6}>
       <CodeBlock
@@ -198,7 +197,7 @@ const PageContents = () => (
       </CodeBlock>
     </Grid>
   </Grid>
-  </WidePostContent>
+  </PostContent>
   <PostContent>
     <BodyText>
       Simple enough. We have defined two modules which expose one function each. Note that in the playerFactory module we have moved the pure functions from the getPlayer function body to being independent local variables of the module. This means that they will only be created once when the module is used but will be available for use by all objects returned from the getPLayer function.
@@ -207,7 +206,7 @@ const PageContents = () => (
       Next, because the refereeFactory only receives field and player objects from the matchFactory, it doesn't actually have a dependency on the, The matchFactory however is dependent on all 3 of the former modules.
     </BodyText>
   </PostContent>
-  <WidePostContent>
+  <PostContent wide>
     <Grid container spacing={12}>
       <Grid item xs={12} lg={6}>
         <CodeBlock
@@ -228,15 +227,15 @@ const PageContents = () => (
         </CodeBlock>
       </Grid>
     </Grid>
-  </WidePostContent>
+  </PostContent>
   <PostContent>
     <BodyText>
       The test files only have a few simple changes. The wingTron_test.js file has been gutted to highlight where the changes are :
     </BodyText>
   </PostContent>
-  <WidePostContent>
+  <PostContent wide>
     <Grid container spacing={12}>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} lg={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
@@ -245,7 +244,7 @@ const PageContents = () => (
           <Caption>Only one line has been modified here to reference the require.js file we downloaded following the standard syntax for single entry point applications as ours will be</Caption>
         </CodeBlock>
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} lg={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
@@ -255,7 +254,7 @@ const PageContents = () => (
         </CodeBlock>
       </Grid>
     </Grid>
-  </WidePostContent>
+  </PostContent>
   <PostContent>
     <BodyText>
       Before we move on, the modularity of the code now raises a question with the semantics we have in use. To get to the point, we are defining factory modules which are directly exposing the constructor function. This means that to get a player we access the getPlayer function directly. It would be much better if this function were contained within a factory object so that we access the constructor like so : playerFactory.getPlayer().
@@ -264,9 +263,9 @@ const PageContents = () => (
       Achieving this is as simple as returning an object literal of {`{getPlayer: getPlayer}`} rather than just returning the function itself. Following this we have to change the way that the module is handled by it's dependants. This is most apparent in the wingTron_test.js file where we have to append the factory object name to the front of every constructor function call. The following figures should make the changes in the modules clear & I have included the complete test file again so that you can copy all the changes if you wish. After this delete your src/wingTron.js file as we no longer need this and check that everything is ok with the unit tests.
     </BodyText>
   </PostContent>
-  <WidePostContent>
+  <PostContent wide>
     <Grid container spacing={12}>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} lg={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
@@ -275,7 +274,7 @@ const PageContents = () => (
           <Caption>Only the return statement is changed here</Caption>
         </CodeBlock>
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} lg={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
@@ -286,7 +285,7 @@ const PageContents = () => (
       </Grid>
     </Grid>
     <Grid container spacing={12}>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} lg={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
@@ -295,7 +294,7 @@ const PageContents = () => (
           <Caption>Only the return statement is changed here</Caption>
         </CodeBlock>
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} lg={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'
@@ -305,7 +304,7 @@ const PageContents = () => (
         </CodeBlock>
       </Grid>
     </Grid>
-  </WidePostContent>
+  </PostContent>
   <PostContent>
     <CodeBlock
       gist_id='js-jslog/35a166646277f0d70b18c7815c0f5b51'

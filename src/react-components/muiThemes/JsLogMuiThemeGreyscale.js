@@ -40,7 +40,7 @@ Theme.layout.responsive_page_column = {
         marginRight: 'auto',
     },
 };
-Theme.layout.responsive_page_column_wide = {
+Theme.layout.responsive_page_column_wide_augmentation = {
     [Theme.breakpoints.up('lg')]: {
         maxWidth: Theme.layout.page_column_width_lg,
         marginLeft: 'auto',
