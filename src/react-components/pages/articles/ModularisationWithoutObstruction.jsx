@@ -53,22 +53,28 @@ const PageContents = () => (
       <BodyText>
         Hiding implementations inside an application wrapper is not the solution. Proper modular design will have your modules <i>loaded</i> into the application rather than being written into the, This way the module exists outside of the application and is therefore exposed for testing purposes, but once loaded into some other code, can be shielded from the global namespace by that codes API.
       </BodyText>
-      <Grid item xs={12} sm={6}>
-        <Figure>
-          <img src="/images/modular-by-wrapping-implementation.png" />
-          <Caption>
-            This code is taking advantage of the module pattern, but creating modules inside calling code leaves those modules beyond reach of any unit testing framework
-          </Caption>
-        </Figure>
+    </PostContent>
+    <PostContent wide>
+      <Grid container spacing={12}>
+        <Grid item xs={12} sm={6}>
+          <Figure parallel>
+            <img src="/images/modular-by-wrapping-implementation.png" />
+            <Caption>
+              This code is taking advantage of the module pattern, but creating modules inside calling code leaves those modules beyond reach of any unit testing framework
+            </Caption>
+          </Figure>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Figure parallel>
+            <img src="/images/modular-proper.png" />
+            <Caption>
+              module1.js & module2.js API will not be accessible by the global context when they are running inside the application.js code, but they are still distinct units whose API's can therefore still be tested from outside the application context
+            </Caption>
+          </Figure>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <Figure>
-          <img src="/images/modular-proper.png" />
-          <Caption>
-            module1.js & module2.js API will not be accessible by the global context when they are running inside the application.js code, but they are still distinct units whose API's can therefore still be tested from outside the application context
-          </Caption>
-        </Figure>
-      </Grid>
+    </PostContent>
+    <PostContent>
       <BodyText>
         Our example above should be rewritten then, like this (using RequireJS syntax):
       </BodyText>
