@@ -264,7 +264,7 @@ const PageContents = () => (
       <BodyText>Identifies whether an object is frozen.</BodyText>
       <CodeBlock
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
-          file="the_two_pillars_of_javascript12.js"
+          file="two_pillars_of_javascript12.js"
       >
         <CodeBlockOutput>
           true
