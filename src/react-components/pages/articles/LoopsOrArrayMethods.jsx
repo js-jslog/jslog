@@ -54,8 +54,8 @@ const PageContents = () => (
             gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
             file='loops_or_array_methods.js'
           >
-            <CodeBlockOutput>2</CodeBlockOutput>
             <Caption>Counting occurences within an array using <Code>for</Code> loop</Caption>
+            <CodeBlockOutput>2</CodeBlockOutput>
           </CodeBlock>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -64,8 +64,8 @@ const PageContents = () => (
             gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
             file='loops_or_array_methods2.js'
           >
-            <CodeBlockOutput>2</CodeBlockOutput>
             <Caption>Counting occurrences within an array using <Code>forEach</Code> method</Caption>
+            <CodeBlockOutput>2</CodeBlockOutput>
           </CodeBlock>
         </Grid>
       </Grid>
@@ -83,8 +83,8 @@ const PageContents = () => (
             gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
             file='loops_or_array_methods3.js'
           >
+            <Caption>Using a <Code>for</Code> loop to determine whether both a blue and green exist inside the array and then exiting as soon as a conclusion has been reached.</Caption>
             <CodeBlockOutput>true</CodeBlockOutput>
-            <figcaption>Using a <Code>for</Code> loop to determine whether both a blue and green exist inside the array and then exiting as soon as a conclusion has been reached.</figcaption>
           </CodeBlock>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -93,8 +93,8 @@ const PageContents = () => (
             gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
             file='loops_or_array_methods4.js'
           >
-            <CodeBlockOutput>true</CodeBlockOutput>
             <Caption>Using a pair of <Code>some</Code> methods to determine whether the array contains blue & then green.</Caption>
+            <CodeBlockOutput>true</CodeBlockOutput>
           </CodeBlock>
         </Grid>
       </Grid>
@@ -131,8 +131,8 @@ const PageContents = () => (
         gist_id='js-jslog/118717af64ecdfda830a894fad6bdbb3'
         file='loops_or_array_methods4.js'
       >
-        <CodeBlockOutput>true</CodeBlockOutput>
         <Caption>Demonstrating that the <Code>some</Code> method will not check the whole array if it is not necessary.</Caption>
+        <CodeBlockOutput>true</CodeBlockOutput>
       </CodeBlock>
       <SectionHeading>
         Conclusion

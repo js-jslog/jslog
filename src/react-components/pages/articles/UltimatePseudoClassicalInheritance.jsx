@@ -138,15 +138,15 @@ class PageContents extends React.Component {
         gist_id="js-jslog/031b29e803acff157ee2c4e63a3ba1f3"
         file="ultimate_pseudoclassical_pattern.js"
       >
+        <Caption>
+          Initial definition of the Animal supertype
+        </Caption>
         <CodeBlockOutput>
           breathing
         </CodeBlockOutput>
         <CodeBlockOutput>
           happy birthday! now 30
         </CodeBlockOutput>
-        <Caption>
-          Initial definition of the Animal supertype
-        </Caption>
       </CodeBlock>
       <BodyText>
         The key features here are :
@@ -175,15 +175,15 @@ class PageContents extends React.Component {
         gist_id="js-jslog/031b29e803acff157ee2c4e63a3ba1f3"
         file="ultimate_pseudoclassical_pattern2.js"
       >
+        <Caption>
+          The prototype chain is not created properly so the dynamic prototype pattern is a folly here
+        </Caption>
         <CodeBlockErrorOutput>
           Uncaught TypeError: bear.swipe is not a function(…)
         </CodeBlockErrorOutput>
         <CodeBlockErrorOutput>
           Uncaught TypeError: bear.respire is not a function(…)
         </CodeBlockErrorOutput>
-        <Caption>
-          The prototype chain is not created properly so the dynamic prototype pattern is a folly here
-        </Caption>
       </CodeBlock>
       <BodyText>
         Scuppered! A very helpful individual on stack overflow helped me identify that the dynamic pattern will not work here. The reason being that by the time the <Code>Bear.prototype</Code> property has been set to <Code>Animal</Code>, an object has already been created by the <Code>new</Code> operator which shares a reference to the current reference of <Code>Bear.prototype</Code>. The <Code>bear</Code> instance maintains this reference even after the reference of <Code>Bear.prototype</Code> is changed to <Code>Animal</Code>.
@@ -204,15 +204,15 @@ class PageContents extends React.Component {
         gist_id="js-jslog/031b29e803acff157ee2c4e63a3ba1f3"
         file="ultimate_pseudoclassical_pattern3.js"
       >
+        <Caption>
+          Bringing the <Code>prototype</Code> definitions outside the constructor makes the world of difference
+        </Caption>
         <CodeBlockOutput>
           swipe - 'Grr'
         </CodeBlockOutput>
         <CodeBlockOutput>
           breathing
         </CodeBlockOutput>
-        <Caption>
-          Bringing the <Code>prototype</Code> definitions outside the constructor makes the world of difference
-        </Caption>
       </CodeBlock>
       <BodyText>
         As well as moving the prototype definitions outside of the constructor we have had to make a couple of changes relating to the passing of <Code>undefined</Code> parameters to the Animal constructor during the prototype chaining phase. This involves :
@@ -235,15 +235,15 @@ class PageContents extends React.Component {
         gist_id="js-jslog/031b29e803acff157ee2c4e63a3ba1f3"
         file="ultimate_pseudoclassical_pattern4.js"
       >
+        <Caption>
+          The combined (constructor / (parasitic prototypal prototype)) pseudo-classical inheritance pattern
+        </Caption>
         <CodeBlockOutput>
           swipe - 'Grr'
         </CodeBlockOutput>
         <CodeBlockOutput>
           breathing
         </CodeBlockOutput>
-        <Caption>
-          The combined (constructor / (parasitic prototypal prototype)) pseudo-classical inheritance pattern
-        </Caption>
       </CodeBlock>
       <BodyText>
         Et voila. The combined (constructor / (parasitic prototypal prototype)) pseudo-classical inheritance pattern. It has it's faults and it only makes use of the patterns I have looked at in my book this week (a recently discovered <i>module pattern</i> would have replaced the dynamic prototype pattern nicely). I also suffers the myriad of issues highlighted with constructor patterns in general throughout the references and elsewhere these days. For example we can see that there is a strong dependency between the <Code>Animal</Code> and <Code>Bear</Code> types now, with the <Code>Bear.swipe</Code> method relying on the <Code>Animal</Code> constructor to set a <Code>sound</Code> property for it to be used.

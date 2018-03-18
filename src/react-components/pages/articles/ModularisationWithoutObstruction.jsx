@@ -43,9 +43,9 @@ const PageContents = () => (
         gist_id='js-jslog/6a79de3a4d8f8b57661b42ef3fe88ee4'
         file='modularisation_without_obstruction.js'
       >
+        <Caption>A 'modular' design which does not permit unit testing</Caption>
         <CodeBlockOutput>module1</CodeBlockOutput>
         <CodeBlockOutput>module2</CodeBlockOutput>
-        <Caption>A 'modular' design which does not permit unit testing</Caption>
       </CodeBlock>
       <BodyText>
         We have achieved encapsulation of our functionality, and reduced the size of our exposed API to as little as possible. The code is modular to the extent that if I wanted to replace module 2's implementation, I know where I would need to do my rewrite. However, this is not the limit of what we have available to us with modular patterns.
@@ -82,15 +82,15 @@ const PageContents = () => (
         gist_id='js-jslog/6a79de3a4d8f8b57661b42ef3fe88ee4'
         file='modularisation_without_obstruction2.js'
       >
+        <Caption>
+          A 'modular' design which does permit unit testing
+        </Caption>
         <CodeBlockOutput>
           module1
         </CodeBlockOutput>
         <CodeBlockOutput>
           module2
         </CodeBlockOutput>
-        <Caption>
-          A 'modular' design which does permit unit testing
-        </Caption>
       </CodeBlock>
       <BodyText>
         Even if you are not familiar with RequireJS yet the idea here should be clear enough. Our modules are now properly decoupled from the application code, we have the ability to test them and they are still not exposed to the global namespace when in the context of the running application.

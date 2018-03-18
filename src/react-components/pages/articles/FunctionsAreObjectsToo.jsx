@@ -43,7 +43,7 @@ We all know that there are two ways of creating a function right?
   </PostContent>
   <PostContent wide>
     <Grid container spacing={12}>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} md={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/4856ad531bf8955867a6b93b139b870d'
@@ -52,7 +52,7 @@ We all know that there are two ways of creating a function right?
         <Caption>The two sensible ways to create a function</Caption>
         </CodeBlock>
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} md={6}>
         <CodeBlock
           parallel
           gist_id='js-jslog/4856ad531bf8955867a6b93b139b870d'
@@ -137,8 +137,8 @@ Now this doesn't sound like an advantage, but from stinking turds, great oaks ca
       gist_id='js-jslog/4856ad531bf8955867a6b93b139b870d'
       file='functions_are_objects_too4.js'
     >
-      <CodeBlockOutput>API available. Parameter to log : Log this!!</CodeBlockOutput>
       <Caption>Demonstration of a buffer mechanism which takes advantage of JavaScript's lack of function overloading</Caption>
+      <CodeBlockOutput>API available. Parameter to log : Log this!!</CodeBlockOutput>
     </CodeBlock>
     <SectionHeading>
       References

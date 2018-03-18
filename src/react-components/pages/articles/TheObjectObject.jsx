@@ -45,11 +45,11 @@ const PageContents = () => (
         gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
         file="the_two_pillars_of_javascript.js"
       >
+        <Caption>Where property names conflict, properties from objects later in the parameter list will take precedence in the new object</Caption>
         <CodeBlockOutput>obj2p1</CodeBlockOutput>
         <CodeBlockOutput>obj1p2</CodeBlockOutput>
         <CodeBlockOutput>obj2p3</CodeBlockOutput>
         <CodeBlockOutput>obj2Meth1</CodeBlockOutput>
-        <Caption>Where property names conflict, properties from objects later in the parameter list will take precedence in the new object</Caption>
       </CodeBlock>
       <SectionSubheading>
         create
@@ -61,11 +61,11 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript2.js"
       >
+          <Caption>Demonstrating a key feature of prototypal inheritance (<i>dynamic object extension</i>) being used in both the prototype and the instance</Caption>
           <CodeBlockOutput>protoP1Changed</CodeBlockOutput>
           <CodeBlockOutput>protoMethChanged</CodeBlockOutput>
           <CodeBlockOutput>objP2</CodeBlockOutput>
           <CodeBlockOutput>protoP2</CodeBlockOutput>
-          <Caption>Demonstrating a key feature of prototypal inheritance (<i>dynamic object extension</i>) being used in both the prototype and the instance</Caption>
       </CodeBlock>
       <BodyText>
         I'd just like to go on record as stating that I believe the term 'shadow', is a gross misnomer in this situation. It is true that a shadow of the instance's property name <b>is</b> (figuratively) cast over the prototype's property of the same name. However in this analogy, we would say that the second propertry is <i>eclipsed</i> by the first. The term shadowing as I have experienced it in computer science has always meant something more akin to mimicry. I believe it's use here to be confusing, but until I am an official spoksman for the language I will follow convention.
@@ -80,10 +80,10 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript3.js"
       >
+          <Caption>Defining both a data and an accessor property at once</Caption>
           <CodeBlockOutput>36500 days</CodeBlockOutput>
           <CodeBlockOutput>365 days</CodeBlockOutput>
           <CodeBlockOutput>0.5</CodeBlockOutput>
-          <Caption>Defining both a data and an accessor property at once</Caption>
       </CodeBlock>
       <SectionSubheading>
         defineProperty
@@ -95,10 +95,10 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript4.js"
       >
+          <Caption>Defining both a data and an accessor property using both literal and functional methods</Caption>
           <CodeBlockOutput>36500 days</CodeBlockOutput>
           <CodeBlockOutput>365 days</CodeBlockOutput>
           <CodeBlockOutput>0.5</CodeBlockOutput>
-          <Caption>Defining both a data and an accessor property using both literal and functional methods</Caption>
       </CodeBlock>
       <SectionSubheading>
         freeze
@@ -110,11 +110,11 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript5.js"
       >
-          <CodeBlockOutput>p1</CodeBlockOutput>
-          <CodeBlockOutput>p1</CodeBlockOutput>
           <Caption>
             Demonstrating that both the returned object & the original object are frozen
           </Caption>
+          <CodeBlockOutput>p1</CodeBlockOutput>
+          <CodeBlockOutput>p1</CodeBlockOutput>
       </CodeBlock>
       <SectionSubheading>
         getOwnPropertyDescriptor
@@ -126,15 +126,15 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript6.js"
       >
+          <Caption>
+            Demonstrating that the non-enumerable values are included in the output of <Code>getOwnPropertyDescriptor</Code>. Also demonstrating the difference in a property's default attribute value when set through literal vs <Code>defineProperty</Code>.
+          </Caption>
           <CodeBlockOutput>
             {`{ value: 100, writable: true, enumerable: true, configurable: true }`}
           </CodeBlockOutput>
           <CodeBlockOutput>
             {`{ get: [Function], set: [Function], enumerable: false, configurable: false }`}
           </CodeBlockOutput>
-          <Caption>
-            Demonstrating that the non-enumerable values are included in the output of <Code>getOwnPropertyDescriptor</Code>. Also demonstrating the difference in a property's default attribute value when set through literal vs <Code>defineProperty</Code>.
-          </Caption>
       </CodeBlock>
       <SectionSubheading>
         getOwnPropertyNames
@@ -146,15 +146,15 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript7.js"
       >
-        <CodeBlockOutput>
-          [ 'years', 'days' ]
-        </CodeBlockOutput>
-        <CodeBlockOutput>
-          [ 'years', 'days' ]
-        </CodeBlockOutput>
         <Caption>
           Demonstrating the same as above, but with less information
         </Caption>
+        <CodeBlockOutput>
+          [ 'years', 'days' ]
+        </CodeBlockOutput>
+        <CodeBlockOutput>
+          [ 'years', 'days' ]
+        </CodeBlockOutput>
       </CodeBlock>
       <SectionSubheading>
         getOwnPropertySymbols
@@ -170,6 +170,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript8.js"
       >
+        <Caption>
+          Demonstrating the different ways of aquiring a prototype
+        </Caption>
         <CodeBlockOutput>
           {`Object {prop1, "p1"}`}
         </CodeBlockOutput>
@@ -182,9 +185,6 @@ const PageContents = () => (
         <CodeBlockOutput>
           true
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating the different ways of aquiring a prototype
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         is (ES6)
@@ -196,21 +196,21 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript9.js"
       >
-        <CodeBlockOutput>
-          false
-        </CodeBlockOutput>
-        <CodeBlockOutput>
-          true
-        </CodeBlockOutput>
-        <CodeBlockOutput>
-          true
-        </CodeBlockOutput>
-        <CodeBlockOutput>
-          false
-        </CodeBlockOutput>
         <Caption>
           Demonstrating two of the problems with the <Code>===</Code> operator which <Code>is</Code> resolves
         </Caption>
+        <CodeBlockOutput>
+          false
+        </CodeBlockOutput>
+        <CodeBlockOutput>
+          true
+        </CodeBlockOutput>
+        <CodeBlockOutput>
+          true
+        </CodeBlockOutput>
+        <CodeBlockOutput>
+          false
+        </CodeBlockOutput>
       </CodeBlock>
       <SectionSubheading>
         isExtensible
@@ -222,15 +222,15 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript10.js"
       >
+        <Caption>
+          Demonstrating that at least part of the function of all of the object functions used above remove extensibility from the object
+        </Caption>
         <CodeBlockOutput>
           true
         </CodeBlockOutput>
         <CodeBlockOutput>
           false
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating that at least part of the function of all of the object functions used above remove extensibility from the object
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         isFrozen
@@ -242,21 +242,21 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript11.js"
       >
-        <CodeBlockOutput>
-          false
-        </CodeBlockOutput>
-        <CodeBlockOutput>
-          true
-        </CodeBlockOutput>
-        <CodeBlockOutput>
-          false
-        </CodeBlockOutput>
-        <CodeBlockOutput>
-          true
-        </CodeBlockOutput>
         <Caption>
           Demonstrating that being frozen consists of being non-extensible, sealed and having non-writable properties
         </Caption>
+        <CodeBlockOutput>
+          false
+        </CodeBlockOutput>
+        <CodeBlockOutput>
+          true
+        </CodeBlockOutput>
+        <CodeBlockOutput>
+          false
+        </CodeBlockOutput>
+        <CodeBlockOutput>
+          true
+        </CodeBlockOutput>
       </CodeBlock>
       <SectionSubheading>
         isSealed
@@ -266,15 +266,15 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="two_pillars_of_javascript12.js"
       >
+        <Caption>
+          Demonstrating that being sealed consists only of lacking extensibility & configurability
+        </Caption>
         <CodeBlockOutput>
           true
         </CodeBlockOutput>
         <CodeBlockOutput>
           false
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating that being sealed consists only of lacking extensibility & configurability
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         keys
@@ -286,15 +286,15 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript13.js"
       >
+        <Caption>
+          Demonstrating the difference between <Code>keys</Code> & <Code>getOwnPropertyNames</Code>
+        </Caption>
         <CodeBlockOutput>
           [ 'prop1', 'prop4', 'prop5', 'prop2' ]
         </CodeBlockOutput>
         <CodeBlockOutput>
           [ 'prop1', 'prop4', 'prop5', 'prop2', 'prop3' ]
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating the difference between <Code>keys</Code> & <Code>getOwnPropertyNames</Code>
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         observe (ES6)
@@ -306,6 +306,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript14.js"
       >
+        <Caption>
+          Demonstrating the use of the <Code>observe</Code> method
+        </Caption>
         <CodeBlockOutput>
           /////////////OBSERVATION MADE////////////////
         </CodeBlockOutput>
@@ -348,9 +351,6 @@ const PageContents = () => (
         <CodeBlockOutput>
           Some other kind of change.. preventExtensions
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating the use of the <Code>observe</Code> method
-        </Caption>
       </CodeBlock>
       <BodyText>
         There are two features which are not apparent in the example above because of the use of timeouts. These were necessary due to the asynchronous nature of the observation engine.
@@ -374,6 +374,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript15.js"
       >
+        <Caption>
+          Demonstrating the presence of a debounce within the observe engine
+        </Caption>
         <CodeBlockOutput>
           /////////////OBSERVATION MADE////////////////
         </CodeBlockOutput>
@@ -401,9 +404,6 @@ const PageContents = () => (
         <CodeBlockOutput>
           Some other kind of change.. preventExtensions
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating the presence of a debounce within the observe engine
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         preventExtensions
@@ -413,12 +413,12 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript16.js"
       >
-        <CodeBlockOutput>
-          undefined
-        </CodeBlockOutput>
         <Caption>
           Demonstrating the use of the <Code>preventExtensions</Code>
         </Caption>
+        <CodeBlockOutput>
+          undefined
+        </CodeBlockOutput>
       </CodeBlock>
       <SectionSubheading>
         seal
@@ -430,6 +430,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript17.js"
       >
+        <Caption>
+          Demonstrating the features of being sealed
+        </Caption>
         <CodeBlockOutput>
           p1
         </CodeBlockOutput>
@@ -439,9 +442,6 @@ const PageContents = () => (
         <CodeBlockOutput>
           p1changed
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating the features of being sealed
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         setPrototypeOf (ES6)
@@ -471,15 +471,15 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript18.js"
       >
+        <Caption>
+          Demonstrating that while variables down the scope chain from a closure are accessible by the closure, they are not considered properties of the object containing that closure
+        </Caption>
         <CodeBlockOutput>
           false
         </CodeBlockOutput>
         <CodeBlockOutput>
           true
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating that while variables down the scope chain from a closure are accessible by the closure, they are not considered properties of the object containing that closure
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         isPrototypeOf
@@ -491,6 +491,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript19.js"
       >
+        <Caption>
+          Demonstrating the difference between setting the prototype property on the template object prior to instance creation vs setting the value of prototype on the instance itself. The prototype chain is made from the [[Prototype]] property rather than the prototype property. This can only be set during object creation and cannot simply be set after creation.
+        </Caption>
         <CodeBlockOutput>
           true
         </CodeBlockOutput>
@@ -503,9 +506,6 @@ const PageContents = () => (
         <CodeBlockOutput>
           false
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating the difference between setting the prototype property on the template object prior to instance creation vs setting the value of prototype on the instance itself. The prototype chain is made from the [[Prototype]] property rather than the prototype property. This can only be set during object creation and cannot simply be set after creation.
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         propertyIsEnumerable
@@ -517,6 +517,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript20.js"
       >
+        <Caption>
+          Demonstrating the difference between setting values using literal notation vs <Code>defineProperty</Code>.
+        </Caption>
         <CodeBlockOutput>
           true
         </CodeBlockOutput>
@@ -526,9 +529,6 @@ const PageContents = () => (
         <CodeBlockOutput>
           false
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating the difference between setting values using literal notation vs <Code>defineProperty</Code>.
-        </Caption>
       </CodeBlock>
       <SectionSubheading>
         toLocaleString / toString / valueOf
@@ -540,6 +540,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript21.js"
       >
+        <Caption>
+          toLocaleString simply calls toString in Object.prototype
+        </Caption>
         <CodeBlockOutput>
           {`[object Object]`}
         </CodeBlockOutput>
@@ -549,9 +552,6 @@ const PageContents = () => (
         <CodeBlockOutput>
           {`{ prop1: 'p1', prop2: false }`}
         </CodeBlockOutput>
-        <Caption>
-          toLocaleString simply calls toString in Object.prototype
-        </Caption>
       </CodeBlock>
       <SectionHeading>
         Object properties
@@ -569,6 +569,9 @@ const PageContents = () => (
           gist_id="js-jslog/56dd83a4645c8938296d23aae8a5601f"
           file="the_two_pillars_of_javascript22.js"
       >
+        <Caption>
+          Demonstrating that the constructor property is not actually used in defining inheritance
+        </Caption>
         <CodeBlockOutput>
           1
         </CodeBlockOutput>
@@ -578,15 +581,12 @@ const PageContents = () => (
         <CodeBlockOutput>
           {`{ prop1: 'p1', prop2: false }`}
         </CodeBlockOutput>
-        <CodeBlockOutput>
+        <CodeBlockErrorOutput>
           Uncaught TypeError: obj1.meth2 is not a function(…)
-        </CodeBlockOutput>
+        </CodeBlockErrorOutput>
         <CodeBlockOutput>
           Obj2Meth2
         </CodeBlockOutput>
-        <Caption>
-          Demonstrating that the constructor property is not actually used in defining inheritance
-        </Caption>
       </CodeBlock>
       <BodyText>
         The text around <q cite="#!!ID_OF_REF!!">the quote being quoted</q>.
