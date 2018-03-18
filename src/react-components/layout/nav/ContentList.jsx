@@ -3,15 +3,17 @@ import {Link} from 'react-router-dom';
 
 import {withStyles} from 'material-ui/styles';
 
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Typography from 'material-ui/Typography';
 import dateFormat from 'dateformat';
 import articles_list from '../../pages/articles/articles.js';
 
 const styles = theme => ({
+  title: theme.layout.vertical_spacing_uneven,
   row: {
     display: 'block',
     color: theme.palette.primary.main,
     borderTop: '1px solid ' + theme.palette.primary.light,
+    borderBottom: 0,
     padding: theme.scales.primary.m1 + ' ' + theme.scales.primary.p1,
   },
   date: {
@@ -19,7 +21,8 @@ const styles = theme => ({
     fontSize: theme.scales.secondary.m1,
     color: theme.palette.primary.light,
     display: 'block',
-    [theme.breakpoints.up('md')]: {
+    paddingBottom: theme.scales.primary.m1,
+    [theme.breakpoints.up('lg')]: {
       display: 'inline-flex',
       width: theme.scales.primary.p5,
     }
@@ -30,10 +33,10 @@ const styles = theme => ({
     fontFamily: '"Nanum Gothic", sans-serif',
     fontSize: theme.scales.secondary.m1,
     color: theme.palette.primary.light,
+    float: 'right',
     paddingLeft: theme.scales.primary.m1,
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('lg')]: {
       paddingTop: theme.scales.primary.m3,
-      float: 'right',
     }
   }
 });
@@ -70,8 +73,17 @@ class ListRow extends React.Component {
 class ContentList extends React.Component {
   render() {
     const {classes} = this.props;
+    const title = this.props.title || 'Content';
     return (
-      <ListRow classes={classes} />
+      <div>
+        <Typography
+          className={classes.title}
+          variant='display1'
+        >
+          {title}
+        </Typography>
+        <ListRow classes={classes} />
+      </div>
     );
   }
 }

@@ -6,6 +6,8 @@ const styles = theme => ({
   blurb: {
     fontFamily: '"Nanum Gothic", sans-serif',
     fontStyle: 'italic',
+    textAlign: 'center',
+    marginBottom: theme.scales.primary.main,
   }
 });
 

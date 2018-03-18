@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PostContent from '../layout/wrapping/PostContent.jsx';
+import ContentList from '../layout/nav/ContentList.jsx';
 import Footer from '../layout/nav/Footer.jsx';
 import MinimalBanner from '../layout/nav/MinimalBanner.jsx';
 import {withStyles} from 'material-ui/styles';
@@ -23,6 +25,9 @@ const ArticleContainer = function (props) {
         <MinimalBanner />
         <StyledPageContents />
         <Footer />
+        <PostContent wide>
+            <ContentList title='Recently added' />
+        </PostContent>
     </div>
 };
 

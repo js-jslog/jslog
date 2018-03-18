@@ -9,6 +9,7 @@ const styles = theme => ({
       textAlign: 'center',
       fontSize: theme.scales.primary.p3,
       fontWeight: 500,
+      lineHeight: theme.scales.primary.p4,
     },
     theme.layout.vertical_spacing_uneven
   )

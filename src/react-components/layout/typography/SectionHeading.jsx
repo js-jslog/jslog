@@ -8,6 +8,7 @@ const styles = theme => ({
       fontFamily: '"Playfair Display", serif',
       fontSize: theme.scales.primary.p2,
       textAlign: 'center',
+      lineHeight: theme.scales.primary.p3,
     },
     theme.layout.vertical_spacing_uneven
   )

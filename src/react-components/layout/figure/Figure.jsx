@@ -13,16 +13,23 @@ const styles = theme => ({
         },
         theme.layout.vertical_spacing_even
     ),
+    figure_spacing_parallel: {
+        [theme.breakpoints.up('lg')]: {
+            marginRight: theme.scales.primary.p1,
+            marginLeft: theme.scales.primary.p1,
+        },
+    },
 });
 
 const Figure = (props) => {
-    const {classes, margin} = props;
-    const children = React.Children.map(props.children, child =>
-        React.cloneElement(child, {classes: classes})
-    );
+    const {classes, children, parallel, margin} = props;
+    let class_name = classes.figure_spacing;
+    if (parallel) {
+        class_name += ' ' + classes.figure_spacing_parallel;
+    }
     return (
         <figure 
-            className={classes.figure_spacing}
+            className={class_name}
             style={{
                 marginRight: margin || undefined,
                 marginLeft: margin || undefined,

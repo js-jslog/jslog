@@ -6,10 +6,8 @@ let Theme = createMuiTheme({
     layout: {
         // page_column_width_xs: scales.primary.p6, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
         page_column_gutter_xs: scales.px.primary.m1,
-        page_column_width_sm: scales.primary.p7,
         page_column_width_md: scales.primary.p7,
-        page_column_width_lg: scales.primary.p7,
-        page_column_width_xl: scales.primary.p7,
+        page_column_width_lg: scales.primary.p9,
     },
     palette: {
         primary: {
@@ -37,22 +35,14 @@ Theme.layout.responsive_page_column = {
     marginLeft: Theme.layout.page_column_gutter_xs,
     marginRight: Theme.layout.page_column_gutter_xs,
     [Theme.breakpoints.up('sm')]: {
-        maxWidth: Theme.layout.page_column_width_sm,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    },
-    [Theme.breakpoints.up('md')]: {
         maxWidth: Theme.layout.page_column_width_md,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+};
+Theme.layout.responsive_page_column_wide_augmentation = {
     [Theme.breakpoints.up('lg')]: {
         maxWidth: Theme.layout.page_column_width_lg,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    },
-    [Theme.breakpoints.up('xl')]: {
-        maxWidth: Theme.layout.page_column_width_xl,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
@@ -66,6 +56,35 @@ Theme.layout.vertical_spacing_uneven = {
     marginBottom: Theme.scales.primary.p1,
 };
 Theme.overrides.MuiButton = {root: {}};
+Theme.overrides.MuiList = {
+   root: {
+      marginLeft: Theme.scales.primary.p1,
+      marginTop: Theme.scales.primary.p2,
+      marginBottom: Theme.scales.primary.p2,
+   },
+   padding: {
+      paddingTop: 0,
+      paddingBottom: 0,
+   },
+};
+Theme.overrides.MuiListItem = {
+   root: {
+      display: 'block',
+      fontFamily: '"Nanum Gothic", sans-serif',
+      color: Theme.palette.primary.light,
+      lineHeight: Theme.scales.primary.p1.split('rem')[0] + 'em',
+   },
+   default: {
+      paddingTop: 0,
+      paddingBottom: Theme.scales.primary.main,
+      marginTop: 0,
+      marginBottom: 0,
+   },
+   gutters: {
+      paddingLeft: 0,
+      paddingRight: 0,
+   },
+};
 Theme.overrides.MuiTypography = {
    root: {
       fontSize: 14,

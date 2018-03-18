@@ -1,6 +1,7 @@
 html {
     font-size: 16px;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    color: #424242;
 }
 
 figure {
@@ -14,8 +15,23 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    border-bottom: 2px dashed;
+    font-weight: 600;
 }
 
 a:hover {
     color: #659edb
+}
+
+ul>li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -1.4em;
+    top: -0.382rem;
+    margin-top: 1em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    border: solid 2px #c0d3da;
 }
