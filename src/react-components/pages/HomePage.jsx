@@ -46,7 +46,7 @@ const PageContents = (props) => {
                 Below is a collection of articles and apps I have created recently. You can also see what I am currently working on at github.
             </Typography>
         </Banner>
-        <PostContent wide>
+        <PostContent medium>
             <ContentList title='Recently added' />
         </PostContent>
         <Footer />

@@ -25,7 +25,7 @@ const ArticleContainer = function (props) {
         <MinimalBanner />
         <StyledPageContents />
         <Footer />
-        <PostContent wide>
+        <PostContent medium>
             <ContentList title='Recently added' />
         </PostContent>
     </div>

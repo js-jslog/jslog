@@ -6,7 +6,8 @@ let Theme = createMuiTheme({
     layout: {
         // page_column_width_xs: scales.primary.p6, REPLACED WITH STATIC GUTTERS AT SMALL SCREEN SIZES
         page_column_gutter_xs: scales.px.primary.m1,
-        page_column_width_md: scales.primary.p7,
+        page_column_width_sm: scales.primary.p7,
+        page_column_width_md: scales.primary.p8,
         page_column_width_lg: scales.primary.p9,
     },
     palette: {
@@ -35,6 +36,13 @@ Theme.layout.responsive_page_column = {
     marginLeft: Theme.layout.page_column_gutter_xs,
     marginRight: Theme.layout.page_column_gutter_xs,
     [Theme.breakpoints.up('sm')]: {
+        maxWidth: Theme.layout.page_column_width_sm,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+};
+Theme.layout.responsive_page_column_medium_augmentation = {
+    [Theme.breakpoints.up('lg')]: {
         maxWidth: Theme.layout.page_column_width_md,
         marginLeft: 'auto',
         marginRight: 'auto',

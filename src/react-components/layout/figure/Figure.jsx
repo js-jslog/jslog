@@ -15,8 +15,8 @@ const styles = theme => ({
     ),
     figure_spacing_parallel: {
         [theme.breakpoints.up('lg')]: {
-            marginRight: theme.scales.primary.p1,
-            marginLeft: theme.scales.primary.p1,
+            marginRight: theme.scales.primary.p3,
+            marginLeft: theme.scales.primary.p3,
         },
     },
 });
