@@ -31,6 +31,9 @@ class PageContents extends React.Component {
           <HeadingBlurb>
             {blurb}
           </HeadingBlurb>
+          <HeadingBlurb>
+            <Link to="https://github.com/js-jslog/dotfiles-multiplexer">see project on github</Link>
+          </HeadingBlurb>
         </PostHeader>
         <PostContent>
           <BodyText>
