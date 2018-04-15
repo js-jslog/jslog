@@ -269,7 +269,7 @@ class PageContents extends React.Component {
             At the time of writing there don&apos;t seem to be any other solutions to this problem. I&apos;m confused about this as I am sure that those at my level of tinkering and above (and there are many of you out there) must feel the need for such a thing.
           </BodyText>
           <BodyText>
-            Perhaps I&apos;m mistake about that, or perhaps there is another solution which I have overlooked. Until I have been convinced of one or the other of those possibilities I intend to keep working on the project, and even if you are in a tiny minority of people who also find it useful and would like to contribute, you are most welcome to get involved. Visit me at <Link to="https://github.com/js-jslog/dotfiles-multiplexer">the project on github</Link>
+            Perhaps I&apos;m mistaken about that, or perhaps there is another solution which I have overlooked. Until I have been convinced of one or the other of those possibilities I intend to keep working on the project, and even if you are in a tiny minority of people who also find it useful and would like to contribute, you are most welcome to get involved. Visit me at <Link to="https://github.com/js-jslog/dotfiles-multiplexer">the project on github</Link>
           </BodyText>
         </PostContent>
       </div>
