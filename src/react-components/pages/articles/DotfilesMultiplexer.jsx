@@ -1,5 +1,6 @@
 import React from 'react';
-import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/figure/CodeBlock.jsx';
+import Link from '../../layout/nav/Link.jsx';
+import CodeBlock from '../../layout/figure/CodeBlock.jsx';
 import { Caption, BodyText, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
 import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
@@ -92,7 +93,7 @@ class PageContents extends React.Component {
             No longer!
           </SectionHeading>
           <BodyText>
-            Inspired by the observations of the author of <a href='https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/'>dotbot</a>, I have created an application to combine the configuration files from multiple repositories.
+            Inspired by the observations of the author of <Link to='https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/'>dotbot</Link>, I have created an application to combine the configuration files from multiple repositories.
           </BodyText>
           <BodyText>
             This means that you can have a single set of configurations for each context you work in, and the only thing that needs to vary is the configuration file which defines which files from which repositories need to be combined in which order.
@@ -265,7 +266,7 @@ class PageContents extends React.Component {
             At the time of writing there don&apos;t seem to be any other solutions to this problem. I&apos;m confused about this as I am sure that those at my level of tinkering and above (and there are many of you out there) must feel the need for such a thing.
           </BodyText>
           <BodyText>
-            Perhaps I&apos;m mistake about that, or perhaps there is another solution which I have overlooked. Until I have been convinced of one or the other of those possibilities I intend to keep working on the project, and even if you are in a tiny minority of people who also find it useful and would like to contribute, you are most welcome to get involved. Visit me at <a href='xyz'>the project on github</a>
+            Perhaps I&apos;m mistake about that, or perhaps there is another solution which I have overlooked. Until I have been convinced of one or the other of those possibilities I intend to keep working on the project, and even if you are in a tiny minority of people who also find it useful and would like to contribute, you are most welcome to get involved. Visit me at <Link to="https://github.com/js-jslog/dotfiles-multiplexer">the project on github</Link>
           </BodyText>
         </PostContent>
       </div>
