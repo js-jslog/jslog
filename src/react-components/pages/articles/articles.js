@@ -1,3 +1,4 @@
+import * as DotfilesMultiplexer from './DotfilesMultiplexer.jsx';
 import * as Boolean from './BooleanFunction.jsx';
 import * as TDD from './BuildAGameWithTdd.jsx';
 import * as Float from './FloatingPointVisualisation.jsx';
@@ -13,6 +14,7 @@ import * as Ultimate from './UltimatePseudoClassicalInheritance.jsx';
 import * as FunctionObject from './FunctionsAreObjectsToo.jsx';
 
 const articles = [
+  DotfilesMultiplexer,
   Boolean, 
   TDD, 
   Float, 
