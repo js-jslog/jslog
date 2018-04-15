@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { BlockQuote, BodyText, Caption, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
+import CodeBlock, {CodeBlockOutput, CodeBlockErrorOutput} from '../../layout/figure/CodeBlock.jsx';
+import { Caption, BodyText, HeadingBlurb, HeadingTitle, SectionHeading, SectionSubheading } from '../../layout/typography/index.js';
 import PostContent from '../../layout/wrapping/PostContent.jsx';
 import PostHeader from '../../layout/wrapping/PostHeader.jsx';
 import {withStyles} from 'material-ui/styles';
@@ -109,34 +109,30 @@ class PageContents extends React.Component {
           <BodyText>
             Joe is a software developer. He is a tinkerer and an optimiser. Naturally he has highly personalised <Code>.vimrc</Code> &amp; <Code>.tmux.conf</Code> files.
           </BodyText>
-          <div>
-            set diffopt+=vertical
-            set shiftwidth=2
-            set softtabstop=2
-
-            set -g base-index 1
-            bind -n S-Left previous-window
-            bind -n S-Right next-window
-          </div>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="self_vimrc"
+          >
+          </CodeBlock>
           <BodyText>
             He also has a <Code>.gitconfig</Code> file which contains the essentials for identifying himself.
           </BodyText>
-          <div>
-            [user]
-              email = jhs4jbs@hotmail.co.uk
-              name = js-jslog
-            [diff]
-              tool = vimdiff
-          </div>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="self_gitconfig"
+          >
+          </CodeBlock>
           <BodyText>
             Finally, Joe has a deployment script which will create symbolic links in all the necessary places, to the configuration files he has in this repository.
           </BodyText>
-          <div>
-            #! /bin/bash
-            ln -sf ~/dotfiles/.vimrc ~/.vimrc
-            ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-            ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-          </div>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="self_deploy.sh"
+          >
+            <Caption>
+              A shell script to create symbolic links from the dotfiles expeceted locations to the version controlled files in Joe&apos;s repository
+            </Caption>
+          </CodeBlock>
           <BodyText>
             This repository fulfills Joe&apos;s requirement to identify himself and satisfy his habits while developing software. But in a moment his requirements will change.
           </BodyText>
@@ -146,63 +142,116 @@ class PageContents extends React.Component {
           <BodyText>
             Joe works in an office behind a firewall. The office also enforces a 4 space indentation code standard which Joe hates and doesn&apos;t want anywhere near his github profile. The office provide a repository with the relevant configuration files for this set of requirements.
           </BodyText>
-          <div>
-            [http]
-              proxy = http://proxyaddress:8080
-
-            Host *github.com
-              ProxyCommand connect -H proxyaddress:8080 %h %p
-
-            set shiftwidth=4
-            set softtabstop=4
-          </div>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="office_vimrc"
+          >
+            <Caption>
+              A .vimrc to configure vim to automatically indent lines by 4 spaces
+            </Caption>
+          </CodeBlock>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="office_gitconfig"
+          >
+            <Caption>
+              A .gitconfig file to configure git to use a proxy for it&apos;s http connections
+            </Caption>
+          </CodeBlock>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="office_sshconf"
+          >
+            <Caption>
+              A .ssh/config file configuring OpenSSH to communicate via a proxy when connecting to github
+            </Caption>
+          </CodeBlock>
           <BodyText>
             Joe&apos;s first thought is to fork this repository and add his configuration to it. However he resents the idea of having to maintain a second repository. Especially one with a 4 space configuration in it.
           </BodyText>
           <BodyText>
             Joe discovers the dotfiles-multiplexer and writes the following script for his office context.
           </BodyText>
-          <div>
-            #! /bin/bash
-
-            git clone dotmplexrepo ~/dotfiles-multiplexer
-            git clone dotfilesme ~/dotfiles-me
-            git clone dotfileswork ~/dotfiles-work
-            git clone dotfilescontexts ~/dotfiles-contexts
-            cp ~/dotfiles-contexts/office.yml ~/.dotfiles-multiplexer.yml
-            cd ~/dotfiles-multiplexer
-            ./setup.sh
-
-            Plus one showing what the office.yml looks like
-            
-          </div>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="office_deploy.sh"
+          >
+            <Caption>
+              A deployment script which makes full use of dotfiles-multiplexer&apos;s automation
+            </Caption>
+          </CodeBlock>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="office.yml"
+          >
+            <Caption>
+              The dotfiles-multiplexer config file for the context of a) Joe + b) working in the office
+            </Caption>
+          </CodeBlock>
+          
           <BodyText>
-            Running the above script will clone the dotfiles-multiplexer repository along with the two repositories containing his two set&apos;s of requirements (personal &amp; work) in order to satisfy the combined needs he experiences in the context of *work*. He doesn&apos;t even need to alter his personal <Code>.vimrc</Code> in the face of the 4 space requirement from the office since the ordering of the <Code>.dotfiles-multiplexer.yml</Code> will mean the office configuration of 4 spaces overrides his personal configuration of 2 spaces.
+            Running the above script will clone the dotfiles-multiplexer repository and a contexts repository which contains a dotfiles-multiplexer configuration for each context which Joe uses dotfiles in.
+          </BodyText>
+          <BodyText>
+            After that it deploys the relevant configuration file for this context to the home directory, and then kicks off dotfiles-multiplexer&apos;s <Code>setup.sh</Code> which does the rest.
+          </BodyText>
+          <BodyText>
+            The dotfiles-multiplexer <Code>setup.sh</Code> will clone the personal and office repositories locally, generate new dotfiles from the composition of the dotfiles it finds in them and create symbolic links to these generated files.
+          </BodyText>
+          <BodyText>
+            The generated dotfiles (for the most part) will use an include syntax, so it is still the repositories versions of the files which are being read by the system, &amp; if the files are updated there, this update in config will be instantly recognised by the system without any need to rerun setup.
+          </BodyText>
+          <BodyText>
+            Furthermore, since the files are composed in the order that the aliases are defined in the <Code>.dotfiles-multiplexer.yml</Code> by default, Joe doesn&apos;t even need to modify his personal <Code>.vimrc</Code> file to have the office config overwrite his indentation config of 2 spaces with the office standard, 4.
           </BodyText>
           <SectionSubheading>
             The colleague
           </SectionSubheading>
           <BodyText>
-            Joe has a colleague who is interested in playing with Joe&apos;s <Code>.vimrc</Code> setup but still wants his own <Code>.gitconfig</Code> and importantly doesn&apos;t want any of Joe&apos;s <Code>.gitconfig</Code> to be combined with his in the process.
+            Joe has a colleague who is interested in playing with Joe&apos;s <Code>.vimrc</Code> and <Code>.gitconfig</Code> setup but naturally wants his own <Code>.gitconfig</Code> to take primacy on user credentials so that Joe doesn&apos;t get credit for his buggy contributions.
           </BodyText>
           <BodyText>
-            Joe&apos;s colleague has already emulated Joe&apos;s setup using dotfiles-multiplexer to combine the office config repo with his own repo (including his own inferior <Code>.vimrc</Code> file). Bringing any number of Joe&apos;s configuration files in to the mix is as simple as cloning Joe&apos;s repository, and referencing it where desired in the <Code>.dotfiles-multiplexer.yml</Code>.
+            All of Joe&apos;s config can be included at lower priority than the colleagues by simply including it before the colleagues own.
           </BodyText>
-          <div>
-            code block of the colleagues dotfiles config including Joe&apos;s vim and tmux config
-          </div>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="colleague_gitconfig"
+          >
+            <Caption>
+              The colleagues <Code>.gitconfig</Code> file. He wants to keep this but import Joe&apos;s <Code>[diff]</Code> config along with everything else.
+            </Caption>
+          </CodeBlock>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="colleague_office_plus_joe.yml"
+          >
+            <Caption>
+              The colleagues <Code>dotfiles-multiplexer.yml</Code> file. He has his own configuration but he wants some of Joe&apos;s too.
+            </Caption>
+          </CodeBlock>
+          <BodyText>
+            All of Joe&apos;s configuration, including <Code>.gitconfig</Code> will be used, save for those items which the colleague has his own configuration for; which in this case is just his <Code>user.name</Code> &amp; <Code>user.email</Code> git configuration.
+          </BodyText>
           <SectionSubheading>
             The money-maker
           </SectionSubheading>
           <BodyText>
-            Joe is working on a project with a friend. This project will make Joe a lot of money and since inspiration can strike at any moment Joe often finds himself needing to make small changes to the project while he is in the office. Joe is exceptionally productive and his bosses don&apos;t notice his fraudulant antics.
+            Joe is working on a project with a friend. This project will make Joe a lot of money and since inspiration can strike at any moment, Joe often finds himself needing to make small changes to the project while he is in the office. Joe is exceptionally productive and his bosses don&apos;t notice his fraudulant antics.
           </BodyText>
           <BodyText>
-            Joe has discovered a new context. He is in the office and requires all of the proxy configuration which comes with the work config repo, but he cannot afford for the dreaded 4 space tab configuration to take effect on his vim application potentially corrupting his immaculately 2 spaced personal project. This context is identical to his work context except that he doesn&apos;t need to office <Code>.vimrc</Code> file. To achieve this Joe doesn&apos;t need to make any changes to the repositories that he has checked out already, he just needs a different <Code>.dotfiles-multiplexer.yml</Code> file.
+            Joe has discovered a new context. He is in the office and requires all of the proxy configuration which comes with the work config repo, but he cannot afford for the dreaded 4 space tab configuration to take effect on his vim application, potentially corrupting his immaculately 2 spaced personal project.
           </BodyText>
-          <div>
-            code block showing the config files for the two contexts discussed
-          </div>
+          <BodyText>
+            This context is identical to his work context except that he doesn&apos;t need to office <Code>.vimrc</Code> file. To achieve this Joe doesn&apos;t need to make any changes to the repositories that he has checked out already, he just needs a different <Code>.dotfiles-multiplexer.yml</Code> file.
+          </BodyText>
+          <CodeBlock
+            gist_id="js-jslog/128ffb51b5635c527d4761074cfd35ca"
+            file="office_minus_vimrc.yml"
+          >
+            <Caption>
+              The <Code>compose:</Code> node specifies which of the available repos should be included in the generated config and in which order.
+            </Caption>
+          </CodeBlock>
           <BodyText>
             Now Joe can switch back and forth between the two contexts of working hard in the office and wasting the office dollar by simply switching out which of the above configuration files is located at <Code>~/.dotfiles-multiplexer.yml</Code> and running <Code>~/dofiles-multiplexer/setup.sh</Code>
           </BodyText>
