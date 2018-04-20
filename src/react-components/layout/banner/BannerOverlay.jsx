@@ -63,11 +63,12 @@ class BannerOverlay extends React.Component {
         const overlay_height = getComputedStyle(this.overlay).height.split('px')[0];
         const overlay_padding_top = getComputedStyle(this.overlay).paddingTop.split('px')[0];
         const overlay_padding_bottom = getComputedStyle(this.overlay).paddingBottom.split('px')[0];
-        const overlay_total = parseFloat(overlay_height) + parseFloat(overlay_padding_top) + parseFloat(overlay_padding_bottom);
-        this.overlay_total = overlay_total;
+      //  const overlay_total = parseFloat(overlay_height) + parseFloat(overlay_padding_top) + parseFloat(overlay_padding_bottom);
+      //  this.overlay_total = overlay_total;  // Saving just in-case, seems to work as intended by substituting overlay_total on overlay_height
+        this.overlay_height=overlay_height
     };
     handleScroll (event) {
-        const diff = parseFloat(this.props.container_height) - parseFloat(this.overlay_total);
+        const diff = parseFloat(this.props.container_height) - parseFloat(this.overlay_height);
         if (window.scrollY < diff - 1) {
             this.overlay.style.position = 'fixed';
             this.overlay.style.top = 0;
@@ -80,7 +81,7 @@ class BannerOverlay extends React.Component {
         }
     };
     scrollToContent (container_height) {
-        const diff = parseFloat(container_height) - parseFloat(this.overlay_total)
+        const diff = parseFloat(container_height) - parseFloat(this.overlay_height)
         const scroll = Scroll.animateScroll;
         scroll.scrollTo(diff, {
             delay: 250,
